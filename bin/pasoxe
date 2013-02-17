@@ -1,0 +1,16 @@
+#!/bin/bash
+
+record_server=""
+if [ "x$PULSE_RECORD" != "x" ]; then
+	record_server="-s $PULSE_RECORD"
+fi
+
+play_server=""
+if [ "x$PULSE_PLAY" != "x" ]; then
+	play_server="-s $PULSE_PLAY"
+fi
+
+
+format="-t raw -r 44k -sLb 16 -c 2"
+parec $record_server | sox $format - $format - "$@" | pacat $play_server
+

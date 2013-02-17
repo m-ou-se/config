@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat $HOME/.crontab.d/*.cron | crontab -

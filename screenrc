@@ -1,0 +1,7 @@
+# Disable annoying visual bell.
+vbell off
+
+# Use the mouse wheel for scrolling.
+altscreen on
+#termcapinfo xterm* ti@:te@
+#term xterm
