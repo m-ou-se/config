@@ -1,0 +1,2 @@
+#!/bin/sh
+gnome-terminal --role ncmpcpp -x ssh -t server ncmpcpp

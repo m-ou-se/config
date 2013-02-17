@@ -1,0 +1,4 @@
+#!/bin/bash
+#size=$(du -hs "$@" | tail -n 1 | awk '{print $1}')
+read size
+pv -pters "$size" | tar x

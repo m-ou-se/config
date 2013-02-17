@@ -1,0 +1,4 @@
+#!/bin/bash
+size=$(du -bsc "$@" | tail -n 1 | awk '{print $1}')
+echo "$size "
+tar -c "$@" | pv -Wpters "$size"

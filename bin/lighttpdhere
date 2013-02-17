@@ -1,0 +1,32 @@
+#!/bin/bash
+
+configfile=$(mktemp)
+
+if [ $# == 1 ]
+then
+	port=$1
+else
+	port=$[($RANDOM % (32*1024)) + 1024]
+fi
+
+echo "server.document-root=\"$(pwd)\"" > $configfile
+echo "server.port = $port" >> $configfile
+echo "index-file.names = (\"index.php\", \"index.html\")" >> $configfile
+echo "server.modules = (\"mod_fastcgi\")" >> $configfile
+echo "fastcgi.server = (\".php\" => ((\"bin-path\" => \"/usr/bin/php-cgi\", \"socket\" => \"$configfile.phpsocket\", \"broken-scriptfilename\" => \"enable\")))" >> $configfile
+echo "mimetype.assign  = (\".html\" => \"text/html\"      )" >> $configfile
+echo "mimetype.assign += (\".css\"  => \"text/css\"       )" >> $configfile
+echo "mimetype.assign += (\".js\"   => \"text/javascript\")" >> $configfile
+echo "mimetype.assign += (\".png\"  => \"image/png\"      )" >> $configfile
+echo "mimetype.assign += (\".jpg\"  => \"image/jpeg\"     )" >> $configfile
+echo "mimetype.assign += (\".gif\"  => \"image/gif\"      )" >> $configfile
+
+if [ -f lighttpdconfig ]; then
+	cat lighttpdconfig >> $configfile
+fi
+
+echo "Starting webserver on http://localhost:$port/ . . ."
+
+lighttpd -D -f $configfile
+
+rm $configfile
