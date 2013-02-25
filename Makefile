@@ -1,6 +1,6 @@
 
 install: vundle
-	cp -r bin        $(HOME)/bin
+	cp -Tr bin        $(HOME)/bin
 	cp    profile    $(HOME)/.profile
 	cp    bashrc     $(HOME)/.bashrc
 	cp    aliases    $(HOME)/.aliases
