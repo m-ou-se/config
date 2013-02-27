@@ -15,6 +15,8 @@ hi NonText ctermfg=Yellow
 hi Search ctermbg=LightBlue ctermfg=White
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap o ox<Backspace>
+inoremap <CR> <CR>x<Backspace>
 
 " Auto completion
 set completeopt=menuone
