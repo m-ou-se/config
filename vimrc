@@ -35,11 +35,11 @@ Bundle 'godlygeek/tabular'
 Bundle 'snipMate'
 
 " Enable clang completion if clang is found.
-if filereadable("/usr/local/lib/libclang.so")
-	Bundle 'Rip-Rip/clang_complete'
-	let g:clang_library_path = "/usr/local/lib/"
-	let g:clang_use_library = 1
-endif
+"if filereadable("/usr/local/lib/libclang.so")
+"	Bundle 'Rip-Rip/clang_complete'
+"	let g:clang_library_path = "/usr/local/lib/"
+"	let g:clang_use_library = 1
+"endif
 
 filetype plugin indent on
 
