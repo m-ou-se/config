@@ -4,6 +4,7 @@ set mouse=a
 set keymodel=startsel
 set clipboard+=unnamed
 set autowrite
+set hlsearch
 
 set tabstop=4 shiftwidth=4 autoindent smartindent copyindent
 
@@ -11,6 +12,7 @@ hi Comment ctermfg=LightBlue
 hi SpecialKey ctermfg=DarkGray
 hi LineNr ctermfg=Brown ctermbg=DarkGray
 hi NonText ctermfg=Yellow
+hi Search ctermbg=LightBlue ctermfg=White
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
