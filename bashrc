@@ -6,6 +6,9 @@ function parse_hostname {
 	echo $1 | sed -e "s/^$USER-//"
 }
 
+if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+	source /usr/share/git/completion/git-prompt.sh
+fi
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
