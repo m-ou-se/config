@@ -1,14 +1,14 @@
 
 install: vundle
-	cp -Tr bin        $(HOME)/bin
-	cp    profile    $(HOME)/.profile
-	cp    bashrc     $(HOME)/.bashrc
-	cp    aliases    $(HOME)/.aliases
-	cp    gitconfig  $(HOME)/.gitconfig
-	cp    gitignore  $(HOME)/.gitignore
-	cp    screenrc   $(HOME)/.screenrc
-	cp    vimrc      $(HOME)/.vimrc
-	vim +BundleInstall +qall
+	cp -Tr bin                      $(HOME)/bin
+	ln -sf settings/core/profile    $(HOME)/.profile
+	ln -sf settings/core/bashrc     $(HOME)/.bashrc
+	ln -sf settings/core/aliases    $(HOME)/.aliases
+	ln -sf settings/core/gitconfig  $(HOME)/.gitconfig
+	ln -sf settings/core/gitignore  $(HOME)/.gitignore
+	ln -sf settings/core/screenrc   $(HOME)/.screenrc
+	ln -sf settings/core/vimrc      $(HOME)/.vimrc
+	vim +BundleClean +BundleInstall +qall
 
 .PHONY: vundle
 vundle:
