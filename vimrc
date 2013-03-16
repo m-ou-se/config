@@ -32,7 +32,8 @@ Bundle 'mutewinter/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-speeddating'
 Bundle 'godlygeek/tabular'
-Bundle 'snipMate'
+Bundle 'UltiSnips'
+Bundle 'Rename2'
 
 " Enable clang completion if clang is found.
 "if filereadable("/usr/local/lib/libclang.so")
