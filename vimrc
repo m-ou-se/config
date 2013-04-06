@@ -15,8 +15,11 @@ hi NonText ctermfg=Yellow
 hi Search ctermbg=LightBlue ctermfg=White
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-nnoremap o ox<Backspace>
-inoremap <CR> <CR>x<Backspace>
+" Dont remove leading whitespace from empty lines.
+nnoremap o ox<backspace>
+inoremap <cr> <cr>x<backspace>
+" Use K to split lines in normal mode.
+nnoremap K i<cr><esc>
 
 " Auto completion
 set completeopt=menuone
