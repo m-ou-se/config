@@ -21,6 +21,9 @@ inoremap <cr> <cr>x<backspace>
 " Use K to split lines in normal mode.
 nnoremap K i<cr><esc>
 
+" Split the current line.
+nnoremap K i<CR><Esc>k$
+
 " Auto completion
 set completeopt=menuone
 
