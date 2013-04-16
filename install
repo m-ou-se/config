@@ -1,0 +1,39 @@
+#!/bin/bash
+
+cd $(dirname "$0")
+config_dir=${PWD##$HOME/}
+
+check_commands() {
+	missing=0
+	for tool in "$@"; do
+		if ! type "$tool" > /dev/null; then
+			echo "$tool missing."
+			missing=1
+		fi
+	done
+	[ $missing -eq 0 ] || return 1
+	return 0
+}
+
+install_file() {
+	ln -sf "$config_dir/$1" "$HOME/$2"
+}
+
+# Check for required tools.
+required_commands="git vim"
+if ! check_commands "$required_commands"; then
+	exit 1;
+fi
+
+# Install configuration files.
+files="aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim"
+for file in $files; do
+	install_file "$file" ".$file"
+done;
+
+# Install vundle.
+if [ ! -d "vim/bundle/vundle" ]; then
+	mkdir -p "vim/bundle"
+	git clone https://github.com/gmarik/vundle.git "vim/bundle/vundle"
+fi
+vim +BundleClean +BundleInstall +qall
