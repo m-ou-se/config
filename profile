@@ -1,4 +1,4 @@
-config_dir=$(dirname "$(readlink .profile)")
+config_dir=$(dirname "$(readlink -f .profile)")
 
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
