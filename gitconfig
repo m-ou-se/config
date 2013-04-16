@@ -1,22 +1,18 @@
-[user]
-	name = Maarten de Vries
-	email = maarten@de-vri.es
 [diff]
 	tool = vimdiff
-	guitool = meld
+
 [color]
 	ui = true
+
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
 	stat = status
-	idiff = diff --no-ext-diff -b
-	amend = commit --amend
-	pop = stash pop
-	vimdiff = difftool -y -t vimdiff
-	meld = difftool -y -t meld
+	ff = merge --ff-only
+	index = diff --cached
+
 [core]
-	excludesfile = /home/maarten/.gitignore
-[merge]
-	tool = diffconflicts
-[mergetool "diffconflicts"]
-	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	excludesfile = ~/.gitignore
+	whitespace = space-before-tab
+
+[include]
+	path = ~/.gitconfig.local
