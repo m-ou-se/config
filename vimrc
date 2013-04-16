@@ -1,8 +1,6 @@
 set list listchars=tab:>—,trail:␣,extends:▶,precedes:◀
-set nowrap ruler number showcmd laststatus=2 encoding=utf-8 cmdheight=1
+set nowrap ruler number showcmd laststatus=2
 set mouse=a
-set keymodel=startsel
-set clipboard+=unnamed
 set autowrite
 set hlsearch
 
@@ -18,8 +16,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " Dont remove leading whitespace from empty lines.
 nnoremap o ox<backspace>
 inoremap <cr> <cr>x<backspace>
-" Use K to split lines in normal mode.
-nnoremap K i<cr><esc>
 
 " Split the current line.
 nnoremap K i<CR><Esc>k$
