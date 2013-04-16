@@ -40,6 +40,8 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'godlygeek/tabular'
 Bundle 'UltiSnips'
 Bundle 'Rename2'
+Bundle 'surround.vim'
+Bundle 'repeat.vim'
 
 " Enable clang completion if clang is found.
 "if filereadable("/usr/local/lib/libclang.so")
