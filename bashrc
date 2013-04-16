@@ -157,3 +157,4 @@ function o() {
 test -f $HOME/.bashrc.local && . $HOME/.bashrc.local
 
 export EDITOR=vim
+export MANPAGER=vimmanpager
