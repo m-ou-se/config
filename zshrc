@@ -1,5 +1,6 @@
 # Include generic shellrc.
 [ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
+GIT_PS1_SHOWUPSTREAM=(auto verbose)
 
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
