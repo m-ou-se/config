@@ -28,6 +28,9 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
+# Enable viewing non-text files in less.
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 # Run a command with no in- or output.
 function noout {
 	"$@" 1>/dev/null 2>/dev/null </dev/null
