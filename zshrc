@@ -30,12 +30,16 @@ autoload colors
 colors
 
 # Set terminal title to show the current directory.
-print -Pn "\e]2;%n@%M: %~\a"
+function update_title {
+	print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a"
+}
+update_title
+
 function chpwd {
+	update_title
+	
 	# Print files when changing directory.
 	[ "$PWD" != ~ ] && ls -CF --color=always
-	# Update terminal title when changing directory.
-	print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a"
 }
 
 PS1=$'%(?,,\n)'
