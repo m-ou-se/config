@@ -1,0 +1,55 @@
+# Include .aliases file.
+config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
+[ -f "$config_dir/git-prompt.sh" ] && source "$config_dir/git-prompt.sh"
+[ -f "$HOME/.aliases"            ] && source "$HOME/.aliases"
+
+# Set linux terminal colors.
+if [ "$TERM" = "linux" ]; then
+	echo -en "\e]P0000000" #black
+	echo -en "\e]P84C4C4C" #darkgrey
+	echo -en "\e]P1CD0000" #darkred
+	echo -en "\e]P9FF0000" #red
+	echo -en "\e]P200CD00" #darkgreen
+	echo -en "\e]PA00FF00" #green
+	echo -en "\e]P3CDCD00" #brown
+	echo -en "\e]PBDDDD00" #yellow
+	echo -en "\e]P41E90FF" #darkblue
+	echo -en "\e]PC4682B4" #blue
+	echo -en "\e]P5CD00CD" #darkmagenta
+	echo -en "\e]PDFF00FF" #magenta
+	echo -en "\e]P600CDCD" #darkcyan
+	echo -en "\e]PE00FFFF" #cyan
+	echo -en "\e]P7E5E5E5" #lightgrey
+	echo -en "\e]PFFFFFFF" #white
+fi
+
+# Set up dircolors.
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# Run a command with no in- or output.
+function noout {
+	"$@" 1>/dev/null 2>/dev/null </dev/null
+}
+
+# Run a command in the background with no in- or output.
+function run {
+	"$@" 1>/dev/null 2>/dev/null </dev/null &
+}
+
+# Open a file using the default application.
+function o {
+	xdg-open "$@" 1>/dev/null 2>/dev/null </dev/null
+}
+
+# Set up git PS1 configuration.
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto verbose"
+
+export EDITOR=vim
+export MANPAGER=vimmanpager
+
+# vi: ft=sh

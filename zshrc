@@ -1,4 +1,5 @@
-# The following lines were added by compinstall
+# Include generic shellrc.
+[ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
 
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
@@ -17,28 +18,25 @@ zstyle :compinstall filename '/home/maarten/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd extendedglob nomatch notify prompt_subst
-setopt auto_pushd
+setopt appendhistory autocd extendedglob nomatch notify prompt_subst auto_pushd correct
 unsetopt beep
 bindkey -e
-# End of lines configured by zsh-newuser-install
-
-config_dir=$(dirname "$(readlink -f "$HOME/.zshrc")")
-
-source "$config_dir/git-prompt.sh"
-
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM="auto verbose"
 
 autoload colors
 colors
+
+# Set terminal title to show the current directory.
+print -Pn "\e]2;%n@%M: %~\a"
+function chpwd {
+	# Print files when changing directory.
+	[ "$PWD" != ~ ] && ls -CF --color=always
+	# Update terminal title when changing directory.
+	print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a"
+}
 
 PS1=$'%(?,,\n)'
 PS1_END=""
@@ -51,13 +49,18 @@ else
 fi
 PS1_END+="%{$reset_color%} "
 
+function __zsh_git_ps1 {
+	local output="$(__git_ps1 "(%s)")"
+	local pat="%"
+	echo "${output/$pat/%%}"
+}
 
 e=$'\e'
 PS1+="%n@"${HOST##${SUDO_USER-$USER}-}
 PS1+="%{$reset_color%}:"
 PS1+="%{$fg[blue]%}%~"
 PS1+="%{$reset_color%}"
-PS1+='$(__git_ps1 "('"%%{$fg[yellow]%%}%s%%{$reset_color%%}"')")'
+PS1+="%{$fg[yellow]%}"'$(__zsh_git_ps1)'"%{$reset_color%}"
 PS1+=$PS1_END
 PS2="$PS1"
 PS2+="%{$fg[blue]%}%_%{$reset_color%}> "
