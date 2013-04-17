@@ -20,12 +20,12 @@ install_file() {
 
 # Check for required tools.
 required_commands="git vim"
-if ! check_commands "$required_commands"; then
+if ! check_commands $required_commands; then
 	exit 1;
 fi
 
 # Install configuration files.
-files="aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim"
+files="aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc"
 for file in $files; do
 	install_file "$file" ".$file"
 done;
