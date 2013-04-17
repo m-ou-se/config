@@ -14,7 +14,6 @@ HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
 PS1='\[\033[32m\]\u@$(parse_hostname \h)\[\033[00m\]:\[\033[34m\]\w$(__git_ps1 "\[\e[33m\](%s)\[\e[00m\]")\[\033[00m\]\$ '
