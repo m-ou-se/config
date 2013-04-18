@@ -46,6 +46,20 @@ function o {
 	xdg-open "$@" 1>/dev/null 2>/dev/null </dev/null
 }
 
+# Create a directory and change to it.
+function mkd {
+	if [ $# -gt 1 ]; then
+		echo "Usage: $0 [dir]" >&2
+		return 13
+	fi
+	if [ -z $1]; then
+		mkd "/tmp/$(date +%F-%H-%M-%S)"
+	else
+		mkdir -p "$1"
+		cd "$1"
+	fi
+}
+
 # Set up git PS1 configuration.
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
