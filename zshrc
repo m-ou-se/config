@@ -54,7 +54,7 @@ function chpwd {
 
 function git_prompt {
 	local output="$(__git_ps1 "(%s)")"
-	echo "${output//\\%/%%}"
+	echo "${output//\%/%%}"
 }
 
 function prompt {
