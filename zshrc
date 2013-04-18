@@ -1,5 +1,6 @@
 [ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
-GIT_PS1_SHOWUPSTREAM=(auto verbose)
+
+GIT_PS1_SHOWUPSTREAM=(${(s/ /)GIT_PS1_SHOWUPSTREAM})
 
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
