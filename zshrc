@@ -26,6 +26,9 @@ SAVEHIST=1000
 setopt appendhistory autocd extendedglob nomatch notify prompt_subst auto_pushd correct
 unsetopt beep
 bindkey -e
+bindkey '^[[Z' reverse-menu-complete
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
 
 autoload colors
 colors
