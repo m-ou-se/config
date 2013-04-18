@@ -23,8 +23,17 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd extendedglob nomatch notify prompt_subst auto_pushd correct
+
+setopt appendhistory
+setopt autocd
+setopt auto_pushd
+setopt correct
+setopt extendedglob
+setopt nomatch
+setopt notify
+setopt prompt_subst
 unsetopt beep
+
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^[[1;5C' emacs-forward-word
