@@ -52,7 +52,7 @@ function mkd {
 		echo "Usage: $0 [dir]" >&2
 		return 13
 	fi
-	if [ -z $1]; then
+	if [ -z $1 ]; then
 		mkd "/tmp/$(date +%F-%H-%M-%S)"
 	else
 		mkdir -p "$1"
