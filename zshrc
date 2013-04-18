@@ -46,32 +46,45 @@ function chpwd {
 	[ "$PWD" != ~ ] && ls -CF --color=always
 }
 
-PS1=$'%(?,,\n)'
-PS1_END=""
-if [ $UID -eq 0 ]; then
-	PS1+="%{$fg[red]%}"
-	PS1_END+="%{$fg[red]%}#"
-else
-	PS1+="%{$fg[green]%}"
-	PS1_END+="%%"
-fi
-PS1_END+="%{$reset_color%} "
-
-function __zsh_git_ps1 {
+function git_prompt {
 	local output="$(__git_ps1 "(%s)")"
-	local pat="%"
-	echo "${output/$pat/%%}"
+	echo "${output//\\%/%%}"
 }
 
-e=$'\e'
-PS1+="%n@"${HOST##${SUDO_USER-$USER}-}
-PS1+="%{$reset_color%}:"
-PS1+="%{$fg[blue]%}%~"
-PS1+="%{$reset_color%}"
-PS1+="%{$fg[yellow]%}"'$(__zsh_git_ps1)'"%{$reset_color%}"
-PS1+=$PS1_END
-PS2="$PS1"
-PS2+="%{$fg[blue]%}%_%{$reset_color%}> "
 
+function prompt {
+	local e=$'\e'
+	echo -n $'%(?,,\n)'
+	if [ $UID -eq 0 ]; then
+		echo -n "%{$fg[red]%}"
+	else
+		echo -n "%{$fg[green]%}"
+	fi
+	echo -n "%n@"${HOST##${SUDO_USER-$USER}-}
+	echo -n "%{$reset_color%}:"
+	echo -n "%{$fg[blue]%}%~"
+	echo -n "%{$reset_color%}"
+	echo -n "%{$fg[yellow]%}"
+	echo -n "$(git_prompt)"
+	echo -n "%{$reset_color%}"
+	
+	if [ $UID -eq 0 ]; then
+		echo -n "%{$fg[red]%}#"
+	else
+		echo -n "%%"
+	fi
+	echo -n "%{$reset_color%} "
+}
 
-RPROMPT="%(?,,%{${e}[A$fg[red]%}%? ✗%{$reset_color${e}[B%}"
+function prompt2 {
+	echo -n "$PS1"
+	echo -n "%{$fg[blue]%}%_%{$reset_color%}> "
+}
+
+function rprompt {
+	echo -n "%(?,,%{${e}[A$fg[red]%}%? ✗%{$reset_color${e}[B%}"
+}
+
+PROMPT='$(prompt)'
+RPROMPT='$(rprompt)'
+PROMPT2='$(prompt2)'
