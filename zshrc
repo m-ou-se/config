@@ -1,4 +1,3 @@
-# Include generic shellrc.
 [ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
 GIT_PS1_SHOWUPSTREAM=(auto verbose)
 
@@ -33,7 +32,6 @@ bindkey '^[[1;5D' emacs-backward-word
 autoload colors
 colors
 
-# Set terminal title to show the current directory.
 function update_title {
 	print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a"
 }
@@ -41,8 +39,6 @@ update_title
 
 function chpwd {
 	update_title
-	
-	# Print files when changing directory.
 	[ "$PWD" != ~ ] && ls -CF --color=always
 }
 
