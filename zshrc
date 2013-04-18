@@ -57,9 +57,7 @@ function git_prompt {
 	echo "${output//\\%/%%}"
 }
 
-
 function prompt {
-	local e=$'\e'
 	echo -n $'%(?,,\n)'
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}"
@@ -73,7 +71,6 @@ function prompt {
 	echo -n "%{$fg[yellow]%}"
 	echo -n "$(git_prompt)"
 	echo -n "%{$reset_color%}"
-	
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}#"
 	else
@@ -82,13 +79,13 @@ function prompt {
 	echo -n "%{$reset_color%} "
 }
 
+function rprompt {
+	echo -n "%(?,,%{\e[A$fg[red]%}%? ✗%{$reset_color\e[B%}"
+}
+
 function prompt2 {
 	echo -n "$PS1"
 	echo -n "%{$fg[blue]%}%_%{$reset_color%}> "
-}
-
-function rprompt {
-	echo -n "%(?,,%{${e}[A$fg[red]%}%? ✗%{$reset_color${e}[B%}"
 }
 
 PROMPT='$(prompt)'
