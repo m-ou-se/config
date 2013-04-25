@@ -39,6 +39,7 @@ function noout {
 # Run a command in the background with no in- or output.
 function run {
 	"$@" 1>/dev/null 2>/dev/null </dev/null &
+	disown
 }
 
 # Open a file using the default application.
