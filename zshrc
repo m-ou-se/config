@@ -60,19 +60,19 @@ function git_prompt {
 function prompt {
 	echo -n $'%(?,,\n)'
 	if [ $UID -eq 0 ]; then
-		echo -n "%{$fg[red]%}"
+		echo -n "%{$fg_bold[red]%}"
 	else
-		echo -n "%{$fg[green]%}"
+		echo -n "%{$fg_bold[green]%}"
 	fi
 	echo -n "%n@"${HOST##${SUDO_USER-$USER}-}
 	echo -n "%{$reset_color%}:"
-	echo -n "%{$fg[blue]%}%~"
+	echo -n "%{$fg_bold[blue]%}%~"
 	echo -n "%{$reset_color%}"
-	echo -n "%{$fg[yellow]%}"
+	echo -n "%{$fg_bold[yellow]%}"
 	echo -n "$(git_prompt)"
 	echo -n "%{$reset_color%}"
 	if [ $UID -eq 0 ]; then
-		echo -n "%{$fg[red]%}#"
+		echo -n "%{$fg_bold[red]%}#"
 	else
 		echo -n "%%"
 	fi
@@ -80,12 +80,12 @@ function prompt {
 }
 
 function rprompt {
-	echo -n "%(?,,%{\e[A$fg[red]%}%? ✗%{$reset_color\e[B%}"
+	echo -n "%(?,,%{\e[A$fg_bold[red]%}%? ✗%{$reset_color\e[B%}"
 }
 
 function prompt2 {
-	echo -n "$PS1"
-	echo -n "%{$fg[blue]%}%_%{$reset_color%}> "
+	prompt
+	echo -n "%{$fg_bold[magenta]%}%_%{$reset_color%}> "
 }
 
 PROMPT='$(prompt)'
