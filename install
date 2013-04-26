@@ -14,8 +14,17 @@ check_commands() {
 	return $missing
 }
 
+config_backup_dir="backup-$(date +%F-%H-%M-%S)";
+
 install_file() {
-	ln -sf "$config_dir/$1" "$HOME/$2"
+	if [ -e "$HOME/$2" ]; then
+		if [ "$(readlink "$HOME/$2")" != "$config_dir/$1" ]; then
+			mkdir -p "$config_backup_dir"
+			mv "$HOME/$2" "$config_backup_dir/$1"
+			echo "'$2' already exists. It is moved to '$config_dir/$config_backup_dir/$1'." 1>&2
+		fi
+	fi
+	ln -fs "$config_dir/$1" "$HOME/$2"
 }
 
 # Check for required tools.
@@ -25,10 +34,10 @@ if ! check_commands $required_commands; then
 fi
 
 # Install configuration files.
-files="aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc"
-for file in $files; do
+for file in aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc
+do
 	install_file "$file" ".$file"
-done;
+done
 
 # Install vundle.
 if [ ! -d "vim/bundle/vundle" ]; then
