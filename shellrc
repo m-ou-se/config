@@ -3,25 +3,31 @@ config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
 [ -f "$config_dir/git-prompt.sh" ] && source "$config_dir/git-prompt.sh"
 [ -f "$HOME/.aliases"            ] && source "$HOME/.aliases"
 
-# Set linux terminal colors.
-if [ "$TERM" = "linux" ]; then
-	echo -en "\e]P0000000" #black
-	echo -en "\e]P84C4C4C" #darkgrey
-	echo -en "\e]P1CD0000" #darkred
-	echo -en "\e]P9FF0000" #red
-	echo -en "\e]P200CD00" #darkgreen
-	echo -en "\e]PA00FF00" #green
-	echo -en "\e]P3CDCD00" #brown
-	echo -en "\e]PBDDDD00" #yellow
-	echo -en "\e]P41E90FF" #darkblue
-	echo -en "\e]PC4682B4" #blue
-	echo -en "\e]P5CD00CD" #darkmagenta
-	echo -en "\e]PDFF00FF" #magenta
-	echo -en "\e]P600CDCD" #darkcyan
-	echo -en "\e]PE00FFFF" #cyan
-	echo -en "\e]P7E5E5E5" #lightgrey
-	echo -en "\e]PFFFFFFF" #white
-fi
+function set_color {
+	if [ "$TERM" = "linux" ]; then
+		printf $'\e]P%X%s' $1 $2
+	else
+		echo -en "\e]4;$1;#$2\a"
+	fi
+}
+
+# Set terminal colors.
+set_color  0 000011 # black
+set_color  1 CC0000 # red
+set_color  2 009900 # green
+set_color  3 CC9900 # yellow
+set_color  4 0066FF # blue
+set_color  5 9933CC # magenta
+set_color  6 009999 # cyan
+set_color  7 999999 # light grey
+set_color  8 333333 # dark grey
+set_color  9 FF3333 # bright red
+set_color 10 33FF33 # bright green
+set_color 11 FFFF33 # bright yellow
+set_color 12 3399CC # bright blue
+set_color 13 CC33FF # bright magenta
+set_color 14 00FFFF # bright cyan
+set_color 15 FFFFFF # white
 
 # Set up dircolors.
 if [ -x /usr/bin/dircolors ]; then

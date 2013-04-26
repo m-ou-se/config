@@ -28,11 +28,11 @@ nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 hi Normal guibg=Black guifg=LightGray
 hi Comment ctermfg=LightBlue guifg=LightBlue
 hi SpecialKey ctermfg=DarkGray guifg=#333333
-hi LineNr ctermfg=Brown ctermbg=DarkGray guifg=Yellow guibg=#333333
+hi LineNr cterm=inverse ctermfg=DarkGray ctermbg=Yellow guifg=Yellow guibg=#333333
 hi NonText ctermfg=Yellow guifg=Yellow
 hi PmenuSel ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-hi Pmenu ctermfg=Gray ctermbg=DarkMagenta guifg=Yellow guibg=DarkMagenta
-hi Folded ctermbg=DarkGray ctermfg=DarkYellow guifg=Yellow guibg=#333333
+hi Pmenu ctermfg=Black ctermbg=Magenta guifg=Yellow guibg=DarkMagenta
+hi Folded cterm=inverse ctermbg=Yellow ctermfg=DarkGray guifg=Yellow guibg=#333333
 hi Search ctermbg=Magenta ctermfg=White guibg=Magenta guifg=White
 hi Visual guibg=#444444
 set guioptions-=T
