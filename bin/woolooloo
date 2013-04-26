@@ -1,4 +1,0 @@
-#!/bin/bash
-
-notify-send "Woolooloo!"
-mplayer /home/rukker/.intro/woolooloo.wav

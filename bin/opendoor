@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo 'Open!' | nc voordeur 8311
