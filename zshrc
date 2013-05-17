@@ -1,4 +1,5 @@
 [ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
+try_source /usr/share/doc/pkgfile/command-not-found.zsh
 
 GIT_PS1_SHOWUPSTREAM=(${(s/ /)GIT_PS1_SHOWUPSTREAM})
 
