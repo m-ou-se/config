@@ -44,7 +44,9 @@ autoload colors
 colors
 
 function update_title {
-	print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a"
+	case "$TERM" in
+		xterm*|rxvt*) print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a" ;;
+	esac
 }
 update_title
 
