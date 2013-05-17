@@ -1,5 +1,6 @@
 # Include generic shellrc.
 [ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
+try_source /usr/share/doc/pkgfile/command-not-found.bash
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
