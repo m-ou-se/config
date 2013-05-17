@@ -1,7 +1,12 @@
 # Include .aliases file.
 config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
-[ -f "$config_dir/git-prompt.sh" ] && source "$config_dir/git-prompt.sh"
-[ -f "$HOME/.aliases"            ] && source "$HOME/.aliases"
+
+function try_source {
+	[ -f "$1" ] && source "$1"
+}
+
+try_source "$config_dir/git-prompt.sh"
+try_source "$HOME/.aliases"
 
 function set_color {
 	if [ "$TERM" = "linux" ]; then
