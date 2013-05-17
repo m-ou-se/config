@@ -70,3 +70,4 @@ set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
 filetype plugin on
 filetype indent on
+syntax on
