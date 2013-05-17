@@ -25,6 +25,8 @@ let g:c_no_curly_error=1
 nmap K i<Cr><Esc>k$
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
 hi Normal guibg=Black guifg=LightGray
 hi Comment ctermfg=LightBlue guifg=LightBlue
 hi SpecialKey ctermfg=DarkGray guifg=#333333
