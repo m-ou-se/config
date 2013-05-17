@@ -54,7 +54,6 @@ Bundle 'vis'
 Bundle 'ShowMarks'
 Bundle 'UltiSnips'
 Bundle 'Rename2'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'JSON.vim'
 Bundle 'glsl.vim'
 let g:vimwiki_camel_case=0
