@@ -1,9 +1,12 @@
 alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias ll='ls -alF'
+alias lla='ls -alF --group-directories-first'
+alias ll='ls -lF --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
 alias clip='xclip -i -selection clipboard'
 
 alias grep='grep --color=auto'
