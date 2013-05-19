@@ -24,7 +24,7 @@ set_color  3 CC9900 # yellow
 set_color  4 0066FF # blue
 set_color  5 9933CC # magenta
 set_color  6 009999 # cyan
-set_color  7 999999 # light grey
+set_color  7 CCCCCC # light grey
 set_color  8 333333 # dark grey
 set_color  9 FF3333 # bright red
 set_color 10 33FF33 # bright green
