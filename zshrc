@@ -56,9 +56,21 @@ function chpwd {
 	[ "$PWD" != ~ ] && ls -CF --color=always
 }
 
-function git_prompt {
+function git_info {
 	local output="$(__git_ps1 "(%s)")"
 	echo "${output//\%/%%}"
+}
+
+function git_path {
+	local p="$1"
+	local result=""
+	until [ "$p" = '.' -o "$p" = '/' ]; do
+		local name="${p##*/}"
+		local info="$(cd -q ${~p} && test -e .git && git_info)"
+		result=$(printf "$2/%s" "$name" "$info" "$result")
+		p="$(dirname "$p")"
+	done
+	echo -n $result
 }
 
 function prompt {
@@ -70,10 +82,7 @@ function prompt {
 	fi
 	echo -n "%n@"${HOST##${SUDO_USER-$USER}-}
 	echo -n "%{$reset_color%}:"
-	echo -n "%{$fg[blue]%}%~"
-	echo -n "%{$reset_color%}"
-	echo -n "%{$fg[yellow]%}"
-	echo -n "$(git_prompt)"
+	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[blue]%%}"
 	echo -n "%{$reset_color%}"
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}#"
