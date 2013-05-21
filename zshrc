@@ -54,7 +54,8 @@ update_title
 
 function chpwd {
 	update_title
-	[ "$PWD" != ~ ] && ls -CF --color=always
+	local count=$(count_files)
+	[ "$count" -le 50 ] && ls -CF --color=always || echo "Too many files to display ($count)."
 }
 
 function git_info {

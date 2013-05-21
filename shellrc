@@ -1,6 +1,7 @@
 # Include .aliases file.
 config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
 
+# Source a file if it exists.
 function try_source {
 	[ -f "$1" ] && source "$1"
 }
@@ -8,6 +9,9 @@ function try_source {
 try_source "$config_dir/git-prompt.sh"
 try_source "$HOME/.aliases"
 
+# Set a color in the terminal palette.
+# \param 1 The index in the pallete.
+# \param 2 is a hexadecimal RGB color code.
 function set_color {
 	if [ "$TERM" = "linux" ]; then
 		printf $'\e]P%X%s' $1 $2
@@ -70,6 +74,16 @@ function mkd {
 		mkdir -p "$1"
 		cd "$1"
 	fi
+}
+
+# Count all non-hidden files in a folder
+function count_files {
+	local file
+	local count=0
+	for file in "${1-.}/"*; do
+		let count++
+	done
+	echo "$count"
 }
 
 # Set up git PS1 configuration.
