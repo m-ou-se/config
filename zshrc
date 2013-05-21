@@ -69,7 +69,11 @@ function git_path {
 	until [ "$p" = '.' -o "$p" = '/' ]; do
 		local name="${p##*/}"
 		local info="$(cd -q ${~p} && test -e .git && git_info)"
-		result=$(printf "$2/%s" "$name" "$info" "$result")
+		if [ -n "$result" ]; then
+			result=$(printf "$2/%s" "$name" "$info" "$result")
+		else
+			result=$(printf "$2" "$name" "$info")
+		fi
 		p="$(dname "$p")"
 	done
 	[ "$p" = '/' ] && result=$(printf "$2/%s" '' '' "$result")
