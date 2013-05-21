@@ -70,7 +70,7 @@ function git_path {
 		local name="${p##*/}"
 		local info="$(cd -q ${~p} && test -e .git && git_info)"
 		result=$(printf "$2/%s" "$name" "$info" "$result")
-		p="$(dirname "$p")"
+		p="$(dname "$p")"
 	done
 	echo -n $result
 }
