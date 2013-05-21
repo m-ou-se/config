@@ -76,6 +76,28 @@ function mkd {
 	fi
 }
 
+# Get the directory name of a path.
+# Behaves exactly like dirname with no options.
+function dname {
+	# Empty input means current directory.
+	local p=${1:-.}
+	# Strip trailing slash.
+	p="${p%/}"
+	# Remove last component.
+	dir="${p%/*}"
+
+	# If nothing is left, it's the root directory.
+	if [ -z "$dir" ]; then
+		echo '/'
+	# If nothing changed there was no slash, so the CWD is the directory.
+	elif [ "$dir" = "$p" ]; then
+		echo '.'
+	# Otherwise $dir holds the directory name.
+	else
+		echo "$dir"
+	fi
+}
+
 # Count all non-hidden files in a folder
 function count_files {
 	local file
