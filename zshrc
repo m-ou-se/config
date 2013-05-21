@@ -40,6 +40,7 @@ bindkey -e
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+try_source "$config_dir/zsh-fix-keys"
 
 autoload colors
 colors
