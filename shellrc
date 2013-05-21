@@ -117,4 +117,5 @@ GIT_PS1_SHOWUPSTREAM="auto verbose"
 export EDITOR=vim
 export MANPAGER=vimmanpager
 
+try_source "$HOME/.shellrc.local"
 # vi: ft=sh
