@@ -19,6 +19,11 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
+bindkey -s '^[Oo' '/'
+bindkey -s '^[Oj' '*'
+bindkey -s '^[Om' '-'
+bindkey -s '^[Ok' '+'
+
 function zle-line-init {
     echoti smkx
 }
