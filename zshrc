@@ -72,7 +72,8 @@ function git_path {
 		result=$(printf "$2/%s" "$name" "$info" "$result")
 		p="$(dname "$p")"
 	done
-	echo -n $result
+	[ "$p" = '/' ] && result=$(printf "$2/%s" '' '' "$result")
+	echo -n "$result"
 }
 
 function prompt {
