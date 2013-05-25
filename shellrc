@@ -98,15 +98,6 @@ function dname {
 	fi
 }
 
-# Count all non-hidden files in a folder
-function count_files {
-	local file
-	local count=0
-	for file in "${1-.}/"*; do
-		let count++
-	done
-	echo "$count"
-}
 
 # Set up git PS1 configuration.
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -118,4 +109,5 @@ export EDITOR=vim
 export MANPAGER=vimmanpager
 
 try_source "$HOME/.shellrc.local"
+
 # vi: ft=sh

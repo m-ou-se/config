@@ -48,10 +48,30 @@ function update_title {
 }
 update_title
 
+# Count all non-hidden files in a folder
+function count_files {
+	setopt localoptions
+	setopt nullglob
+	local files
+	files=("${1:-.}"/*)
+	echo "${#files}"
+}
+
+# Count all hidden files in a folder
+function count_hidden_files {
+	setopt localoptions
+	setopt nullglob
+	local files
+	files=("${1:-.}"/.*)
+	echo "${#files}"
+}
+
 function chpwd {
 	update_title
 	local count=$(count_files)
-	[ "$count" -le 50 ] && ls -CF --color=always || echo "Too many files to display ($count)."
+	local hidden=$(count_hidden_files)
+	[ "$count" -le 50 ] && ls --group-directories-first -CF --color=always
+	echo "Files: $count, hidden: $hidden"
 }
 
 function git_info {
