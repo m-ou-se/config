@@ -56,6 +56,7 @@ Bundle 'UltiSnips'
 Bundle 'Rename2'
 Bundle 'JSON.vim'
 Bundle 'glsl.vim'
+Bundle 'bkad/CamelCaseMotion'
 let g:vimwiki_camel_case=0
 let g:netrw_dirhistmax=0
 let g:showmarks_enable=0
