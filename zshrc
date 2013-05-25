@@ -31,10 +31,10 @@ setopt autocd
 setopt auto_pushd
 setopt correct
 setopt extendedglob
-setopt nomatch
 setopt notify
 setopt prompt_subst
 unsetopt beep
+unsetopt nomatch
 
 try_source "$config_dir/zsh-fix-keys"
 
