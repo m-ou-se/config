@@ -1,4 +1,14 @@
 typeset -A key
+
+bindkey -e
+bindkey '^[[Z' reverse-menu-complete
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
+bindkey -s '^[Oo' '/'
+bindkey -s '^[Oj' '*'
+bindkey -s '^[Om' '-'
+bindkey -s '^[Ok' '+'
+
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
@@ -18,17 +28,3 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
-
-bindkey -s '^[Oo' '/'
-bindkey -s '^[Oj' '*'
-bindkey -s '^[Om' '-'
-bindkey -s '^[Ok' '+'
-
-function zle-line-init {
-    echoti smkx
-}
-function zle-line-finish {
-    echoti rmkx
-}
-zle -N zle-line-init
-zle -N zle-line-finish
