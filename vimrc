@@ -25,6 +25,7 @@ let g:c_no_curly_error=1
 nmap K i<Cr><Esc>k$
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
+nmap <Leader>n :NERDTreeToggle<Cr>
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
 hi Normal guibg=Black guifg=LightGray
