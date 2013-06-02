@@ -1,0 +1,5 @@
+URxvt.background:   black
+URxvt.foreground:   gray
+URxvt.font:         xft:DejaVu Sans Mono-11
+URxvt.urgentOnBell: true
+URxvt.scrollBar:    false
