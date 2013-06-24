@@ -29,7 +29,6 @@ SAVEHIST=1000
 setopt appendhistory
 setopt autocd
 setopt auto_pushd
-setopt correct
 setopt extendedglob
 setopt notify
 setopt prompt_subst
