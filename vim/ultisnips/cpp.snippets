@@ -9,6 +9,9 @@ if (${1:false}) {
 	${VISUAL}${2}
 }
 endsnippet
+snippet ifc
+if (${1}${VISUAL/\s*(.*?);?\s*$/$1/}) 
+endsnippet
 snippet ei "" w
  else if (${1:false}) {
 	${VISUAL}${2}
@@ -28,6 +31,9 @@ snippet wh
 while (${1:true}) {
 	${VISUAL}${2}
 }
+endsnippet
+snippet whc
+while (${1}${VISUAL/\s*(.*?);?\s*$/$1/})${2:;}
 endsnippet
 snippet for
 for (auto ${1:const & ${2:x}} : ${3:c}) {
@@ -84,7 +90,7 @@ endsnippet
 snippet ns
 namespace ${1:FooBar} {
 	${VISUAL}${2}
-};
+}
 endsnippet
 # ---
 snippet nocopy
@@ -196,31 +202,31 @@ void ${1:* }
 endsnippet
 # ---
 snippet s "" w
-size_t
+size_t 
 endsnippet
 snippet u64 "" w
-uint64_t
+uint64_t 
 endsnippet
 snippet u32 "" w
-uint32_t
+uint32_t 
 endsnippet
 snippet u16 "" w
-uint16_t
+uint16_t 
 endsnippet
 snippet u8 "" w
-uint8_t
+uint8_t 
 endsnippet
 snippet i64 "" w
-int64_t
+int64_t 
 endsnippet
 snippet i32 "" w
-int32_t
+int32_t 
 endsnippet
 snippet i16 "" w
-int16_t
+int16_t 
 endsnippet
 snippet i8 "" w
-int8_t
+int8_t 
 endsnippet
 # ---
 snippet <<
