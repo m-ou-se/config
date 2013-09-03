@@ -60,6 +60,7 @@ Bundle 'glsl.vim'
 Bundle 'django.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
+Bundle 'groenewege/vim-less'
 let g:vimwiki_camel_case=0
 let g:netrw_dirhistmax=0
 let g:showmarks_enable=0
