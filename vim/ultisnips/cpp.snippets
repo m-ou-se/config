@@ -288,6 +288,9 @@ endsnippet
 snippet sa
 static_assert(${1:${VISUAL/\s*(.*?);?\s*$/$1/}}, "${2:${1/"/\\"/g} is not true.}");
 endsnippet
+snippet as
+assert(${1:${VISUAL/\s*(.*?);?\s*$/$1/}});
+endsnippet
 # ---
 snippet 0 "" w
 nullptr
