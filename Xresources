@@ -1,4 +1,4 @@
-URxvt.background:   #000011
+URxvt.background:   black
 URxvt.foreground:   gray
 URxvt.font:         xft:monospace:pixelsize=14
 URxvt.boldFont:     xft:monospace:bold:pixelsize=14
