@@ -18,45 +18,47 @@ endif
 let colors_name = "trusty"
 
 
-hi Normal guifg=grey guibg=black
+hi Normal guifg=#aaaaaa guibg=Black
+hi Cursor term=reverse ctermbg=Black
+hi NonText ctermfg=Yellow
 
-hi Cursor term=reverse ctermbg=black
-hi DiffAdd term=bold ctermbg=blue
-hi DiffChange term=bold ctermbg=5
-hi DiffDelete term=bold cterm=bold ctermfg=4 ctermbg=6
-hi DiffText term=reverse cterm=bold ctermbg=1
-hi Directory term=bold ctermfg=4
-hi ErrorMsg term=standout cterm=bold ctermfg=7
-hi FoldColumn term=standout ctermfg=4 ctermbg=7
-hi Folded term=standout ctermfg=4 ctermbg=7
+hi DiffAdd ctermbg=DarkGreen
+hi DiffChange ctermbg=DarkBlue
+hi DiffDelete ctermbg=DarkRed
+hi DiffText term=reverse ctermbg=DarkMagenta
+
+hi Directory ctermfg=DarkBlue
+hi ErrorMsg term=standout ctermfg=Grey
+hi FoldColumn term=standout ctermfg=DarkBlue ctermbg=Grey
+hi Folded term=standout ctermfg=DarkBlue ctermbg=Grey
 hi IncSearch term=reverse cterm=reverse
 hi LineNr ctermfg=Yellow ctermbg=235
+hi MatchParen ctermfg=White ctermbg=DarkCyan
 hi ModeMsg term=bold cterm=bold
-hi MoreMsg term=bold ctermfg=2
-hi NonText ctermfg=Yellow
-hi Question term=standout ctermfg=2
+hi MoreMsg term=bold ctermfg=DarkGreen
+hi Question term=standout ctermfg=DarkGreen
 hi Search ctermbg=Magenta ctermfg=White
 hi SpecialKey ctermfg=DarkGray
 hi StatusLineNC term=reverse cterm=reverse
 hi StatusLine term=bold,reverse cterm=bold,reverse
-hi Title term=bold ctermfg=5
+hi Title term=bold ctermfg=DarkMagenta
 hi VertSplit term=reverse cterm=reverse
 hi VisualNOS term=bold,underline cterm=bold,underline
 hi Visual term=reverse cterm=reverse
-hi WarningMsg term=standout ctermfg=1
-hi WildMenu term=standout ctermfg=0 ctermbg=3
+hi WarningMsg term=standout ctermfg=DarkRed
+hi WildMenu term=standout ctermfg=Black ctermbg=3
 
 " Colors for syntax highlighting
-hi Comment ctermfg=4
-hi Constant ctermfg=1
-hi Special term=bold ctermfg=5
-hi Identifier term=underline ctermfg=6
-hi Statement term=bold ctermfg=3
-hi PreProc term=underline ctermfg=5
-hi Type term=underline ctermfg=2
-hi Ignore cterm=bold ctermfg=7
-hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1
-hi Todo term=standout ctermfg=0 ctermbg=3
+hi Comment ctermfg=DarkBlue
+hi Constant ctermfg=DarkRed
+hi Special ctermfg=DarkMagenta
+hi Identifier cterm=NONE ctermfg=DarkCyan
+hi Statement ctermfg=3
+hi PreProc ctermfg=DarkMagenta
+hi Type ctermfg=DarkGreen
+hi Ignore ctermfg=Grey
+hi Error term=reverse ctermfg=Grey ctermbg=DarkRed
+hi Todo term=standout ctermfg=Black ctermbg=3
 
 hi Pmenu ctermfg=Black ctermbg=Magenta
 hi PmenuSel ctermfg=Black ctermbg=Yellow
