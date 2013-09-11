@@ -1,5 +1,15 @@
-URxvt.background:   black
+URxvt.background:   #000011
 URxvt.foreground:   gray
-URxvt.font:         xft:DejaVu Sans Mono-11
+URxvt.font:         xft:monospace:pixelsize=14
+URxvt.boldFont:     xft:monospace:bold:pixelsize=14
 URxvt.urgentOnBell: true
 URxvt.scrollBar:    false
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  xdg-open
+URxvt.url-select.underline: true
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-f:           perl:keyboard-select:search

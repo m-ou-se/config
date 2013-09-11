@@ -30,7 +30,7 @@ imap <MiddleMouse> <Nop>
 hi Normal guibg=Black guifg=LightGray
 hi Comment ctermfg=LightBlue guifg=LightBlue
 hi SpecialKey ctermfg=DarkGray guifg=#333333
-hi LineNr cterm=inverse ctermfg=DarkGray ctermbg=Yellow guifg=Yellow guibg=#333333
+hi LineNr ctermfg=Yellow ctermbg=237,DarkGray guifg=Yellow guibg=#333333
 hi NonText ctermfg=Yellow guifg=Yellow
 hi PmenuSel ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi Pmenu ctermfg=Black ctermbg=Magenta guifg=Yellow guibg=DarkMagenta
