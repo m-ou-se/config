@@ -27,16 +27,9 @@ nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 nmap <Leader>n :NERDTreeToggle<Cr>
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
-hi Normal guibg=Black guifg=LightGray
-hi Comment ctermfg=LightBlue guifg=LightBlue
-hi SpecialKey ctermfg=DarkGray guifg=#333333
-hi LineNr ctermfg=Yellow ctermbg=237,DarkGray guifg=Yellow guibg=#333333
-hi NonText ctermfg=Yellow guifg=Yellow
-hi PmenuSel ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-hi Pmenu ctermfg=Black ctermbg=Magenta guifg=Yellow guibg=DarkMagenta
-hi Folded cterm=inverse ctermbg=Yellow ctermfg=DarkGray guifg=Yellow guibg=#333333
-hi Search ctermbg=Magenta ctermfg=White guibg=Magenta guifg=White
-hi Visual guibg=#444444
+
+colorscheme trusty
+
 set guioptions-=T
 nmap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
 filetype off
