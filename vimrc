@@ -30,7 +30,7 @@ imap <MiddleMouse> <Nop>
 
 colorscheme trusty
 
-set guioptions-=T
+set guioptions=ac
 nmap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
 filetype off
 set rtp+=~/.vim/bundle/vundle/
