@@ -69,7 +69,7 @@ hi StatusLine    cterm=bold,reverse
 hi Title         cterm=none ctermfg=DarkMagenta
 hi VertSplit     cterm=reverse
 hi VisualNOS     cterm=bold,underline
-hi Visual        cterm=reverse ctermbg=White
+hi Visual        cterm=reverse ctermbg=Black
 hi WarningMsg    cterm=none ctermfg=DarkRed
 hi WildMenu      cterm=none ctermfg=Black ctermbg=3
 
