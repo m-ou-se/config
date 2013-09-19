@@ -148,7 +148,7 @@ endsnippet
 snippet ce "" w
 constexpr 
 endsnippet
-snippet mu
+snippet mut
 mutable 
 endsnippet
 snippet tl "" w
@@ -382,4 +382,14 @@ endsnippet
 # ---
 snippet std "" w
 std::
+endsnippet
+# ---
+snippet mu "" w
+make_unique<${1:type}>(${2:${VISUAL:value/\s*(.*?);?\s*$/$1/}})
+endsnippet
+snippet up "" w
+std::unique_ptr<${1:${VISUAL:type}}>
+endsnippet
+snippet vec "" w
+std::vector<${1:${VISUAL:type}}>
 endsnippet
