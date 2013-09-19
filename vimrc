@@ -47,13 +47,15 @@ Bundle 'vis'
 Bundle 'ShowMarks'
 Bundle 'UltiSnips'
 Bundle 'Rename2'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'JSON.vim'
 Bundle 'glsl.vim'
 Bundle 'django.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
+if v:version > 703
+	Bundle 'Valloric/YouCompleteMe'
+endif
 let g:vimwiki_camel_case=0
 let g:netrw_dirhistmax=0
 let g:showmarks_enable=0
