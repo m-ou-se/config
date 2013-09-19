@@ -1,13 +1,9 @@
 config_dir=$(dirname "$(readlink -f .profile)")
 
-function prepend_bin_dir {
-	[ -d "$1" ] && PATH="$1:$PATH"
-}
-
-prepend_bin_dir "$HOME/bin"
-prepend_bin_dir "$config_dir/bin"
-prepend_bin_dir "$HOME/.local/bin"
-prepend_bin_dir "$HOME/.cabal/bin"
+[ -d "$HOME/bin"        ] && PATH="$HOME/bin:$PATH"
+[ -d "$config_dir/bin"  ] && PATH="$config_dir/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.cabal/bin" ] && PATH="$HOME/.cabal/bin:$PATH"
 
 [ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
