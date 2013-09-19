@@ -74,8 +74,7 @@ function chpwd {
 }
 
 function git_info {
-	local output="$(__git_ps1 "(%s)")"
-	echo "${output//\%/%%}"
+	__git_ps1 "(%s)"
 }
 
 function git_path {
@@ -83,7 +82,7 @@ function git_path {
 	local result=""
 	until [ "$p" = '.' -o "$p" = '/' ]; do
 		local name="${p##*/}"
-		local info="$(cd -q ${~p} && test -e .git && git_info)"
+		local info="$(cd -q ${~p} && test -e .git && __git_ps1 "(%s)")"
 		if [ -n "$result" ]; then
 			result=$(printf "$2/%s" "$name" "$info" "$result")
 		else
