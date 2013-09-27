@@ -53,6 +53,7 @@ Bundle 'django.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
+Bundle 'DetectIndent'
 if v:version > 703
 	Bundle 'Valloric/YouCompleteMe'
 endif
@@ -69,6 +70,13 @@ let g:ycm_allow_changing_updatetime=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
+
+
+autocmd BufReadPost * :DetectIndent
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent    = 4
+
+
 filetype plugin on
 filetype indent on
 syntax on
