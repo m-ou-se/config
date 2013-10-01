@@ -73,16 +73,22 @@ function chpwd {
 	echo "Files: $count, hidden: $hidden"
 }
 
-function git_info {
-	__git_ps1 "(%s)"
-}
-
 function git_path {
 	local p="$1"
 	local result=""
 	until [ "$p" = '.' -o "$p" = '/' ]; do
 		local name="${p##*/}"
-		local info="$(cd -q ${~p} && test -e .git && __git_ps1 "(%s)")"
+		local info=""
+		if [ -e ${~p}/.git ]; then
+			info="$info$(cd -q ${~p} && __git_ps1 "(%s)")"
+		elif [ "true" = "$(cd -q ${~p} && git rev-parse --is-inside-work-tree 2>/dev/null)" ]; then
+			info="$info$(
+			cd -q ${~p}
+			git diff --no-ext-diff --quiet --exit-code . || echo -n '*'
+			git diff-index --cached --quiet HEAD -- . || echo -n '+'
+			git ls-files --others --exclude-standard --error-unmatch -- . >/dev/null 2>/dev/null && echo -n '%%'
+			)"
+		fi
 		if [ -n "$result" ]; then
 			result=$(printf "$2/%s" "$name" "$info" "$result")
 		else
