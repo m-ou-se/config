@@ -114,7 +114,7 @@ function prompt {
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}#"
 	else
-		echo -n "%%"
+		echo -n '$'
 	fi
 	echo -n "%{$reset_color%} "
 }
