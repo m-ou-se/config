@@ -51,8 +51,8 @@ hi DiffDelete    cterm=none ctermbg=DarkRed
 hi DiffText      cterm=none ctermbg=DarkMagenta
 hi Directory     cterm=none ctermfg=DarkBlue
 hi ErrorMsg      cterm=none ctermfg=Grey
-hi FoldColumn    cterm=none ctermfg=DarkBlue ctermbg=Grey
-hi Folded        cterm=none ctermfg=DarkBlue ctermbg=Grey
+hi FoldColumn    cterm=none ctermfg=Black ctermbg=DarkGrey
+hi Folded        cterm=none ctermfg=Black ctermbg=DarkGrey
 hi IncSearch     cterm=reverse
 hi LineNr        cterm=none ctermfg=Yellow ctermbg=235
 hi MatchParen    cterm=none ctermfg=White ctermbg=DarkCyan
