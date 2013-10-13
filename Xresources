@@ -7,6 +7,7 @@ URxvt.scrollBar:            false
 URxvt.scrollTtyOutput:      false
 URxvt.scrollWithBuffer:     true
 URxvt.scrollTtyKeypress:    true
+URxvt.saveLines:            65535
 URxvt.url-select.launcher:  xdg-open
 URxvt.url-select.underline: true
 URxvt.iso14755:             false
