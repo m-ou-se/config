@@ -5,6 +5,8 @@
 # Version 1.8.2
 # git://github.com/rkitover/vimpager.git
 
+# Edited by Maurice Bos <m-ou.se@m-ou.se> to be less like less and more like vim.
+
 # Just pass through if not on a tty
 if [ ! -t 1 ]; then
 	exec cat "${@}"
@@ -240,9 +242,8 @@ less_vim() {
 
 			${vim_cmd} \
 				-u "${vimrc}" \
-				--cmd 'let vimpager=1 | runtime! macros/less.vim | set nocp' \
-				-c "set scrolloff=${scrolloff:-5} | set foldlevel=999 | set nonu | silent! set nornu |
-				    nmap <ESC>u :nohlsearch<cr> | noremap q :<C-u>q<CR> | nnoremap <Down> 1<C-d> | nnoremap <Up> 1<C-u>" \
+				--cmd 'let vimpager=1 | set nocp' \
+				-c "set nonu | noremap q :<C-u>q<CR>" \
 				"${@:--}"
 			;;
 		*) # gvim or mvim GUI
@@ -260,9 +261,8 @@ less_vim() {
 
 			${vim_cmd} \
 				-u "${vimrc}" \
-				--cmd 'let vimpager=1 | runtime! macros/less.vim | set nocp' \
-				-c "set scrolloff=${scrolloff:-5} | set foldlevel=999 | set nonu | silent! set nornu |
-				    nmap <ESC>u :nohlsearch<cr> | noremap q :<C-u>q<CR> | nnoremap <Down> 1<C-d> | nnoremap <Up> 1<C-u> |
+				--cmd 'let vimpager=1 | set nocp' \
+				-c "set nonu | noremap q :<C-u>q<CR> |
 				    ${colors:-echo} | ${restore:-echo} | set lines=${lines} | set columns=${cols}" \
 				"${@:--}" &
 			;;
