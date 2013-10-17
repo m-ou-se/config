@@ -54,7 +54,6 @@ Bundle 'django.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
-Bundle 'vimpager'
 if v:version > 703
 	Bundle 'Valloric/YouCompleteMe'
 endif
