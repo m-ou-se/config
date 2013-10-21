@@ -12,7 +12,7 @@ URxvt.url-select.launcher:  xdg-open
 URxvt.url-select.underline: true
 URxvt.iso14755:             false
 
-URxvt.perl-ext-common:        default,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common:        default,clipboard,url-select,keyboard-select,resize-font
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.M-u:             perl:url-select:select_next
