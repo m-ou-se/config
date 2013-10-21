@@ -37,6 +37,11 @@ set_color 12 3399CC # bright blue
 set_color 13 CC33FF # bright magenta
 set_color 14 00FFFF # bright cyan
 set_color 15 FFFFFF # white
+# Set colors for 256
+set_color 17 000033 # dark blue
+set_color 22 003300 # dark green
+set_color 52 330000 # dark green
+set_color 53 330033 # dark magenta
 
 # Set up dircolors.
 if [ -x /usr/bin/dircolors ]; then
