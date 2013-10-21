@@ -112,7 +112,7 @@ function prompt {
 	fi
 	echo -n "%n@"${HOST##${SUDO_USER-$USER}-}
 	echo -n "%{$reset_color%}:"
-	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[blue]%%}"
+	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[cyan]%%}"
 	echo -n "%{$reset_color%}"
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}#"
