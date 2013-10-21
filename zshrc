@@ -22,6 +22,9 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
+autoload edit-command-line && zle -N edit-command-line
+bindkey '\ee' edit-command-line
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
