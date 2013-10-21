@@ -54,6 +54,7 @@ Bundle 'django.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
+Bundle 'guns/xterm-color-table.vim'
 if v:version > 703
 	Bundle 'Valloric/YouCompleteMe'
 endif
