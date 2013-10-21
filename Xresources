@@ -1,7 +1,7 @@
 URxvt.background:           black
 URxvt.foreground:           #aaaaaa
-URxvt.font:                 xft:monospace:size=11
-URxvt.boldFont:             xft:monospace:bold:size=11
+URxvt.font:                 xft:monospace:pixelsize=14
+URxvt.boldFont:             xft:monospace:bold:pixelsize=14
 URxvt.urgentOnBell:         true
 URxvt.scrollBar:            false
 URxvt.scrollTtyOutput:      false
