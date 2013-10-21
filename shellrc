@@ -21,7 +21,7 @@ function set_color {
 }
 
 # Set terminal colors.
-set_color  0 000011 # black
+set_color  0 000000 # black
 set_color  1 CC0000 # red
 set_color  2 009900 # green
 set_color  3 CC9900 # yellow
