@@ -21,6 +21,7 @@ set updatetime=500
 set foldmethod=marker
 set history=200
 set viminfo='100,s10,h,%
+set statusline=%<%f\ %h%w%m%r\ %{fugitive#statusline()}%=%-14.(%4l/%L,%c%V%)\ %P
 let g:c_no_curly_error=1
 nmap K i<Cr><Esc>k$
 nmap <Leader>o VaBJds{
@@ -55,6 +56,7 @@ Bundle 'bkad/CamelCaseMotion'
 Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'tpope/vim-fugitive'
 if v:version > 703
 	Bundle 'Valloric/YouCompleteMe'
 endif
