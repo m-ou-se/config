@@ -15,7 +15,8 @@
 	excludesfile = ~/.gitignore
 	whitespace = space-before-tab
 
+[push]
+	default = simple
+
 [include]
 	path = ~/.gitconfig.local
-[push]
-	default = current
