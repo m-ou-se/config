@@ -111,6 +111,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto verbose"
 
 export EDITOR=vim
+export PAGER=less
 export MANPAGER=vimpager
 
 try_source "$HOME/.shellrc.local"
