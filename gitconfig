@@ -28,5 +28,8 @@
 [merge]
 	conflictstyle = diff3
 
+[mergetool "tabbedmeld"]
+cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
+
 [mergetool "fugitive"]
 cmd = vim -f -c Gdiff $MERGED
