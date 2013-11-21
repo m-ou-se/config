@@ -21,3 +21,9 @@
 
 [include]
 	path = ~/.gitconfig.local
+
+[push]
+	default = current
+
+[merge]
+	conflictstyle = diff3
