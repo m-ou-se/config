@@ -106,11 +106,14 @@ function git_path {
 function prompt {
 	echo -n $'%(?,,\n)'
 	if [ $UID -eq 0 ]; then
-		echo -n "%{$fg[red]%}"
+		echo -n "%{$fg[red]%}%n"
 	else
-		echo -n "%{$fg[green]%}"
+		echo -n "%{$fg[green]%}%n"
+		if [ -n "$SSH_TTY" ]; then
+			echo -n "%{$fg[red]%}"
+		fi
 	fi
-	echo -n "%n@"${HOST##${SUDO_USER-$USER}-}
+	echo -n "@${HOST##${SUDO_USER-$USER}-}"
 	echo -n "%{$reset_color%}:"
 	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[magenta]%%}"
 	echo -n "%{$reset_color%}"
