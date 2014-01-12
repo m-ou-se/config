@@ -109,11 +109,11 @@ function prompt {
 		echo -n "%{$fg[red]%}%n"
 	else
 		echo -n "%{$fg[green]%}%n"
-		if [ -n "$SSH_TTY" ]; then
-			echo -n "%{$fg[red]%}"
-		fi
 	fi
 	echo -n "@${HOST##${SUDO_USER-$USER}-}"
+	if [ -n "$SSH_TTY" ]; then
+		echo -n "%{$fg[cyan]%}[ssh]"
+	fi
 	echo -n "%{$reset_color%}:"
 	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[magenta]%%}"
 	echo -n "%{$reset_color%}"
