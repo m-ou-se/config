@@ -48,7 +48,7 @@ hi Cursor        cterm=none ctermbg=Black
 hi DiffAdd       cterm=none ctermbg=22
 hi DiffChange    cterm=none ctermbg=17
 hi DiffDelete    cterm=none ctermbg=52
-hi DiffText      cterm=none ctermbg=53
+hi DiffText      cterm=none ctermbg=54
 hi Directory     cterm=none ctermfg=DarkBlue
 hi ErrorMsg      cterm=none ctermfg=Grey
 hi FoldColumn    cterm=none ctermfg=Black ctermbg=DarkGrey
