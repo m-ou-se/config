@@ -20,6 +20,7 @@ echo "mimetype.assign += (\".js\"   => \"text/javascript\")" >> $configfile
 echo "mimetype.assign += (\".png\"  => \"image/png\"      )" >> $configfile
 echo "mimetype.assign += (\".jpg\"  => \"image/jpeg\"     )" >> $configfile
 echo "mimetype.assign += (\".gif\"  => \"image/gif\"      )" >> $configfile
+echo "mimetype.assign += (\".svg\"  => \"image/svg+xml\"  )" >> $configfile
 
 if [ -f lighttpdconfig ]; then
 	cat lighttpdconfig >> $configfile
