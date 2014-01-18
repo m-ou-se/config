@@ -50,22 +50,6 @@ fi
 # Enable viewing non-text files in less.
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Run a command with no in- or output.
-function noout {
-	"$@" 1>/dev/null 2>/dev/null </dev/null
-}
-
-# Run a command in the background with no in- or output.
-function run {
-	"$@" 1>/dev/null 2>/dev/null </dev/null &
-	disown
-}
-
-# Open a file using the default application.
-function o {
-	xdg-open "$@" 1>/dev/null 2>/dev/null </dev/null
-}
-
 # Create a directory and change to it.
 function mkd {
 	if [ $# -gt 1 ]; then
