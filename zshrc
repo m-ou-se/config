@@ -109,9 +109,9 @@ function prompt {
 		echo -n "%{$fg[red]%}%n"
 	else
 		echo -n "%{$fg[green]%}%n"
-		if [ -n "$SSH_TTY" ]; then
-			echo -n "%{$fg[red]%}"
-		fi
+	fi
+	if [ -n "$HAS_SSHD_ANCESTOR" ]; then
+		echo -n "%{$bold_color%}"
 	fi
 	echo -n "@${HOST##${SUDO_USER-$USER}-}"
 	echo -n "%{$reset_color%}:"

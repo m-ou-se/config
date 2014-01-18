@@ -86,6 +86,24 @@ function dname {
 	fi
 }
 
+# Usage: has_ancestor PID NAME
+# Check wether the process with PID has an ancestor with NAME.
+function has_ancestor {
+	local pid=$1
+	local target=$2
+	while [ $pid -ne 0 ]; do
+		read -r ppid name < <(ps -o ppid= -o comm= -p "$pid")
+		if [ "$name" = "$target" ]; then
+			return 0
+		fi
+		pid=$ppid
+	done
+	return 1
+}
+
+if has_ancestor $$ sshd; then
+	export HAS_SSHD_ANCESTOR=1
+fi
 
 # Set up git PS1 configuration.
 GIT_PS1_SHOWDIRTYSTATE=1
