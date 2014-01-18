@@ -1,4 +1,3 @@
-# Include .aliases file.
 config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
 
 # Source a file if it exists.
