@@ -16,9 +16,6 @@
 	excludesfile = ~/.gitignore
 	whitespace = space-before-tab
 
-[include]
-	path = ~/.gitconfig.local
-
 [push]
 	default = upstream
 
@@ -26,7 +23,10 @@
 	conflictstyle = diff3
 
 [mergetool "tabbedmeld"]
-cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
+	cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
 
 [mergetool "fugitive"]
-cmd = vim -f -c Gdiff $MERGED
+	cmd = vim -f -c Gdiff $MERGED
+
+[include]
+	path = ~/.gitconfig.local
