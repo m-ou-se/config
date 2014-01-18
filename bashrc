@@ -25,7 +25,11 @@ if [ $UID -eq 0 ]; then
 else
 	PS1+='\[\e[32m\]'
 fi
-PS1+='\u@${HOSTNAME##${SUDO_USER-$USER}-}'
+PS1+='\u'
+if [ -n "$HAS_SSHD_ANCESTOR" ]; then
+	PS1+='\[\e[1m\]'
+fi
+PS1+='@${HOSTNAME##${SUDO_USER-$USER}-}'
 PS1+='\[\e[m\]:'
 PS1+='\[\e[34m\]\w'
 PS1+='\[\e[33m\]$(__git_ps1 "(%s)")'
