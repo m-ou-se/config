@@ -47,7 +47,6 @@ Bundle 'speeddating.vim'
 Bundle 'VisIncr'
 Bundle 'vis'
 Bundle 'ShowMarks'
-Bundle 'UltiSnips'
 Bundle 'Rename2'
 Bundle 'JSON.vim'
 Bundle 'glsl.vim'
@@ -57,8 +56,12 @@ Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'tpope/vim-fugitive'
-if v:version > 703
-	Bundle 'Valloric/YouCompleteMe'
+
+if has('python')
+	Bundle 'UltiSnips'
+	if v:version > 703
+		Bundle 'Valloric/YouCompleteMe'
+	endif
 endif
 let g:vimwiki_camel_case=0
 let g:netrw_dirhistmax=0
