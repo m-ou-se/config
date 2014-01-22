@@ -1,4 +1,5 @@
-[ -f "$HOME/.shellrc" ] && source "$HOME/.shellrc"
+source "$HOME/.shellrc"
+
 try_source /usr/share/doc/pkgfile/command-not-found.zsh
 try_source /etc/zsh_command_not_found
 
