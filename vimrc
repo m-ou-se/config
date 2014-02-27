@@ -79,6 +79,7 @@ if has('python')
 		let g:ycm_confirm_extra_conf=0
 		set completeopt-=preview
 		let g:ycm_add_preview_to_completeopt=0
+		let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
 	endif
 
 endif
