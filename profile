@@ -8,4 +8,6 @@ config_dir=$(dirname "$(readlink -f .profile)")
 
 [ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # vi: ft=sh
