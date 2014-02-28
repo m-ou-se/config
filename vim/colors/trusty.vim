@@ -84,6 +84,11 @@ hi Statement     cterm=none ctermfg=3
 hi Todo          cterm=none ctermfg=Black ctermbg=3
 hi Type          cterm=none ctermfg=DarkGreen
 
+hi SpellBad      cterm=none ctermfg=White ctermbg=Red
+hi SpellCap      cterm=none ctermfg=White ctermbg=Blue
+hi SpellRare     cterm=none ctermfg=White ctermbg=DarkMagenta
+hi SpellLocal    cterm=none ctermfg=White ctermbg=Brown
+
 
 " GUI.
 hi Cursor        gui=none guibg=#aaaaaa
