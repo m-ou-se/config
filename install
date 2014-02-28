@@ -34,7 +34,7 @@ if ! check_commands $required_commands; then
 fi
 
 # Install configuration files.
-for file in aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources
+for file in aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
