@@ -60,6 +60,7 @@
 # of values:
 #
 #     verbose       show number of commits ahead/behind (+/-) upstream
+#     name          if verbose, then also show the upstream abbrev name
 #     legacy        don't use the '--count' option available in recent
 #                   versions of git-rev-list
 #     git           always compare HEAD to @{upstream}
@@ -94,7 +95,7 @@ __git_ps1_show_upstream ()
 {
 	local key value
 	local svn_remote svn_url_pattern count n
-	local upstream=git legacy="" verbose=""
+	local upstream=git legacy="" verbose="" name=""
 
 	svn_remote=()
 	# get some config options from git-config
@@ -110,7 +111,7 @@ __git_ps1_show_upstream ()
 			;;
 		svn-remote.*.url)
 			svn_remote[$((${#svn_remote[@]} + 1))]="$value"
-			svn_url_pattern+="\\|$value"
+			svn_url_pattern="$svn_url_pattern\\|$value"
 			upstream=svn+git # default upstream is SVN if available, else git
 			;;
 		esac
@@ -122,6 +123,7 @@ __git_ps1_show_upstream ()
 		git|svn) upstream="$option" ;;
 		verbose) verbose=1 ;;
 		legacy)  legacy=1  ;;
+		name)    name=1 ;;
 		esac
 	done
 
@@ -204,6 +206,9 @@ __git_ps1_show_upstream ()
 		*)	    # diverged from upstream
 			p=" u+${count#*	}-${count%	*}" ;;
 		esac
+		if [[ -n "$count" && -n "$name" ]]; then
+			p="$p $(git rev-parse --abbrev-ref "$upstream" 2>/dev/null)"
+		fi
 	fi
 
 }
@@ -402,12 +407,14 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWDIRTYSTATE-}" ] &&
 		   [ "$(git config --bool bash.showDirtyState)" != "false" ]
 		then
-			git diff --no-ext-diff --quiet --exit-code || w="*"
-			if [ -n "$short_sha" ]; then
-				git diff-index --cached --quiet HEAD -- || i="+"
-			else
+			local treeish=HEAD
+			if [ -z "$short_sha" ]; then
 				i="#"
+				# the empty tree
+				treeish=4b825dc642cb6eb9a060e54bf8d69288fbee4904
 			fi
+			git diff --no-ext-diff --quiet --exit-code || w="*"
+			git diff-index --cached --quiet $treeish -- || i="$i+"
 		fi
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   [ -r "$g/refs/stash" ]; then
