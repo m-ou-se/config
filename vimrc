@@ -10,7 +10,7 @@ set smartindent
 set laststatus=2
 set list
 set listchars=tab:›—,trail:␣,extends:▶,precedes:◀
-set cinkeys=0{,0},0),o,O
+set cinkeys=0{,0},0),o,O,!^F
 set cino=g0,Ls,N-s,(s,U1,m1,j1,J1,#1,l1
 set mouse=a
 set nowrap
