@@ -407,14 +407,11 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWDIRTYSTATE-}" ] &&
 		   [ "$(git config --bool bash.showDirtyState)" != "false" ]
 		then
-			local treeish=HEAD
 			if [ -z "$short_sha" ]; then
 				i="#"
-				# the empty tree
-				treeish=4b825dc642cb6eb9a060e54bf8d69288fbee4904
 			fi
 			git diff --no-ext-diff --quiet --exit-code || w="*"
-			git diff-index --cached --quiet $treeish -- || i="$i+"
+			git diff --no-ext-diff --quiet --exit-code --cached || i="$i+"
 		fi
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   [ -r "$g/refs/stash" ]; then
