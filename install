@@ -45,3 +45,8 @@ if [ ! -d "vim/bundle/vundle" ]; then
 	git clone https://github.com/gmarik/vundle.git "vim/bundle/vundle"
 fi
 vim +BundleClean +BundleInstall +qall
+
+# Install zsh-autosuggestions.
+if [ ! -d "zsh-autosuggestions" ]; then
+	git clone git://github.com/tarruda/zsh-autosuggestions
+fi
