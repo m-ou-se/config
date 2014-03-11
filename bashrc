@@ -23,6 +23,8 @@ esac
 
 if [ $UID -eq 0 ]; then
 	PS1+='\[\e[31m\]'
+elif [ -n "$SUDO_USER" ] && [ "$USER" != "$SUDO_USER" ]; then
+	PS1+='\[\e[33m\]'
 else
 	PS1+='\[\e[32m\]'
 fi
