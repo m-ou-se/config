@@ -142,15 +142,6 @@ PROMPT='$(prompt)'
 RPROMPT='$(rprompt)'
 PROMPT2='$(prompt2)'
 
-if [ -d "$config_dir/zsh-syntax-highlighting" ]; then
-	source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-if [ -d "$config_dir/zsh-autosuggestions" ]; then
-	source "$config_dir/zsh-autosuggestions/autosuggestions.zsh"
-	zle-line-init() {
-		zle autosuggest-start
-	}
-	zle -N zle-line-init
-	bindkey '^T' autosuggest-toggle
+if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"; then
+	ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
 fi
