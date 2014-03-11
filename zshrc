@@ -111,6 +111,8 @@ function prompt {
 	echo -n $'%(?,,\n)'
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}%n"
+	elif [ -n "$SUDO_USER" ] && [ "$USER" != "$SUDO_USER" ]; then
+		echo -n "%{$fg[yellow]%}%n"
 	else
 		echo -n "%{$fg[green]%}%n"
 	fi
