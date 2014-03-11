@@ -150,3 +150,7 @@ if [ -d "$config_dir/zsh-autosuggestions" ]; then
 	zle -N zle-line-init
 	bindkey '^T' autosuggest-toggle
 fi
+
+if [ -d "$config_dir/zsh-syntax-highlighting" ]; then
+	source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
