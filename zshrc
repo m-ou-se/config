@@ -141,3 +141,12 @@ function prompt2 {
 PROMPT='$(prompt)'
 RPROMPT='$(rprompt)'
 PROMPT2='$(prompt2)'
+
+if [ -d "$config_dir/zsh-autosuggestions" ]; then
+	source "$config_dir/zsh-autosuggestions/autosuggestions.zsh"
+	zle-line-init() {
+		zle autosuggest-start
+	}
+	zle -N zle-line-init
+	bindkey '^T' autosuggest-toggle
+fi
