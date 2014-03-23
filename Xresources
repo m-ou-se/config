@@ -18,6 +18,7 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.M-u:             perl:url-select:select_next
 URxvt.keysym.M-Escape:        perl:keyboard-select:activate
 URxvt.keysym.M-f:             perl:keyboard-select:search
+URxvt.keysym.C-0:             perl:resize-font:reset
 URxvt.keysym.Control-Up:      \033[1;5A
 URxvt.keysym.Control-Down:    \033[1;5B
 URxvt.keysym.Control-Left:    \033[1;5D
