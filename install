@@ -43,6 +43,9 @@ done
 if [ ! -d "vim/bundle/vundle" ]; then
 	mkdir -p "vim/bundle"
 	git clone https://github.com/gmarik/vundle.git "vim/bundle/vundle"
+else
+	git -C "vim/bundle/vundle" fetch
+	git -C "vim/bundle/vundle" reset --hard "origin/master"
 fi
 vim +BundleClean +BundleInstall +qall
 
