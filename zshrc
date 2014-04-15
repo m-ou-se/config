@@ -115,7 +115,7 @@ function preexec {
 
 function precmd {
 	local exit_code="$?"
-	[ $print_status == "1" ] && [ "$exit_code" -ne 0 ] && echo "$fg[red]zsh: Command terminated with status $?.$reset_color"
+	[ $print_status == "1" ] && [ "$exit_code" -ne 0 ] && echo "$fg[red]✗ - status code $exit_code$reset_color"
 	print_status="0"
 }
 
