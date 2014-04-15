@@ -107,8 +107,19 @@ function git_path {
 	echo -n "$result"
 }
 
+print_status="0"
+
+function preexec {
+	print_status="1"
+}
+
+function precmd {
+	local exit_code="$?"
+	[ $print_status == "1" ] && [ "$exit_code" -ne 0 ] && echo "$fg[red]$? ✗$reset_color"
+	print_status="0"
+}
+
 function prompt {
-	echo -n $'%(?,,\n)'
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}%n"
 	elif [ -n "$SUDO_USER" ] && [ "$USER" != "$SUDO_USER" ]; then
@@ -131,17 +142,12 @@ function prompt {
 	echo -n "%{$reset_color%} "
 }
 
-function rprompt {
-	echo -n "%(?,,%{\e[A$fg[red]%}%? ✗%{$reset_color\e[B%}"
-}
-
 function prompt2 {
 	prompt
 	echo -n "%{$fg[magenta]%}%_%{$reset_color%}> "
 }
 
 PROMPT='$(prompt)'
-RPROMPT='$(rprompt)'
 PROMPT2='$(prompt2)'
 
 if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"; then
