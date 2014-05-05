@@ -54,6 +54,7 @@ EXEC 01;32 # executable file
 .cc 01;35
 .c 01;35
 .s 01;35
+.d 01;35
 .C 01;35
 .S 01;35
 .css 01;35
