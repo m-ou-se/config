@@ -87,3 +87,7 @@ endif
 
 filetype plugin on
 filetype indent on
+
+if filereadable($HOME . "/.vimrc.local")
+	source ~/.vimrc.local
+endif
