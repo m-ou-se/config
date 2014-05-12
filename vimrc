@@ -30,6 +30,7 @@ nmap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 nmap <Leader>n :NERDTreeToggle<Cr>
+nmap <Leader>f :NERDTreeFind<Cr>
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
 
