@@ -134,6 +134,7 @@ function prompt {
 	echo -n "%{$reset_color%}:"
 	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[magenta]%%}"
 	echo -n "%{$reset_color%}"
+	echo -n '%(1j.[%j].)'
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}#"
 	else
