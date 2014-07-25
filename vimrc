@@ -1,4 +1,3 @@
-set autowrite
 set nocompatible
 set number
 set shiftwidth=4
