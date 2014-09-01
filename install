@@ -34,10 +34,16 @@ if ! check_commands $required_commands; then
 fi
 
 # Install configuration files.
-for file in aliases bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources tmux.conf
+for file in aliases dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
+
+if [ "$(uname)" == "Darwin" ]; then
+	install_file "bashrc" ".bash_profile"
+else
+	install_file "bashrc" ".bashrc"
+fi
 
 # Install vundle.
 if [ ! -d "vim/bundle/vundle" ]; then

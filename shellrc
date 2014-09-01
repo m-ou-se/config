@@ -1,4 +1,8 @@
-config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
+if [ "$(uname)" == "Darwin" ]; then
+	config_dir=$(dirname "$(greadlink -f "$HOME/.shellrc")")
+else
+	config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
+fi
 
 # Source a file if it exists.
 function try_source {

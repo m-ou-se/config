@@ -1,4 +1,8 @@
-config_dir=$(dirname "$(readlink -f .profile)")
+if [ "$(uname)" == "Darwin" ]; then
+	config_dir=$(dirname "$(greadlink -f .profile)")
+else
+	config_dir=$(dirname "$(readlink -f .profile)")
+fi
 
 [ -d "$HOME/bin"                 ] && PATH="$HOME/bin:$PATH"
 [ -d "$config_dir/bin"           ] && PATH="$config_dir/bin:$PATH"
