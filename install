@@ -39,7 +39,7 @@ do
 	install_file "$file" ".$file"
 done
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
 	install_file "bashrc" ".bash_profile"
 else
 	install_file "bashrc" ".bashrc"

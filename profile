@@ -1,4 +1,4 @@
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
 	config_dir=$(dirname "$(greadlink -f .profile)")
 else
 	config_dir=$(dirname "$(readlink -f .profile)")

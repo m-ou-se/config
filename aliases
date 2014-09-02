@@ -1,4 +1,4 @@
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
 	alias echo=gecho
 	alias ls='gls --color=auto'
 	alias dir='gdir --color=auto'
