@@ -1,11 +1,13 @@
-alias ls='ls --color=auto'
+if test_command gls; then
+	alias ls='gls --color=auto'
+else
+	alias ls='ls --color=auto'
+fi
+
 alias lla='ls -alF --group-directories-first'
 alias ll='ls -lF --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
-
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
 
 alias clip='xclip -i -selection clipboard'
 
