@@ -1,12 +1,16 @@
 #!/bin/bash
 
 cd $(dirname "$0")
-config_dir=${PWD##$HOME/}
+config_dir="${PWD##$HOME/}"
+
+# Check if the config_dir is relative to $HOME or not.
+config_dir_prefix=""
+[ "$config_dir" != "$PWD" ] && config_dir_prefix="../"
 
 check_commands() {
 	local missing=0
 	for tool in "$@"; do
-		if ! type "$tool" > /dev/null; then
+		if ! command -v "$tool" > /dev/null; then
 			echo "$tool missing."
 			missing=1
 		fi
@@ -30,20 +34,28 @@ install_file() {
 # Check for required tools.
 required_commands="git vim"
 if ! check_commands $required_commands; then
-	exit 1;
+	exit 1
+fi
+
+# Make a symlink to the config dir at $HOME/.config/config_dir
+if [ ! -e "$HOME/.config" ]; then
+	mkdir "$HOME/.config"
+elif [ ! -d "$HOME/.config" ]; then
+	echo "$HOME/.config exists and is not a directory." 1>&2
+fi;
+
+if [ ! -e "$HOME/.config/config_dir" ]; then
+	ln -s "$config_dir_prefix$config_dir" "$HOME/.config/config_dir"
+elif [ "$(readlink "$HOME/.config/config_dir")" != "$config_dir_prefix$config_dir" ]; then
+	echo "$HOME/.config/config_dir exists but is not the correct symlink. Please move or remove it." 1>&2
+	exit 1
 fi
 
 # Install configuration files.
-for file in aliases dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources tmux.conf
+for file in bash_profile bashrc gitconfig profile screenrc vimrc zshrc vim zprofile Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
-
-if [ "$(uname)" = "Darwin" ]; then
-	install_file "bashrc" ".bash_profile"
-else
-	install_file "bashrc" ".bashrc"
-fi
 
 # Install vundle.
 if [ ! -d "vim/bundle/vundle" ]; then

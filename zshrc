@@ -1,4 +1,4 @@
-source "$HOME/.shellrc"
+source "$HOME/.config/config_dir/shellrc"
 
 try_source /usr/share/doc/pkgfile/command-not-found.zsh
 try_source /etc/zsh_command_not_found
@@ -78,6 +78,7 @@ function chpwd {
 }
 
 function git_path {
+	test_command dname || return 1
 	setopt localoptions
 	setopt re_match_pcre
 	local p="$1"
@@ -115,7 +116,7 @@ function preexec {
 
 function precmd {
 	local exit_code="$?"
-	[ $print_status == "1" ] && [ "$exit_code" -ne 0 ] && echo "$fg[red]✗ - status code $exit_code$reset_color"
+	[ $print_status = "1" ] && [ "$exit_code" -ne 0 ] && echo "$fg[red]✗ - status code $exit_code$reset_color"
 	print_status="0"
 }
 

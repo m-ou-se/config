@@ -1,12 +1,7 @@
-if [ "$(uname)" = "Darwin" ]; then
-	alias echo=gecho
+if test_command gls; then
 	alias ls='gls --color=auto'
-	alias dir='gdir --color=auto'
-	alias vdir='gvdir --color=auto'
 else
 	alias ls='ls --color=auto'
-	alias dir='dir --color=auto'
-	alias vdir='vdir --color=auto'
 fi
 
 alias lla='ls -alF --group-directories-first'
