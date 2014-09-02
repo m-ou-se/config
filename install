@@ -1,7 +1,11 @@
 #!/bin/bash
 
 cd $(dirname "$0")
-config_dir=${PWD##$HOME/}
+config_dir="${PWD##$HOME/}"
+
+# Check if the config_dir is relative to $HOME or not.
+config_dir_prefix=""
+[ "$config_dir" != "$PWD" ] && config_dir_prefix="../"
 
 check_commands() {
 	local missing=0
@@ -33,8 +37,17 @@ if ! check_commands $required_commands; then
 	exit 1;
 fi
 
+# Make a symlink to the config dir at $HOME/.config/config_dir
+if [ ! -e "$HOME/.config" ]; then
+	mkdir "$HOME/.config"
+elif [ ! -d "$HOME/.config" ]; then
+	echo "$HOME/.config exists and is not a directory." 1>&2
+fi;
+
+ln -s "$config_dir_prefix$config_dir" "$HOME/.config/config_dir"
+
 # Install configuration files.
-for file in aliases bash_profile bashrc dircolors gitconfig gitignore profile screenrc vimrc zshrc vim zprofile shellrc Xresources tmux.conf
+for file in bash_profile bashrc gitconfig profile screenrc vimrc zshrc vim zprofile Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
