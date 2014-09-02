@@ -78,6 +78,7 @@ function chpwd {
 }
 
 function git_path {
+	test_command dname || return 1
 	setopt localoptions
 	setopt re_match_pcre
 	local p="$1"
