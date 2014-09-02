@@ -1,12 +1,17 @@
-config_dir=$(dirname "$(readlink -f "$HOME/.shellrc")")
+config_dir="$HOME/.config/config_dir"
 
 # Source a file if it exists.
 function try_source {
 	[ -f "$1" ] && source "$1"
 }
 
+# Test if a command exists.
+function test_command {
+	command -v "$1" > /dev/null
+}
+
 try_source "$config_dir/git-prompt.sh"
-try_source "$HOME/.aliases"
+try_source "$config_dir/aliases"
 
 # Set a color in the terminal palette.
 # \param 1 The index in the pallete.
@@ -43,12 +48,12 @@ set_color 52 330000 # dark green
 set_color 53 330033 # dark magenta
 
 # Set up dircolors.
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if test_command dircolors; then
+    test -r "$config_dir/dircolors" && eval "$(dircolors -b "$config_dir/dircolors")" || eval "$(dircolors -b)"
 fi
 
 # Enable viewing non-text files in less.
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+test_command lesspipe && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Create a directory and change to it.
 function mkd {
