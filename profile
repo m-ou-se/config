@@ -1,4 +1,4 @@
-config_dir=$(dirname "$(readlink -f .profile)")
+config_dir="$HOME/.config/config_dir"
 
 [ -d "$HOME/bin"                 ] && PATH="$HOME/bin:$PATH"
 [ -d "$config_dir/bin"           ] && PATH="$config_dir/bin:$PATH"
