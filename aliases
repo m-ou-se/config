@@ -4,10 +4,6 @@ else
 	alias ls='ls --color=auto'
 fi
 
-if test_command gecho; then
-	alias echo='gecho'
-fi
-
 alias lla='ls -alF --group-directories-first'
 alias ll='ls -lF --group-directories-first'
 alias la='ls -A'
