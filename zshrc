@@ -36,6 +36,7 @@ setopt auto_pushd
 setopt extendedglob
 setopt notify
 setopt prompt_subst
+setopt hist_ignore_dups
 unsetopt beep
 unsetopt nomatch
 
