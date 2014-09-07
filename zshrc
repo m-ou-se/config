@@ -156,3 +156,6 @@ PROMPT2='$(prompt2)'
 if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"; then
 	ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
 fi
+
+# Include a local zshrc
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
