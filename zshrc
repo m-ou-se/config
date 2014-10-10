@@ -45,6 +45,23 @@ try_source "$config_dir/zsh-fix-keys"
 autoload colors
 colors
 
+# bracketed paste mode
+bindkey -N paste
+bindkey -R -M paste "^@"-"\M-^?" paste-insert
+bindkey '^[[200~' _start_paste
+bindkey -M paste '^[[201~' _end_paste
+bindkey -M paste -s '^M' '^J'
+zle -N _start_paste
+zle -N _end_paste
+zle -N zle-line-init _zle_line_init
+zle -N zle-line-finish _zle_line_finish
+zle -N paste-insert _paste_insert
+function _start_paste { bindkey -A paste main }
+function _paste_insert { _paste_text+=$KEYS }
+function _end_paste { bindkey -e; LBUFFER+=$_paste_text; unset _paste_text }
+function _zle_line_init { printf '\e[?2004h' }
+function _zle_line_finish { printf '\e[?2004l' }
+
 function update_title {
 	case "$TERM" in
 		xterm*|rxvt*) print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a" ;;
