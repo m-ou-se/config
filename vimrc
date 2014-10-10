@@ -59,6 +59,7 @@ Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'ConradIrwin/vim-bracketed-paste'
 
 Bundle 'ShowMarks'
 let g:showmarks_enable=0
