@@ -41,7 +41,7 @@ unsetopt beep
 unsetopt nomatch
 
 try_source "$HOME/.config/config_dir/zsh-fix-keys"
-try_source "$HOME/.config/config_dir/safe-paste.plugin.zsh"
+try_source "$HOME/.config/config_dir/zsh-safe-paste"
 
 autoload colors
 colors
