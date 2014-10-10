@@ -18,9 +18,9 @@ try_source "$config_dir/aliases"
 # \param 2 is a hexadecimal RGB color code.
 function set_color {
 	if [ "$TERM" = "linux" ]; then
-		[ $1 -lt 16 ] && printf $'\e]P%X%s' $1 $2
+		[ $1 -lt 16 ] && printf $'\e]P%X%s' "$1" "$2"
 	else
-		echo -en "\e]4;$1;#$2\a"
+		printf $'\e]4;%s;#%s\e\\' "$1" "$2"
 	fi
 }
 
