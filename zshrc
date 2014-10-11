@@ -92,7 +92,7 @@ function git_path {
 			info="$info$(cd -q ${~p} && __git_ps1 "(%s)")"
 		else
 			info="$info$(
-			cd -q ${~p}
+			cd -q ${~p} &>/dev/null || exit 1
 			st=$(git status --porcelain . 2>/dev/null)
 			if [ "$st" =~ '(?:^|\n).\w' ]; then echo -n '*'; fi
 			if [ "$st" =~ '(?:^|\n)\w' ]; then echo -n '+'; fi
