@@ -18,6 +18,8 @@ set showcmd
 set hlsearch
 set nrformats=octal,hex,alpha
 set updatetime=500
+set timeoutlen=1000
+set ttimeoutlen=50
 set foldmethod=marker
 set history=200
 set viminfo='100,s10,h,%
