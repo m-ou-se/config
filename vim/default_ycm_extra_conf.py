@@ -3,7 +3,7 @@ def FlagsForFile(filename):
         'flags': [
             '-Wall',
             '-Wextra',
-            '-std=c++11',
+            '-std=c++1y',
             '-x', 'c++',
             '-I', '.'
         ],
