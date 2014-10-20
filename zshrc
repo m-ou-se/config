@@ -159,4 +159,4 @@ if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
 fi
 
 # Include a local zshrc
-[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+try_source "$HOME/.zshrc.local"
