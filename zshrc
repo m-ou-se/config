@@ -94,9 +94,9 @@ function git_path {
 			info="$info$(
 			cd -q ${~p} &>/dev/null || exit 1
 			st=$(git status --porcelain . 2>/dev/null)
-			if [ "$st" =~ '(?:^|\n).\w' ]; then echo -n '*'; fi
-			if [ "$st" =~ '(?:^|\n)\w' ]; then echo -n '+'; fi
-			if [ "$st" =~ '(?:^|\n)\?' ]; then echo -n '%%'; fi
+			[[ "$st" =~ '(?:^|\n).\w' ]] &&  echo -n '*';
+			[[ "$st" =~ '(?:^|\n)\w'  ]] &&  echo -n '+';
+			[[ "$st" =~ '(?:^|\n)\?'  ]] &&  echo -n '%%';
 			)"
 		fi
 		if [ -n "$result" ]; then
