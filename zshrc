@@ -94,7 +94,8 @@ function git_path {
 		local name="${p##*/}"
 		local info=""
 		if [ -e ${~p}/.git ]; then
-			info="$info$(cd -q ${~p} && __git_ps1 "(%s)")"
+			info="$(cd -q ${~p} && __git_ps1 "(%s)")"
+			info="${info/ u/}"
 		fi
 		info="$info$(
 			cd -q ${~p} &>/dev/null || exit 1
