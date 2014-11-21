@@ -5,6 +5,10 @@ try_source /etc/zsh_command_not_found
 
 GIT_PS1_SHOWUPSTREAM=(${(s/ /)GIT_PS1_SHOWUPSTREAM})
 
+# Dirty/untracked/staged is already shown by the code below.
+GIT_PS1_SHOWDIRTYSTATE=
+GIT_PS1_SHOWUNTRACKEDFILES=
+
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' expand prefix suffix
@@ -85,25 +89,26 @@ function git_path {
 	setopt re_match_pcre
 	local p="$1"
 	local result=""
+	local pathspec=""
 	until [ "$p" = '.' -o "$p" = '/' ]; do
 		local name="${p##*/}"
 		local info=""
 		if [ -e ${~p}/.git ]; then
 			info="$info$(cd -q ${~p} && __git_ps1 "(%s)")"
-		else
-			info="$info$(
+		fi
+		info="$info$(
 			cd -q ${~p} &>/dev/null || exit 1
-			st=$(git status --porcelain . 2>/dev/null)
+			st=$(git status --porcelain . "$pathspec" 2>/dev/null)
 			[[ "$st" =~ '(?:^|\n).\w' ]] &&  echo -n '*';
 			[[ "$st" =~ '(?:^|\n)\w'  ]] &&  echo -n '+';
 			[[ "$st" =~ '(?:^|\n)\?'  ]] &&  echo -n '%%';
-			)"
-		fi
+		)"
 		if [ -n "$result" ]; then
 			result=$(printf "$2/%s" "$name" "$info" "$result")
 		else
 			result=$(printf "$2" "$name" "$info")
 		fi
+		pathspec=":(exclude)$name"
 		p="$(dname "$p")"
 	done
 	[ "$p" = '/' ] && result=$(printf "$2/%s" '' '' "$result")
