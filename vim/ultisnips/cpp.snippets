@@ -388,7 +388,7 @@ std::
 endsnippet
 # ---
 snippet mu "" w
-make_unique<${1:type}>(${2:${VISUAL:value/\s*(.*?);?\s*$/$1/}})
+std::make_unique<${1:type}>(${2:${VISUAL:value/\s*(.*?);?\s*$/$1/}})
 endsnippet
 snippet up "" w
 std::unique_ptr<${1:${VISUAL:type}}>
