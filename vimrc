@@ -61,6 +61,7 @@ Bundle 'openscad.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'de-vri-es/vim-urscript'
 
 Bundle 'ShowMarks'
 let g:showmarks_enable=0
