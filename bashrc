@@ -23,16 +23,16 @@ esac
 
 if [ $UID -eq 0 ]; then
 	PS1+='\[\e[31m\]'
-elif [ -n "$SUDO_USER" ] && [ "$USER" != "$SUDO_USER" ]; then
+elif [ "$TTY_USER" != "$USER" ]; then
 	PS1+='\[\e[33m\]'
 else
 	PS1+='\[\e[32m\]'
 fi
 PS1+='\u'
-if [ -n "$HAS_SSHD_ANCESTOR" ]; then
+if [ -n "$TTY_HOST" ]; then
 	PS1+='\[\e[1m\]'
 fi
-PS1+='@${HOSTNAME##${SUDO_USER-$USER}-}'
+PS1+='@${HOSTNAME##${TTY_USER-$USER}-}'
 PS1+='\[\e[m\]:'
 PS1+='\[\e[34m\]\w'
 PS1+='\[\e[33m\]$(__git_ps1 "(%s)")'
