@@ -52,7 +52,7 @@ colors
 
 function update_title {
 	case "$TERM" in
-		xterm*|rxvt*) print -Pn "\e]2;%n@${HOST##${SUDO_USER-$USER}-}: %~\a" ;;
+		xterm*|rxvt*) print -Pn "\e]2;%n@${HOST##${TTY_USER-$USER}-}: %~\a" ;;
 	esac
 }
 update_title
@@ -131,15 +131,15 @@ function precmd {
 function prompt {
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}%n"
-	elif [ -n "$SUDO_USER" ] && [ "$USER" != "$SUDO_USER" ]; then
+	elif [ "$TTY_USER" != "$USER" ]; then
 		echo -n "%{$fg[yellow]%}%n"
 	else
 		echo -n "%{$fg[green]%}%n"
 	fi
-	if [ -n "$HAS_SSHD_ANCESTOR" ]; then
+	if [ -n "$TTY_HOST" ]; then
 		echo -n "%{$bold_color%}"
 	fi
-	echo -n "@${HOST##${SUDO_USER-$USER}-}"
+	echo -n "@${HOST##${TTY_USER-$USER}-}"
 	echo -n "%{$reset_color%}:"
 	git_path "$(print -P '%~')" "%%{$fg[blue]%%}%s%%{$fg[yellow]%%}%s%%{$fg[magenta]%%}"
 	echo -n "%{$reset_color%}"
