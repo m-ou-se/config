@@ -10,4 +10,9 @@ config_dir="$HOME/.config/config_dir"
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+if command -v gpg-agent > /dev/null; then
+	gpg-agent --daemon --enable-ssh-support > /dev/null 2>&1
+	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
 # vi: ft=sh
