@@ -1,2 +1,4 @@
-SpeedDatingFormat! %v
-SpeedDatingFormat! %^v
+if exists(":SpeedDatingFormat")
+	SpeedDatingFormat! %v
+	SpeedDatingFormat! %^v
+endif
