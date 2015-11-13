@@ -95,6 +95,12 @@ export TTY="$(tty)"
 export TTY_HOST="$(who -m | awk '$NF ~ /\(.*\)/ { if ("/dev/" $2 == ENVIRON["TTY"]) { sub(/^\(/, "", $NF); sub(/\)$/, "", $NF); print $NF; exit 0; } }')"
 export TTY_USER="$(ls -l "$TTY" | awk '{ print $3; exit 0; }')"
 
+if [ "$SHELLTTY" != "$TTY" ]; then
+	export SHELLTTY="$TTY"
+	export NESTEDSHELLS=0
+else
+	export NESTEDSHELLS=$(($NESTEDSHELLS + 1))
+fi
 
 # Set up git PS1 configuration.
 GIT_PS1_SHOWDIRTYSTATE=1

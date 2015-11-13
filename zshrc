@@ -129,6 +129,7 @@ function precmd {
 }
 
 function prompt {
+	echo -n "%{$bold_color$fg[black]%}${(l:$NESTEDSHELLS::$$:)}%{$reset_color%}"
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}%n"
 	elif [ "$TTY_USER" != "$USER" ]; then
