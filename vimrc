@@ -41,7 +41,7 @@ colorscheme trusty
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -88,6 +88,8 @@ if has('python')
 	endif
 
 endif
+
+call vundle#end()
 
 filetype plugin on
 filetype indent on
