@@ -63,9 +63,14 @@ Bundle 'groenewege/vim-less'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'de-vri-es/vim-urscript'
-
+Bundle 'Shougo/vimproc.vim'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'eagletmt/neco-ghc'
 Bundle 'ShowMarks'
+
 let g:showmarks_enable=0
+let g:haddock_browser='xdg-open'
+let g:necoghc_enable_detailed_browse=1
 
 if has('python')
 
@@ -85,6 +90,7 @@ if has('python')
 		set completeopt-=preview
 		let g:ycm_add_preview_to_completeopt=0
 		let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
+		let g:ycm_semantic_triggers={'haskell' : ['.']}
 	endif
 
 endif
