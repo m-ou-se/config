@@ -30,6 +30,7 @@ let g:c_no_curly_error=1
 nmap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
+nmap <Leader>S vip:sort<Cr>
 nmap <Leader>n :NERDTreeToggle<Cr>
 nmap <Leader>f :NERDTreeFind<Cr>
 map <MiddleMouse> <Nop>
