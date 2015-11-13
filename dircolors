@@ -64,6 +64,7 @@ EXEC 01;32 # executable file
 .py 01;35
 .js 01;35
 .java 01;35
+.hs 01;35
 # header files
 .hpp 00;35
 .hh 00;35
@@ -74,3 +75,4 @@ EXEC 01;32 # executable file
 .obj 00;31
 .pyc 00;31
 .class 00;31
+.hi 00;31
