@@ -92,7 +92,7 @@ function dname {
 }
 
 export TTY="$(tty)"
-export TTY_HOST="$(who -m | awk '$NF ~ /\(.*\)/ { if ("/dev/" $2 == ENVIRON["TTY"]) { sub(/^\(/, "", $5); sub(/\)$/, "", $5); print $5; exit 0; } }')"
+export TTY_HOST="$(who -m | awk '$NF ~ /\(.*\)/ { if ("/dev/" $2 == ENVIRON["TTY"]) { sub(/^\(/, "", $NF); sub(/\)$/, "", $NF); print $NF; exit 0; } }')"
 export TTY_USER="$(ls -l "$TTY" | awk '{ print $3; exit 0; }')"
 
 
