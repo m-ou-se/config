@@ -1,36 +1,78 @@
-# GIT-PROMPT-PATH
+# Copyright (c) 2015, Maarten de Vries and Mara Bos
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Authors: Maarten de Vries <maarten@de-vri.es>, Mara Bos <m-ou.se@m-ou.se>
+
+
+
+# # git-prompt-path
+#
 # Display git information next to every path component in your prompt.
 #
 # Example output:
+#
 #     ~/src/project(master+2)/foo*/bar/baz+%/submodule(release-1.2=)%/fizz/buzz
 #
 # Note how the branch names of both the project and the submodule are
 # visible, and how the state of the index and worktree is visible at every
 # directory.
 #
-# The status symbols are the same as used by __git_ps1 from git-prompt.sh:
-#     +  Changes in index.
-#     *  Changes in working tree.
-#     %  Untracked files.
+# The status symbols are the same as used by `__git_ps1` from [`git-prompt.sh`][1]:
 #
-# Usage example (zsh):
-#   PROMPT='$(git_prompt_path)$ '
+#  - `+` Changes in index.
+#  - `*` Changes in working tree.
+#  - `%` Untracked files.
 #
-# Usage example (bash):
-#   function update_ps1 { PS1="$(git_prompt_path)\$ " }
-#   PROMPT_COMMAND=update_ps1
+# ## Usage examples
+#
+# First source both [`git-prompt.sh`][1] from git/contrib,
+# and `git-prompt-path.sh` from this repository:
+#
+#     source ~/.../git-prompt.sh
+#     source ~/.../git-prompt-path.sh
+#
+# And then for `zsh`:
+#
+#     PROMPT='$(git_prompt_path)$ '
+#
+#
+# Or for `bash`:
+#
+#     function update_ps1 { PS1="$(git_prompt_path)\$ " }
+#     PROMPT_COMMAND=update_ps1
+#
 #
 # These will use the default colours. To use it without colour, call
-# git_prompt_path with a format string without colour codes:
-#   $(git_prompt_path "%s%s")
+# `git_prompt_path` with a format string without colour codes:
+#   `$(git_prompt_path "%s%s")`
 #
 # Alternatively, to use your own colours, put them in the format string:
-#   $(git_prompt_path "...%s...%s...")...
+#   `$(git_prompt_path "...%s...%s...")...`
 # Make sure to surround the colour codes with the right escape sequences for
-# your shell. (\[ and \] for bash, %{ and %} for zsh. Note that the %'s need to
-# be escaped inside the format string with another %.)
+# your shell. (`[` and `\]` for bash, `%{` and `%}` for zsh. Note that the `%`s need to
+# be escaped inside the format string with another `%`.)
 #
-# Authors: Maarten de Vries <maarten@de-vri.es>, Mara Bos <m-ou.se@m-ou.se>
+# [1]: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 
 
 
@@ -94,8 +136,9 @@ function git_prompt_path {
 		fi
 
 		# Show short git status.
+		echo "git status --porcelain \"$pp\" \"$exclude\" 2>/dev/null" > /tmp/a
 		info="$info$(
-			st=$'\n'"$(git status --porcelain "$pp" "$exclude" 2>/dev/null)"
+			st=$'\n'"$(git -C "$pp" status --porcelain . "$exclude" 2>/dev/null)"
 			[[ "$st" =~ [$'\n'].[A-Z] ]] && echo -n '*';
 			[[ "$st" =~ [$'\n'][A-Z]  ]] && echo -n '+';
 			[[ "$st" =~ [$'\n'][?]    ]] && echo -n "%${ZSH_VERSION+%}";
@@ -106,7 +149,7 @@ function git_prompt_path {
 		result="$(printf "$format" "$name" "$info")$result"
 
 		# Ignore already reported changes in the next iteration.
-		exclude=":(exclude)$pp"
+		exclude=":(exclude)$name"
 
 		# Pop the last path component, or break if we're at '/' or something without any slash.
 		[[ "$p" = '/' ]] && break
