@@ -72,12 +72,14 @@ export TTY="$(tty)"
 export TTY_HOST="$(who -m | awk '$NF ~ /\(.*\)/ { if ("/dev/" $2 == ENVIRON["TTY"]) { sub(/^\(/, "", $NF); sub(/\)$/, "", $NF); print $NF; exit 0; } }')"
 export TTY_USER="$(ls -l "$TTY" | awk '{ print $3; exit 0; }')"
 
+
 if [ "$SHELLTTY" != "$TTY" ]; then
 	export SHELLTTY="$TTY"
 	export NESTEDSHELLS=0
-else
+elif [ "$SHELLPID" != "$$" ]; then
 	export NESTEDSHELLS=$(($NESTEDSHELLS + 1))
 fi
+export SHELLPID=$$
 
 # Set up git prompt configuration.
 GIT_PS1_SHOWSTASHSTATE=1
