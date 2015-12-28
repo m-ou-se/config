@@ -136,7 +136,6 @@ function git_prompt_path {
 		fi
 
 		# Show short git status.
-		echo "git status --porcelain \"$pp\" \"$exclude\" 2>/dev/null" > /tmp/a
 		info="$info$(
 			st=$'\n'"$(git -C "$pp" status --porcelain . "$exclude" 2>/dev/null)"
 			[[ "$st" =~ [$'\n'].[A-Z] ]] && echo -n '*';
