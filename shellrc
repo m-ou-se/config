@@ -46,6 +46,9 @@ set_color 22 003300 # dark green
 set_color 52 330000 # dark green
 set_color 53 330033 # dark magenta
 
+# Disable ctrl-q and ctrl-s.
+stty start undef stop undef
+
 # Set up dircolors.
 if test_command dircolors; then
     test -r "$config_dir/dircolors" && eval "$(dircolors -b "$config_dir/dircolors")" || eval "$(dircolors -b)"
