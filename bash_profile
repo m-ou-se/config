@@ -1,2 +1,2 @@
 source $HOME/.profile
-source $HOME/.bashrc
+[ -n "$PS1" ] && source $HOME/.bashrc
