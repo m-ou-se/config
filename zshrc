@@ -5,7 +5,6 @@ try_source /etc/zsh_command_not_found
 
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' format '[%d]'
 zstyle ':completion:*' group-name ''
