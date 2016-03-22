@@ -95,11 +95,11 @@ if has('python')
 
 endif
 
+if filereadable($HOME . "/.vimrc.local")
+	source ~/.vimrc.local
+endif
+
 call vundle#end()
 
 filetype plugin on
 filetype indent on
-
-if filereadable($HOME . "/.vimrc.local")
-	source ~/.vimrc.local
-endif
