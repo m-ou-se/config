@@ -82,11 +82,10 @@ if has('python')
 
 	if v:version > 703
 		Bundle 'Valloric/YouCompleteMe'
-		nmap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
+		nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
 		let g:ycm_key_list_select_completion = ['<Down>']
 		let g:ycm_key_list_previous_completion = ['<Up>']
 		let g:ycm_allow_changing_updatetime=0
-		let g:ycm_confirm_extra_conf=0
 		set completeopt-=preview
 		let g:ycm_add_preview_to_completeopt=0
 		let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
