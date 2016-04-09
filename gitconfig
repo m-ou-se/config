@@ -20,6 +20,9 @@
 [push]
 	default = upstream
 
+[rebase]
+	autoSquash = true
+
 [merge]
 	conflictstyle = diff3
 
