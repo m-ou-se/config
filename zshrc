@@ -23,6 +23,8 @@ compinit
 autoload edit-command-line && zle -N edit-command-line
 bindkey '\ee' edit-command-line
 
+bindkey '^q' push-line-or-edit
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
