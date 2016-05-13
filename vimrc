@@ -27,14 +27,14 @@ set statusline=%<%f\ %h%w%m%r\ %{exists('g:loaded_fugitive')?fugitive#statusline
 set guioptions=ac
 let g:c_no_curly_error=1
 
-nmap K i<Cr><Esc>
+nnoremap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
-nmap <Leader>S vip:sort<Cr>
-nmap <Leader>n :NERDTreeToggle<Cr>
-nmap <Leader>f :NERDTreeFind<Cr>
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
+nnoremap <Leader>S vip:sort<Cr>
+nnoremap <Leader>n :NERDTreeToggle<Cr>
+nnoremap <Leader>f :NERDTreeFind<Cr>
+noremap <MiddleMouse> <Nop>
+inoremap <MiddleMouse> <Nop>
 
 syntax on
 colorscheme trusty
