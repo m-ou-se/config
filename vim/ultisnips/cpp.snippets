@@ -1,7 +1,17 @@
 snippet { "" w
 {
-	${VISUAL}$0
+	${VISUAL}${1}
 }
+endsnippet
+# ---
+snippet [ "" w
+[${1:&}] ${2:(${3})} {
+	${VISUAL}${4}
+}
+endsnippet
+# ---
+snippet ( "" w
+(${1:${VISUAL/\s*(.*?);?\s*$/$1/}})${2:;}
 endsnippet
 # ---
 snippet if
@@ -89,7 +99,9 @@ union ${1:FooBar} {
 endsnippet
 snippet ns
 namespace ${1:FooBar} {
-	${VISUAL}${2}
+
+${VISUAL}${2}
+
 }
 endsnippet
 # ---
@@ -117,6 +129,10 @@ endsnippet
 # ---
 snippet once
 #pragma once
+endsnippet
+# ---
+snippet C "" w
+${1:${VISUAL:f}}(${2});
 endsnippet
 # ---
 snippet [] "" w
@@ -295,7 +311,7 @@ snippet as
 assert(${1:${VISUAL/\s*(.*?);?\s*$/$1/}});
 endsnippet
 # ---
-snippet 0 "" w
+snippet n "" w
 nullptr
 endsnippet
 snippet tr "" w
@@ -331,7 +347,7 @@ snippet ao "" w
 alignof(${VISUAL/\s*(.*?);?\s*$/$1/}${1})
 endsnippet
 # ---
-snippet ts "" w
+snippet t "" w
 this${1:->}${2}
 endsnippet
 # ---
@@ -387,12 +403,60 @@ snippet std "" w
 std::
 endsnippet
 # ---
+snippet str "" w
+std::string 
+endsnippet
 snippet mu "" w
 std::make_unique<${1:type}>(${2:${VISUAL:value/\s*(.*?);?\s*$/$1/}})
 endsnippet
+snippet ms "" w
+std::make_shared<${1:type}>(${2:${VISUAL:value/\s*(.*?);?\s*$/$1/}})
+endsnippet
 snippet up "" w
-std::unique_ptr<${1:${VISUAL:type}}>
+std::unique_ptr<${1:${VISUAL:type}}> 
+endsnippet
+snippet sp "" w
+std::shared_ptr<${1:${VISUAL:type}}> 
+endsnippet
+snippet ar "" w
+std::array<${1:${VISUAL:type}}, ${2:size}> 
 endsnippet
 snippet vec "" w
-std::vector<${1:${VISUAL:type}}>
+std::vector<${1:${VISUAL:type}}> 
+endsnippet
+snippet list "" w
+std::list<${1:${VISUAL:type}}> 
+endsnippet
+snippet set "" w
+std::set<${1:${VISUAL:type}}> 
+endsnippet
+snippet mset "" w
+std::multiset<${1:${VISUAL:type}}> 
+endsnippet
+snippet oset "" w
+std::unordered_set<${1:${VISUAL:type}}> 
+endsnippet
+snippet omset "" w
+std::unordered_multiset<${1:${VISUAL:type}}> 
+endsnippet
+snippet map "" w
+std::map<${1:key}, ${2:value}> 
+endsnippet
+snippet mmap "" w
+std::multimap<${1:key}, ${2:value}> 
+endsnippet
+snippet omap "" w
+std::unordered_map<${1:key}, ${2:value}> 
+endsnippet
+snippet ommap "" w
+std::unordered_multimap<${1:key}, ${2:value}> 
+endsnippet
+snippet fun "" w
+std::function<${1:${2:void} (${3:})}> 
+endsnippet
+snippet pair "" w
+std::pair<${1:first}, ${2:second}> 
+endsnippet
+snippet tuple "" w
+std::tuple<${1:types...}> 
 endsnippet
