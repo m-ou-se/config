@@ -77,7 +77,8 @@ if has('python')
 
 	Bundle 'UltiSnips'
 	let g:UltiSnipsSnippetDirectories=["ultisnips"]
-	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsExpandTrigger="<c-space>"
+	xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
