@@ -30,7 +30,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 setopt appendhistory
-setopt autocd
 setopt auto_pushd
 setopt extendedglob
 setopt notify
