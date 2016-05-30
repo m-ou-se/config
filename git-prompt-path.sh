@@ -148,7 +148,7 @@ function git_prompt_path {
 		result="$(printf "$format" "$name" "$info")$result"
 
 		# Ignore already reported changes in the next iteration.
-		exclude=":(exclude)$name"
+		exclude=":(exclude)$name/*"
 
 		# Pop the last path component, or break if we're at '/' or something without any slash.
 		[[ "$p" = '/' ]] && break
