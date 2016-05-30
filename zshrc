@@ -26,8 +26,8 @@ bindkey '\ee' edit-command-line
 bindkey '^q' push-line-or-edit
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 
 setopt appendhistory
 setopt auto_pushd
