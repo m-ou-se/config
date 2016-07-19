@@ -5,7 +5,7 @@ set tabstop=4
 set softtabstop=4
 set autoindent
 set copyindent
-set smartindent
+set cindent
 set laststatus=2
 set list
 set listchars=tab:›—,trail:␣,extends:▶,precedes:◀
