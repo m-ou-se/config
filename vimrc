@@ -25,6 +25,7 @@ set history=200
 set viminfo='100,s10,h,%
 set statusline=%<%f\ %h%w%m%r\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}%=%-14.(%4l/%L,%c%V%)\ %P
 set guioptions=ac
+set wildmenu
 let g:c_no_curly_error=1
 
 nnoremap K i<Cr><Esc>
