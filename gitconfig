@@ -34,3 +34,5 @@
 
 [include]
 	path = ~/.gitconfig.local
+[svn]
+	rmdir = true
