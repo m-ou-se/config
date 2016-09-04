@@ -44,6 +44,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
+let g:rust_recommended_style=0
+
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'hallison/vim-markdown'
@@ -69,6 +71,7 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'eagletmt/neco-ghc'
 Bundle 'ShowMarks'
+Bundle 'rust-lang/rust.vim'
 
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
