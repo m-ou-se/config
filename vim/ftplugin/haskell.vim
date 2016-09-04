@@ -1,7 +1,7 @@
-set tabstop=8
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set shiftround
+setlocal tabstop=8
+setlocal expandtab
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal shiftround
 compiler ghc
 setlocal omnifunc=necoghc#omnifunc
