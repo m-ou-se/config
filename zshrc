@@ -111,6 +111,7 @@ function prompt {
 		echo -n '$'
 	fi
 	echo -n "%{$reset_color%} "
+	update_title
 }
 
 function prompt2 {
