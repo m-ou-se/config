@@ -69,7 +69,6 @@ function count_hidden_files {
 }
 
 function chpwd {
-	update_title
 	local count=$(count_files)
 	local hidden=$(count_hidden_files)
 	[ "$count" -le 50 ] && ls --group-directories-first -CF --color=always
@@ -89,6 +88,10 @@ function precmd {
 }
 
 function prompt {
+	echo -n "%{"
+	update_title
+	echo -n "%}"
+
 	echo -n "%{$bold_color$fg[black]%}${(l:$NESTEDSHELLS::$$:)}%{$reset_color%}"
 	if [ $UID -eq 0 ]; then
 		echo -n "%{$fg[red]%}%n"
@@ -111,9 +114,6 @@ function prompt {
 		echo -n '$'
 	fi
 	echo -n "%{$reset_color%} "
-	echo -n "%{"
-	update_title
-	echo -n "%}"
 }
 
 function prompt2 {
