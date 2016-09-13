@@ -58,11 +58,10 @@ do
 done
 
 # Install vundle.
-if [ ! -d "vim/bundle/vundle" ]; then
-	mkdir -p "vim/bundle"
-	git clone https://github.com/gmarik/vundle.git "vim/bundle/vundle"
+if [ ! -d "vim/plugged/vim-plug" ]; then
+	git clone --depth 1 https://github.com/junegunn/vim-plug.git "vim/plugged/vim-plug"
 fi
-vim +PluginClean +PluginUpdate +qall
+vim +PlugClean +PlugUpdate +qall
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then

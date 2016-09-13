@@ -41,37 +41,36 @@ syntax on
 colorscheme trusty
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 let g:rust_recommended_style=0
 
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'hallison/vim-markdown'
-Bundle 'surround.vim'
-Bundle 'repeat.vim'
-Bundle 'The-NERD-commenter'
-Bundle 'The-NERD-tree'
-Bundle 'speeddating.vim'
-Bundle 'VisIncr'
-Bundle 'vis'
-Bundle 'Rename2'
-Bundle 'JSON.vim'
-Bundle 'glsl.vim'
-Bundle 'django.vim'
-Bundle 'jade.vim'
-Bundle 'bkad/CamelCaseMotion'
-Bundle 'openscad.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'guns/xterm-color-table.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'de-vri-es/vim-urscript'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'eagletmt/neco-ghc'
-Bundle 'ShowMarks'
-Bundle 'rust-lang/rust.vim'
+Plug 'junegunn/vim-plug'
+Plug 'godlygeek/tabular'
+Plug 'hallison/vim-markdown'
+Plug 'surround.vim'
+Plug 'repeat.vim'
+Plug 'The-NERD-commenter'
+Plug 'The-NERD-tree'
+Plug 'speeddating.vim'
+Plug 'VisIncr'
+Plug 'vis'
+Plug 'Rename2'
+Plug 'JSON.vim'
+Plug 'glsl.vim'
+Plug 'django.vim'
+Plug 'jade.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'openscad.vim'
+Plug 'groenewege/vim-less'
+Plug 'guns/xterm-color-table.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'de-vri-es/vim-urscript'
+Plug 'Shougo/vimproc.vim'
+Plug 'lukerandall/haskellmode-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'ShowMarks'
+Plug 'rust-lang/rust.vim'
 
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
@@ -79,7 +78,7 @@ let g:necoghc_enable_detailed_browse=1
 
 if has('python')
 
-	Bundle 'UltiSnips'
+	Plug 'UltiSnips'
 	let g:UltiSnipsSnippetDirectories=["ultisnips"]
 	let g:UltiSnipsExpandTrigger="<c-space>"
 	xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
@@ -87,7 +86,7 @@ if has('python')
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 	if v:version > 703
-		Bundle 'Valloric/YouCompleteMe'
+		Plug 'Valloric/YouCompleteMe'
 		nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
 		let g:ycm_key_list_select_completion = ['<Down>']
 		let g:ycm_key_list_previous_completion = ['<Up>']
@@ -104,7 +103,7 @@ if filereadable($HOME . "/.vimrc.local")
 	source ~/.vimrc.local
 endif
 
-call vundle#end()
+call plug#end()
 
 filetype plugin on
 filetype indent on
