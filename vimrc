@@ -71,7 +71,7 @@ Plug 'eagletmt/neco-ghc'
 Plug 'ShowMarks'
 Plug 'rust-lang/rust.vim'
 
-Plug 'ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_extensions = ['mixed', 'line']
 let g:ctrlp_cmd = 'CtrlPMixed'
 
