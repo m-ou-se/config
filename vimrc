@@ -72,6 +72,10 @@ Plug 'eagletmt/neco-ghc'
 Plug 'ShowMarks'
 Plug 'rust-lang/rust.vim'
 
+Plug 'ctrlp.vim'
+let g:ctrlp_extensions = ['mixed', 'line']
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
