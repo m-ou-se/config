@@ -86,6 +86,14 @@ omap / <Plug>(easymotion-tn)
 
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+let g:easy_align_delimiters = {
+	\ ',': { 'pattern': ',', 'left_margin': 0, 'right_margin': 1 },
+	\ '(': { 'pattern': '(', 'left_margin': 0, 'right_margin': 0 },
+	\ ')': { 'pattern': ')', 'left_margin': 0, 'right_margin': 0 } }
+
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
