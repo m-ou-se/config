@@ -15,7 +15,6 @@ set mouse=a
 set nowrap
 set colorcolumn=+1
 set showcmd
-set hlsearch
 set nrformats=octal,hex,alpha
 set updatetime=500
 set timeoutlen=300
@@ -75,6 +74,17 @@ Plug 'rust-lang/rust.vim'
 Plug 'ctrlp.vim'
 let g:ctrlp_extensions = ['mixed', 'line']
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_keys = 'asghlqwertyuiopzxcvbnmdkfj'
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_prompt = '{n}/'
+highlight link EasyMotionMoveHL Search
+nmap s <Plug>(easymotion-s)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
