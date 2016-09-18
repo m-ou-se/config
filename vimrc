@@ -80,9 +80,10 @@ Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_keys = 'asghlqwertyuiopzxcvbnmdkfj'
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_prompt = '{n}/'
-nmap s <Plug>(easymotion-s)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+let g:EasyMotion_add_search_history = 0
+let g:EasyMotion_verbose = 0
+nmap S <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-sn)
 
 Plug 'terryma/vim-multiple-cursors'
 
