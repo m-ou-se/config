@@ -85,6 +85,11 @@ let g:EasyMotion_verbose = 0
 nmap S <Plug>(easymotion-s)
 nmap s <Plug>(easymotion-sn)
 
+Plug 'haya14busa/incsearch.vim'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'junegunn/vim-easy-align'
