@@ -1,3 +1,4 @@
 .*.swp
 .swp
 *.clang_complete
+.ycm_extra_conf.pyc
