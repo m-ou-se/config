@@ -118,6 +118,7 @@ if has('python')
 	if v:version > 703
 		Plug 'Valloric/YouCompleteMe'
 		nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
+		nnoremap <Leader>i <Esc>:YcmCompleter FixIt<CR>:cclose<CR>
 		let g:ycm_key_list_select_completion = ['<Down>']
 		let g:ycm_key_list_previous_completion = ['<Up>']
 		let g:ycm_allow_changing_updatetime=0
