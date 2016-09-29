@@ -32,7 +32,8 @@
 [mergetool "fugitive"]
 	cmd = vim -f -c Gdiff $MERGED
 
-[include]
-	path = ~/.gitconfig.local
 [svn]
 	rmdir = true
+
+[include]
+	path = ~/.gitconfig.local
