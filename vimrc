@@ -83,8 +83,8 @@ let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_prompt = '{n}/'
 let g:EasyMotion_add_search_history = 0
 let g:EasyMotion_verbose = 0
-nmap S <Plug>(easymotion-s)
-nmap s <Plug>(easymotion-sn)
+nmap s <Plug>(easymotion-s)
+nmap S <Plug>(easymotion-sn)
 
 Plug 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
