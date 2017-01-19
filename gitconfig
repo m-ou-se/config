@@ -5,9 +5,9 @@
 	ui = true
 
 [alias]
-	l     = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --author-date-order
-	lg    = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --author-date-order --all
-	slg   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --author-date-order --simplify-by-decoration
+	l     = log --graph --pretty=format:'%Cred%h %Cgreen%ad%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:%F --author-date-order
+	lg    = !git l --all
+	slg   = !git l --simplify-by-decoration
 	stat  = status
 	st    = status
 	ff    = merge --ff-only
