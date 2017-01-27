@@ -73,6 +73,10 @@ Plug 'eagletmt/neco-ghc'
 Plug 'ShowMarks'
 Plug 'rust-lang/rust.vim'
 
+if &term =~? "^rxvt-unicode"
+	set ttymouse=urxvt
+endif
+
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_extensions = ['mixed', 'line']
 let g:ctrlp_cmd = 'CtrlPMixed'
