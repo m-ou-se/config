@@ -75,8 +75,8 @@ Plug 'rust-lang/rust.vim'
 
 if &term =~? "^rxvt-unicode"
 	set ttymouse=urxvt
-	map [7~ <Home>
-	map [8~ <End>
+	set nottybuiltin
+	set term=$TERM
 endif
 
 Plug 'ctrlpvim/ctrlp.vim'
