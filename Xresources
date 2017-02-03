@@ -24,3 +24,27 @@ URxvt.keysym.Control-Left:    \033[1;5D
 URxvt.keysym.Control-Right:   \033[1;5C
 
 URxvt.resize-font.reset:      C-0
+
+XTerm*background:        rgb:00/00/00
+XTerm*foreground:        rgb:aa/aa/aa
+XTerm*renderFont:        true
+XTerm*faceName:          monospace
+XTerm*forceBoxChars:     true
+XTerm*showMissingGlyphs: true
+XTerm*faceSize:          10
+XTerm*faceSize1:         2
+XTerm*faceSize2:         5
+XTerm*faceSize3:         7
+XTerm*faceSize4:         10
+XTerm*faceSize5:         20
+XTerm*faceSize6:         32
+XTerm*termName:          xterm-256color
+XTerm*locale:            true
+XTerm*altSendsEscape:    true
+XTerm*metaSendsEscape:   true
+XTerm*eightBitInput:     false
+XTerm*backarrowKey:      false
+XTerm*ttyModes:          erase ^?
+XTerm*saveLines:         65535
+XTerm*bellIsUrgent:      true
+XTerm*on4Clicks:         group
