@@ -40,6 +40,7 @@ hi WildMenu      cterm=none ctermfg=Black ctermbg=3
 hi ColorColumn   ctermbg=17
 hi SignColumn    cterm=none ctermfg=14 ctermbg=233
 hi FoldColumn    cterm=none ctermfg=Grey ctermbg=233
+hi EndOfBuffer   cterm=none ctermfg=237 ctermbg=Black
 hi IndentTab     cterm=none ctermfg=235
 hi Comment       cterm=none ctermfg=DarkBlue
 hi Constant      cterm=none ctermfg=DarkRed
@@ -89,6 +90,7 @@ hi WildMenu      gui=none guifg=#000000 guibg=#cc9900
 hi ColorColumn   guibg=#00005f
 hi SignColumn    gui=none guibg=#262626
 hi FoldColumn    gui=none guifg=#aaaaaa guibg=#262626
+hi EndOfBuffer   gui=none guifg=#585858 guibg=#000000
 hi IndentTab     gui=none guifg=#262626
 hi Comment       gui=none guifg=#0066ff
 hi Constant      gui=none guifg=#cc0000
