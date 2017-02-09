@@ -39,7 +39,7 @@ noremap <MiddleMouse> <Nop>
 inoremap <MiddleMouse> <Nop>
 
 syntax on
-colorscheme trusty
+colorscheme custom
 
 filetype off
 call plug#begin('~/.vim/plugged')
