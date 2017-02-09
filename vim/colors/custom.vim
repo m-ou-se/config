@@ -28,7 +28,7 @@ hi Pmenu         cterm=none ctermfg=Grey ctermbg=52
 hi PmenuSel      cterm=none ctermfg=White ctermbg=88
 hi Question      cterm=none ctermfg=DarkGreen
 hi Search        cterm=none ctermbg=Magenta ctermfg=White
-hi SpecialKey    cterm=none ctermfg=DarkGray
+hi SpecialKey    cterm=bold ctermfg=DarkYellow
 hi StatusLineNC  cterm=none ctermfg=240 ctermbg=234
 hi StatusLine    cterm=bold ctermfg=250 ctermbg=234
 hi Title         cterm=none ctermfg=DarkMagenta
@@ -38,6 +38,7 @@ hi Visual        cterm=reverse ctermbg=Black
 hi WarningMsg    cterm=none ctermfg=DarkRed
 hi WildMenu      cterm=none ctermfg=Black ctermbg=3
 hi ColorColumn   ctermbg=233
+hi IndentTab     cterm=none ctermfg=235
 hi Comment       cterm=none ctermfg=DarkBlue
 hi Constant      cterm=none ctermfg=DarkRed
 hi Error         cterm=none ctermfg=Grey ctermbg=DarkRed
@@ -74,7 +75,7 @@ hi Pmenu         gui=none guifg=#aaaaaa guibg=#5f0000
 hi PmenuSel      gui=none guifg=#ffffff guibg=#870000
 hi Question      gui=none guifg=#009900
 hi Search        gui=none guibg=#cc33ff guifg=#ffffff
-hi SpecialKey    gui=none guifg=#333333
+hi SpecialKey    gui=none guifg=#cc9900
 hi StatusLineNC  gui=none guifg=#585858 guibg=#1c1c1c
 hi StatusLine    gui=none guifg=#bcbcbc guibg=#1c1c1c
 hi Title         gui=none guifg=#9933cc
@@ -84,6 +85,7 @@ hi Visual        gui=reverse guibg=#ffffff
 hi WarningMsg    gui=none guifg=#cc0000
 hi WildMenu      gui=none guifg=#000000 guibg=#cc9900
 hi ColorColumn   guibg=#333333
+hi IndentTab     gui=none guifg=#262626
 hi Comment       gui=none guifg=#0066ff
 hi Constant      gui=none guifg=#cc0000
 hi Error         gui=none guifg=#aaaaaa guibg=#cc0000

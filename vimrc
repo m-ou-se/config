@@ -40,6 +40,7 @@ inoremap <MiddleMouse> <Nop>
 
 syntax on
 colorscheme custom
+autocmd BufWinEnter * match IndentTab /^\t\+/
 
 filetype off
 call plug#begin('~/.vim/plugged')
