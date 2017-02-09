@@ -12,14 +12,14 @@ let colors_name = "custom"
 hi Cursor        cterm=none ctermbg=Black
 hi DiffAdd       cterm=none ctermbg=22
 hi DiffChange    cterm=none ctermbg=17
-hi DiffDelete    cterm=none ctermbg=52
+hi DiffDelete    cterm=none ctermbg=52 ctermfg=52
 hi DiffText      cterm=none ctermbg=54
 hi Directory     cterm=none ctermfg=DarkBlue
 hi ErrorMsg      cterm=none ctermfg=Grey
 hi FoldColumn    cterm=none ctermfg=Black ctermbg=DarkGrey
 hi Folded        cterm=none ctermfg=Black ctermbg=DarkGrey
 hi IncSearch     cterm=reverse
-hi LineNr        cterm=none ctermfg=240 ctermbg=235
+hi LineNr        cterm=none ctermfg=237 ctermbg=233
 hi MatchParen    cterm=bold ctermfg=White
 hi ModeMsg       cterm=bold
 hi MoreMsg       cterm=none ctermfg=DarkGreen
@@ -37,7 +37,9 @@ hi VisualNOS     cterm=bold,underline
 hi Visual        cterm=reverse ctermbg=Black
 hi WarningMsg    cterm=none ctermfg=DarkRed
 hi WildMenu      cterm=none ctermfg=Black ctermbg=3
-hi ColorColumn   ctermbg=233
+hi ColorColumn   ctermbg=17
+hi SignColumn    cterm=none ctermfg=14 ctermbg=233
+hi FoldColumn    cterm=none ctermfg=Grey ctermbg=233
 hi IndentTab     cterm=none ctermfg=235
 hi Comment       cterm=none ctermfg=DarkBlue
 hi Constant      cterm=none ctermfg=DarkRed
@@ -56,10 +58,10 @@ hi SpellLocal    cterm=none ctermbg=18
 
 " GUI
 hi Cursor        gui=none guibg=#aaaaaa
-hi DiffAdd       gui=none guibg=#009900
-hi DiffChange    gui=none guibg=#0066ff
-hi DiffDelete    gui=none guibg=#cc0000
-hi DiffText      gui=none guibg=#9933cc
+hi DiffAdd       gui=none guibg=#005f00
+hi DiffChange    gui=none guibg=#00005f
+hi DiffDelete    gui=none guibg=#5f0000 guifg=#5f0000
+hi DiffText      gui=none guibg=#4f0087
 hi Directory     gui=none guifg=#0066ff
 hi ErrorMsg      gui=none guifg=#aaaaaa
 hi FoldColumn    gui=none guifg=#0066ff guibg=#aaaaaa
@@ -84,7 +86,9 @@ hi VisualNOS     gui=bold,underline
 hi Visual        gui=reverse guibg=#ffffff
 hi WarningMsg    gui=none guifg=#cc0000
 hi WildMenu      gui=none guifg=#000000 guibg=#cc9900
-hi ColorColumn   guibg=#333333
+hi ColorColumn   guibg=#00005f
+hi SignColumn    gui=none guibg=#262626
+hi FoldColumn    gui=none guifg=#aaaaaa guibg=#262626
 hi IndentTab     gui=none guifg=#262626
 hi Comment       gui=none guifg=#0066ff
 hi Constant      gui=none guifg=#cc0000
