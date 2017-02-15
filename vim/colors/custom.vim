@@ -20,7 +20,7 @@ hi FoldColumn    cterm=none ctermfg=Black ctermbg=DarkGrey
 hi Folded        cterm=none ctermfg=Black ctermbg=DarkGrey
 hi IncSearch     cterm=reverse
 hi LineNr        cterm=none ctermfg=237 ctermbg=233
-hi MatchParen    cterm=bold ctermfg=White
+hi MatchParen    cterm=bold ctermfg=White ctermbg=none
 hi ModeMsg       cterm=bold
 hi MoreMsg       cterm=none ctermfg=DarkGreen
 hi NonText       cterm=none ctermfg=Yellow
@@ -69,7 +69,7 @@ hi FoldColumn    gui=none guifg=#0066ff guibg=#aaaaaa
 hi Folded        gui=none guifg=#0066ff guibg=#aaaaaa
 hi IncSearch     gui=reverse
 hi LineNr        gui=none guifg=#585858 guibg=#262626
-hi MatchParen    gui=none guifg=#ffffff guibg=#009999
+hi MatchParen    gui=none guifg=#ffffff guibg=#000000
 hi ModeMsg       gui=bold
 hi MoreMsg       gui=none guifg=#009900
 hi NonText       gui=none guifg=#ffff33
