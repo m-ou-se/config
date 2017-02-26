@@ -11,6 +11,7 @@ URxvt.url-select.launcher:  xdg-open
 URxvt.url-select.underline: true
 URxvt.iso14755:             false
 URxvt.pointerBlank:         true
+URxvt.pointerBlankDelay:    987654321
 
 URxvt.perl-ext-common:        default,clipboard,url-select,keyboard-select,resize-font
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
