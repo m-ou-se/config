@@ -19,7 +19,7 @@ hi ErrorMsg      cterm=none ctermfg=Grey
 hi FoldColumn    cterm=none ctermfg=Black ctermbg=DarkGrey
 hi Folded        cterm=none ctermfg=Black ctermbg=DarkGrey
 hi IncSearch     cterm=reverse
-hi LineNr        cterm=none ctermfg=237 ctermbg=233
+hi LineNr        cterm=none ctermfg=240 ctermbg=233
 hi MatchParen    cterm=bold ctermfg=White ctermbg=none
 hi ModeMsg       cterm=bold
 hi MoreMsg       cterm=none ctermfg=DarkGreen
@@ -41,7 +41,7 @@ hi ColorColumn   ctermbg=17
 hi SignColumn    cterm=none ctermfg=14 ctermbg=233
 hi FoldColumn    cterm=none ctermfg=Grey ctermbg=233
 hi EndOfBuffer   cterm=none ctermfg=237 ctermbg=Black
-hi IndentTab     cterm=none ctermfg=235
+hi IndentTab     cterm=none ctermfg=240
 hi Comment       cterm=none ctermfg=DarkBlue
 hi Constant      cterm=none ctermfg=DarkRed
 hi Error         cterm=none ctermfg=Grey ctermbg=DarkRed
