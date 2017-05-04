@@ -50,20 +50,20 @@ let g:rust_recommended_style=0
 Plug 'junegunn/vim-plug'
 Plug 'godlygeek/tabular'
 Plug 'hallison/vim-markdown'
-Plug 'surround.vim'
-Plug 'repeat.vim'
-Plug 'The-NERD-commenter'
-Plug 'The-NERD-tree'
-Plug 'speeddating.vim'
-Plug 'VisIncr'
-Plug 'vis'
-Plug 'Rename2'
-Plug 'JSON.vim'
-Plug 'glsl.vim'
-Plug 'django.vim'
-Plug 'jade.vim'
+Plug 'vim-scripts/surround.vim'
+Plug 'vim-scripts/repeat.vim'
+Plug 'vim-scripts/The-NERD-commenter'
+Plug 'vim-scripts/The-NERD-tree'
+Plug 'vim-scripts/speeddating.vim'
+Plug 'vim-scripts/VisIncr'
+Plug 'vim-scripts/vis'
+Plug 'vim-scripts/Rename2'
+Plug 'vim-scripts/JSON.vim'
+Plug 'vim-scripts/glsl.vim'
+Plug 'vim-scripts/django.vim'
+Plug 'vim-scripts/jade.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'openscad.vim'
+Plug 'vim-scripts/openscad.vim'
 Plug 'groenewege/vim-less'
 Plug 'guns/xterm-color-table.vim'
 Plug 'tpope/vim-fugitive'
@@ -71,7 +71,7 @@ Plug 'de-vri-es/vim-urscript'
 Plug 'Shougo/vimproc.vim'
 Plug 'lukerandall/haskellmode-vim'
 Plug 'eagletmt/neco-ghc'
-Plug 'ShowMarks'
+Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
 
 if &term =~? "^rxvt-unicode"
@@ -116,7 +116,7 @@ let g:necoghc_enable_detailed_browse=1
 
 if has('python')
 
-	Plug 'UltiSnips'
+	Plug 'vim-scripts/UltiSnips'
 	let g:UltiSnipsSnippetDirectories=["ultisnips"]
 	let g:UltiSnipsExpandTrigger="<c-space>"
 	xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
