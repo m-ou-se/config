@@ -51,8 +51,13 @@ elif [ "$(readlink "$HOME/.config/config_dir")" != "$config_dir_prefix$config_di
 	exit 1
 fi
 
+# Throw away old .zprofile that we used to ship.
+if [ "$(readlink "$HOME/.zprofile")" == "$config_dir/zprofile" ]; then
+	rm "$HOME/.zprofile"
+fi
+
 # Install configuration files.
-for file in bash_profile bashrc gitconfig profile screenrc vimrc zshrc vim zprofile Xresources tmux.conf
+for file in bash_profile bashrc gitconfig profile screenrc vimrc zshrc vim zshenv Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
