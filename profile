@@ -1,13 +1,24 @@
 config_dir="$HOME/.config/config_dir"
 
-[ -d "$HOME/bin"                 ] && PATH="$HOME/bin:$PATH"
-[ -d "$config_dir/bin"           ] && PATH="$config_dir/bin:$PATH"
-[ -d "$HOME/.local/bin"          ] && PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/.cabal/bin"          ] && PATH="$HOME/.cabal/bin:$PATH"
-[ -d "$HOME/.gem/ruby/2.0.0/bin" ] && PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-[ -d "$HOME/.gem/ruby/2.2.0/bin" ] && PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+add_path() {
+	for d in "$@"; do
+		[ -d "$d" ] || continue
+		case ":$PATH:" in
+			*":$d:"*) ;;
+			::) export PATH="$d" ;;
+			*)  export PATH="$d:$PATH" ;;
+		esac
+	done
+}
+
+add_path "$HOME/bin"
+add_path "$config_dir/bin"
+add_path "$HOME/.local/bin"
+add_path "$HOME/.cabal/bin"
+add_path "$HOME"/.gem/ruby/*/bin
+add_path "$HOME/.npm-packages/bin"
+
 if [ -d "$HOME/.npm-packages" ]; then
-	PATH="$HOME/.npm-packages/bin:$PATH"
 	export NODE_PATH="$HOME/.npm-packages/lib/node_modules"
 fi
 
