@@ -26,9 +26,11 @@ install_file() {
 			mkdir -p "$config_backup_dir"
 			mv "$HOME/$2" "$config_backup_dir/$1"
 			echo "'$2' already exists. It is moved to '$config_dir/$config_backup_dir/$1'." 1>&2
+		else
+			return
 		fi
 	fi
-	ln -fs "$config_dir/$1" "$HOME/$2"
+	ln -s "$config_dir/$1" "$HOME/$2"
 }
 
 # Check for required tools.
