@@ -44,7 +44,8 @@ if [ ! -e "$HOME/.config" ]; then
 	mkdir "$HOME/.config"
 elif [ ! -d "$HOME/.config" ]; then
 	echo "$HOME/.config exists and is not a directory." 1>&2
-fi;
+	exit 1
+fi
 
 if [ ! -e "$HOME/.config/config_dir" ]; then
 	ln -s "$config_dir_prefix$config_dir" "$HOME/.config/config_dir"
