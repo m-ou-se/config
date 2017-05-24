@@ -80,7 +80,7 @@ shell=$(getent passwd $LOGNAME | cut -d: -f7)
 case "$shell" in
 	*/zsh) ;;
 	*)
-		zshell=$(chsh -l | grep zsh | head -n1)
+		zshell=$(grep '/zsh$' /etc/shells | head -n1)
 		if [ -n "$zshell" ]; then
 			echo "Changing shell to $zshell. ^C to keep $shell."
 			chsh -s "$zshell"
