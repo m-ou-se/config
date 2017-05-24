@@ -72,3 +72,15 @@ vim +PlugClean +PlugUpdate +qall
 if [ ! -d "zsh-syntax-highlighting" ]; then
 	git clone git://github.com/zsh-users/zsh-syntax-highlighting
 fi
+
+shell=$(getent passwd $LOGNAME | cut -d: -f7)
+case "$shell" in
+	*/zsh) ;;
+	*)
+		zshell=$(chsh -l | grep zsh | head -n1)
+		if [ -n "$zshell" ]; then
+			echo "Changing shell to $zshell. ^C to keep $shell."
+			chsh -s "$zshell"
+		fi
+		;;
+esac
