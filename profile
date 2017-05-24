@@ -22,8 +22,12 @@ if [ -d "$HOME/.npm-packages" ]; then
 	export NODE_PATH="$HOME/.npm-packages/lib/node_modules"
 fi
 
-[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
+export EDITOR=vim
+export PAGER=less
+export MANPAGER=vimpager
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
 # vi: ft=sh
