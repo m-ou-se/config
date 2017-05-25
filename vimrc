@@ -33,6 +33,7 @@ nnoremap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 nnoremap <Leader>S vip:sort<Cr>
+vnoremap <Leader>S :sort<Cr>gv
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 nnoremap <Leader>f :NERDTreeFind<Cr>
 noremap <MiddleMouse> <Nop>
