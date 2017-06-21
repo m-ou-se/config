@@ -1,5 +1,9 @@
 [diff]
 	tool = vimdiff
+	submodule = log
+
+[status]
+	submodulesummary = 1
 
 [color]
 	ui = true
