@@ -1,3 +1,6 @@
+unsetopt nomatch
+source "$HOME/.profile"
+
 source "$HOME/.config/config_dir/shellrc"
 
 try_source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -36,7 +39,6 @@ setopt notify
 setopt prompt_subst
 setopt hist_ignore_dups
 unsetopt beep
-unsetopt nomatch
 
 try_source "$HOME/.config/config_dir/zsh-fix-keys"
 
