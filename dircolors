@@ -74,5 +74,6 @@ EXEC 01;32 # executable file
 .o 00;31
 .obj 00;31
 .pyc 00;31
+.pyo 00;31
 .class 00;31
 .hi 00;31
