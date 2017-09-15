@@ -47,6 +47,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 let g:rust_recommended_style=0
+let g:python_recommended_style=0
 
 Plug 'junegunn/vim-plug'
 Plug 'godlygeek/tabular'
