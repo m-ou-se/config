@@ -1,0 +1,4 @@
+#!/bin/sh
+set -xe
+cd $(dirname "$0")/vim/plugged/YouCompleteMe
+python2 ./install.py --clang-completer --system-libclang --system-boost --racer-completer --tern-completer
