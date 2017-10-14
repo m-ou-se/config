@@ -81,6 +81,9 @@ if &term =~? "^rxvt-unicode"
 	set ttymouse=urxvt
 	set nottybuiltin
 	set term=$TERM
+	let &t_SI = "\<Esc>[6 q"
+	let &t_SR = "\<Esc>[4 q"
+	let &t_EI = "\<Esc>[2 q"
 endif
 
 Plug 'ctrlpvim/ctrlp.vim'
