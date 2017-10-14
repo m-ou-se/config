@@ -40,5 +40,9 @@
 [svn]
 	rmdir = true
 
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+	pushInsteadOf = git://github.com/
+
 [include]
 	path = ~/.gitconfig.local
