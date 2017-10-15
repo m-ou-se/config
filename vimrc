@@ -44,7 +44,7 @@ map! <F1> <Esc>
 
 syntax on
 colorscheme custom
-autocmd BufEnter,WinEnter * match IndentTab /^\t\+/
+autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
 filetype off
 call plug#begin('~/.vim/plugged')
