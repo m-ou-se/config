@@ -39,6 +39,8 @@ nnoremap <Leader>n :NERDTreeToggle<Cr>
 nnoremap <Leader>f :NERDTreeFind<Cr>
 noremap <MiddleMouse> <Nop>
 inoremap <MiddleMouse> <Nop>
+map <F1> <Esc>
+map! <F1> <Esc>
 
 syntax on
 colorscheme custom
