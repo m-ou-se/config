@@ -17,6 +17,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+function fvim {
+	vim +Find!\ "$*"
+}
+
 alias ..='cd ..'
 
 [ -e "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"
