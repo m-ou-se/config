@@ -87,3 +87,11 @@ case "$shell" in
 		fi
 		;;
 esac
+
+if ! command -v rg > /dev/null; then
+	echo "Consider installing ripgrep: cargo install ripgrep"
+fi
+
+if ! command -v fzf > /dev/null; then
+	echo "Consider installing fzf (fuzzy finding in zsh, bash, vim, etc.)"
+fi
