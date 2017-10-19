@@ -79,6 +79,18 @@ Plug 'eagletmt/neco-ghc'
 Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
 
+Plug 'junegunn/fzf.vim'
+nmap <C-P> :Files<CR>
+imap <C-P> <plug>(fzf-complete-path)
+
+if executable('rg')
+	command! -bang -nargs=* Find call fzf#vim#grep(
+		\'rg --smart-case --column --line-number --no-heading --follow --color "always" '.shellescape(<q-args>),
+		\1, fzf#vim#with_preview('right:50%', '?'), <bang>0)
+	nmap <C-K> :Find 
+	set grepprg=rg\ --vimgrep
+endif
+
 if &term =~? "^rxvt-unicode"
 	set ttymouse=urxvt
 	set nottybuiltin
@@ -87,10 +99,6 @@ if &term =~? "^rxvt-unicode"
 	let &t_SR = "\<Esc>[4 q"
 	let &t_EI = "\<Esc>[2 q"
 endif
-
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_extensions = ['mixed', 'line']
-let g:ctrlp_cmd = 'CtrlPMixed'
 
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_keys = 'asghlqwertyuiopzxcvbnmdkfj'
