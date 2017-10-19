@@ -80,8 +80,8 @@ Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
 
 Plug 'junegunn/fzf.vim'
-nmap <C-P> :Files<CR>
-imap <C-P> <plug>(fzf-complete-path)
+nmap <C-p> :Files<CR>
+imap <C-x><C-p> <plug>(fzf-complete-path)
 
 if executable('rg')
 	command! -bang -nargs=* Find call fzf#vim#grep(
