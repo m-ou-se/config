@@ -89,7 +89,7 @@ case "$shell" in
 esac
 
 if ! command -v rg > /dev/null; then
-	echo "Consider installing ripgrep: cargo install ripgrep"
+	echo "Consider installing ripgrep"
 fi
 
 if ! command -v fzf > /dev/null; then
