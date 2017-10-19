@@ -130,5 +130,7 @@ if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
 	ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
 fi
 
+try_source "/usr/share/fzf/key-bindings.zsh"
+
 # Include a local zshrc
 try_source "$HOME/.zshrc.local"
