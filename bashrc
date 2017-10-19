@@ -40,4 +40,7 @@ function update_ps1 {
 
 PROMPT_COMMAND=update_ps1
 
+try_source /usr/share/fzf/key-bindings.bash
+try_source /usr/share/fzf/completion.bash
+
 [ -f $HOME/.bashrc.local ] && source $HOME/.bashrc.local
