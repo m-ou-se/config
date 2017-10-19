@@ -47,6 +47,8 @@ syntax on
 colorscheme custom
 autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
+autocmd BufRead,BufNewFile Cargo.toml,*.rs compiler cargo
+
 filetype off
 call plug#begin('~/.vim/plugged')
 
