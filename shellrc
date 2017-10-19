@@ -90,8 +90,6 @@ GIT_PS1_SHOWUPSTREAM=(auto verbose)
 source "$config_dir/git-prompt.sh"
 source "$HOME/.config/config_dir/git-prompt-path.sh"
 
-export FZF_DEFAULT_COMMAND='rg --files --follow'
-
 try_source "$HOME/.shellrc.local"
 
 # vi: ft=sh

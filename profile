@@ -27,6 +27,8 @@ export EDITOR=vim
 export PAGER=less
 export MANPAGER=vimpager
 
+export FZF_DEFAULT_COMMAND='rg --files --follow'
+
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 [ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
