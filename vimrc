@@ -41,6 +41,7 @@ noremap <MiddleMouse> <Nop>
 inoremap <MiddleMouse> <Nop>
 map <F1> <Esc>
 map! <F1> <Esc>
+nmap <F8> :terminal ++curwin<Cr>
 
 syntax on
 colorscheme custom
