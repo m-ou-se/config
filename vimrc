@@ -81,6 +81,7 @@ Plug 'lukerandall/haskellmode-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-commentary'
 
 Plug 'junegunn/fzf.vim'
 nmap <C-p> :Files<CR>
