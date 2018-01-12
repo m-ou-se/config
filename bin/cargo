@@ -1,13 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 subcommand="$1"
 shift 1
 
-if command -v rustup > /dev/null; then
-	cargo="$(rustup which cargo)"
-	(($? == 0)) || exit 1
-else
+cargo="$(rustup which cargo)"
+if [[ $? -ne 0 ]]; then
 	cargo="$(command -pv cargo)"
-	(($? == 0)) || exit 1
+	[[ $? -ne 0 ]] && exit 1
 fi
 
 case "$subcommand" in
