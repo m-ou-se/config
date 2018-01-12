@@ -10,7 +10,7 @@ fi
 
 case "$subcommand" in
 	test|build|check)
-		exec "$cargo" "$subcommand" --color always "$@" 2>&1 | LESS="${LESS-RFX}" ${PAGER-less};;
+		exec "$cargo" "$subcommand" --color always "$@" |& LESS="${LESS-RFX}" ${PAGER-less};;
 	*) exec "$cargo" "$subcommand" "$@";;
 esac
 
