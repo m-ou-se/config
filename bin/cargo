@@ -1,0 +1,18 @@
+#!/bin/sh
+subcommand="$1"
+shift 1
+
+if command -v rustup > /dev/null; then
+	cargo="$(rustup which cargo)"
+	(($? == 0)) || exit 1
+else
+	cargo="$(command -pv cargo)"
+	(($? == 0)) || exit 1
+fi
+
+case "$subcommand" in
+	test|build|check)
+		exec "$cargo" "$subcommand" --color always "$@" 2>&1 | LESS="${LESS-RFX}" ${PAGER-less};;
+	*) exec "$cargo" "$subcommand" "$@";;
+esac
+
