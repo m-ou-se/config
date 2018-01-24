@@ -118,7 +118,7 @@ function git_prompt_path {
 	[[ "$p" != "/" ]] && p="${p%/}"
 
 	local result=''
-	local exclude=''
+	local exclude=()
 	# Iterate over the path components from right to left.
 	while true; do
 		local name="${p##*/}"
@@ -137,7 +137,7 @@ function git_prompt_path {
 
 		# Show short git status.
 		info="$info$(
-			st=$'\n'"$(git -C "$pp" status --porcelain . "$exclude" 2>/dev/null)"
+			st=$'\n'"$(git -C "$pp" status --porcelain . "${exclude[@]}" 2>/dev/null)"
 			[[ "$st" =~ [$'\n'].[A-Z] ]] && echo -n '*';
 			[[ "$st" =~ [$'\n'][A-Z]  ]] && echo -n '+';
 			[[ "$st" =~ [$'\n'][?]    ]] && echo -n "%${ZSH_VERSION+%}";
@@ -148,7 +148,7 @@ function git_prompt_path {
 		result="$(printf "$format" "$name" "$info")$result"
 
 		# Ignore already reported changes in the next iteration.
-		exclude=":(exclude)$name/*"
+		exclude=(":(exclude)$name/*")
 
 		# Pop the last path component, or break if we're at '/' or something without any slash.
 		[[ "$p" = '/' ]] && break
