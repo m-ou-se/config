@@ -81,6 +81,7 @@ Plug 'lukerandall/haskellmode-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
 
 Plug 'junegunn/fzf.vim'
