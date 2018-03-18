@@ -83,6 +83,7 @@ Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'junegunn/fzf.vim'
 nmap <C-p> :Files<CR>
