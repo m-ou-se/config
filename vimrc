@@ -136,7 +136,7 @@ let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
 
-if has('python')
+if has('python3')
 
 	Plug 'vim-scripts/UltiSnips'
 	let g:UltiSnipsSnippetDirectories=["ultisnips"]
