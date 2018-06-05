@@ -25,6 +25,9 @@
 	default = upstream
 	followTags = true
 
+[transfer]
+fsckObjects = true
+
 [rebase]
 	autoSquash = true
 
