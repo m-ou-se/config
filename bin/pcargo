@@ -1,0 +1,11 @@
+#!/bin/bash
+subcommand="$1"
+shift 1
+
+cargo="$(rustup which cargo)"
+if [[ $? -ne 0 ]]; then
+	cargo="$(command -pv cargo)"
+	[[ $? -ne 0 ]] && exit 1
+fi
+
+exec "$cargo" "$subcommand" --color always "$@" |& LESS="${LESS-RFX}" ${PAGER-less}
