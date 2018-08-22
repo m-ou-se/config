@@ -40,6 +40,8 @@ setopt prompt_subst
 setopt hist_ignore_dups
 unsetopt beep
 
+WORDCHARS=${WORDCHARS/\/}
+
 try_source "$HOME/.config/config_dir/zsh-fix-keys"
 
 autoload colors
