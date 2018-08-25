@@ -9,8 +9,8 @@ set cindent
 set laststatus=2
 set list
 set listchars=tab:›─,trail:␣,extends:▶,precedes:◀
-set cinkeys=0{,0},0),o,O,!^F
-set cino=g0,Ls,N-s,(s,U1,m1,j1,J1,#1,l1
+set cinkeys=0},0),0],o,O,!^F
+set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
 set mouse=a
 set nowrap
