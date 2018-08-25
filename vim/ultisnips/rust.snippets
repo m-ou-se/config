@@ -12,24 +12,24 @@ endsnippet
 
 snippet deref
 impl std::ops::Deref for ${1:Type} {
-	type Target = ${2:Type2};
+	type Target = ${2:T};
 	fn deref(&self) -> &Self::Target {
-		${3:self.${4:0}}
+		${3:&${4:self.${5:0}}}
 	}
 }
 endsnippet
 
 snippet derefmut
 impl std::ops::DerefMut for ${1:Type} {
-	fn deref_mut(&mut self) -> &mut Self::Target {
-		${3:self.${4:0}}
+	fn deref_mut(&mut self) -> &mut <Self as std::ops::Deref>::Target {
+		${3:&mut ${4:self.${5:0}}}
 	}
 }
 endsnippet
 
 snippet debug
-impl fmt::Debug for ${1:Type} {
-	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result<(), fmt::Error> {
+impl std::fmt::Debug for ${1:Type} {
+	fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
 		write!(f, "${2:\{\}}"${3:, ${4:self.${5:foo}}})
 	}
 }
