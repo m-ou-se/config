@@ -17,7 +17,7 @@ set nowrap
 set colorcolumn=+1
 set showcmd
 set hlsearch
-set nrformats=octal,hex,alpha
+set nrformats=bin,hex,alpha
 set updatetime=500
 set timeoutlen=300
 set ttimeoutlen=50
