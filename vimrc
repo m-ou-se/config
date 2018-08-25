@@ -24,7 +24,11 @@ set ttimeoutlen=50
 set foldmethod=marker
 set history=200
 set viminfo='100,s10,h,%
-set statusline=%<%f\ %h%w%m%r\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}%=%-14.(%4l/%L,%c%V%)\ %P
+set statusline=%<%f\ %h%w%m%r\ 
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
+set statusline+=%=
+set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
+set statusline+=%-14.(%4l/%L,%c%V%)\ %P
 set guioptions=ac
 set wildmenu
 set nojoinspaces
@@ -83,6 +87,7 @@ Plug 'vim-scripts/ShowMarks'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'junegunn/fzf.vim'
@@ -168,4 +173,3 @@ call plug#end()
 
 filetype plugin on
 filetype indent on
-autocmd FileType cmake setlocal noexpandtab
