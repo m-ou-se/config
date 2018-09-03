@@ -1,6 +1,6 @@
 set nocompatible
 set number
-set shiftwidth=4
+set shiftwidth=0
 set tabstop=4
 set softtabstop=-1
 set autoindent
