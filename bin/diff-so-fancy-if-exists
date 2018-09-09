@@ -1,0 +1,6 @@
+#!/bin/sh
+if command -v diff-so-fancy > /dev/null; then
+	exec diff-so-fancy
+else
+	exec cat
+fi

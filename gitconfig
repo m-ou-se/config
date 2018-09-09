@@ -20,6 +20,7 @@
 [core]
 	excludesfile = ~/.config/config_dir/gitignore
 	whitespace = space-before-tab
+	pager = "diff-so-fancy-if-exists | less --tabs=4 -RFX"
 
 [push]
 	default = upstream
@@ -46,6 +47,17 @@ fsckObjects = true
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 	pushInsteadOf = git://github.com/
+
+[color.diff-highlight]
+	oldNormal = "red"
+	newNormal = "green"
+	oldHighlight = "red 52 bold"
+	newHighlight = "green 22 bold"
+
+[color.diff]
+	meta = "yellow"
+	frag = "magenta bold"
+	commit = "yellow bold"
 
 [include]
 	path = ~/.gitconfig.local
