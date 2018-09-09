@@ -46,6 +46,7 @@ inoremap <MiddleMouse> <Nop>
 map <F1> <Esc>
 map! <F1> <Esc>
 nmap <F8> :terminal ++curwin<Cr>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 syntax on
 colorscheme custom
