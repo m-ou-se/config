@@ -8,8 +8,8 @@ fi
 
 alias lla='ls -alF --group-directories-first'
 alias ll='ls -lF --group-directories-first'
-alias la='ls -A'
-alias l='ls -CF'
+alias la='ls -A --group-directories-first'
+alias l='ls -CF --group-directories-first'
 
 alias clip='xclip -i -selection clipboard'
 
