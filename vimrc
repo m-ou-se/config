@@ -54,43 +54,61 @@ autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
 autocmd BufRead,BufNewFile Cargo.toml,*.rs compiler cargo
 
-filetype off
-call plug#begin('~/.vim/plugged')
-
 let g:rust_recommended_style=0
 let g:python_recommended_style=0
 
-Plug 'Shougo/vimproc.vim'
-Plug 'bkad/CamelCaseMotion'
-Plug 'cespare/vim-toml'
-Plug 'de-vri-es/vim-urscript'
-Plug 'eagletmt/neco-ghc'
-Plug 'godlygeek/tabular'
-Plug 'groenewege/vim-less'
-Plug 'guns/xterm-color-table.vim'
-Plug 'hallison/vim-markdown'
-Plug 'junegunn/vim-plug'
-Plug 'leafgarland/typescript-vim'
-Plug 'lukerandall/haskellmode-vim'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/JSON.vim'
-Plug 'vim-scripts/Rename2'
-Plug 'vim-scripts/ShowMarks'
-Plug 'vim-scripts/The-NERD-tree'
-Plug 'vim-scripts/VisIncr'
-Plug 'vim-scripts/django.vim'
-Plug 'vim-scripts/glsl.vim'
-Plug 'vim-scripts/jade.vim'
-Plug 'vim-scripts/openscad.vim'
-Plug 'vim-scripts/vis'
+let g:plug_extra = []
+command -nargs=1 Plug call add(g:plug_extra, '<args>')
 
-Plug 'junegunn/fzf.vim'
+function! PackInit() abort
+	packadd minpac
+	call minpac#init()
+	call minpac#add('Shougo/vimproc.vim')
+	call minpac#add('bkad/CamelCaseMotion')
+	call minpac#add('cespare/vim-toml')
+	call minpac#add('de-vri-es/vim-urscript')
+	call minpac#add('eagletmt/neco-ghc')
+	call minpac#add('easymotion/vim-easymotion')
+	call minpac#add('godlygeek/tabular')
+	call minpac#add('groenewege/vim-less')
+	call minpac#add('guns/xterm-color-table.vim')
+	call minpac#add('hallison/vim-markdown')
+	call minpac#add('haya14busa/incsearch.vim')
+	call minpac#add('junegunn/fzf.vim')
+	call minpac#add('junegunn/vim-easy-align')
+	call minpac#add('leafgarland/typescript-vim')
+	call minpac#add('lukerandall/haskellmode-vim')
+	call minpac#add('rust-lang/rust.vim')
+	call minpac#add('terryma/vim-multiple-cursors')
+	call minpac#add('tpope/vim-commentary')
+	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('tpope/vim-repeat')
+	call minpac#add('tpope/vim-sleuth')
+	call minpac#add('tpope/vim-speeddating')
+	call minpac#add('tpope/vim-surround')
+	call minpac#add('vim-scripts/JSON.vim')
+	call minpac#add('vim-scripts/Rename2')
+	call minpac#add('vim-scripts/ShowMarks')
+	call minpac#add('vim-scripts/The-NERD-tree')
+	call minpac#add('vim-scripts/VisIncr')
+	call minpac#add('vim-scripts/django.vim')
+	call minpac#add('vim-scripts/glsl.vim')
+	call minpac#add('vim-scripts/jade.vim')
+	call minpac#add('vim-scripts/openscad.vim')
+	call minpac#add('vim-scripts/vis')
+	if has('python3')
+		call minpac#add('vim-scripts/UltiSnips')
+		call minpac#add('Valloric/YouCompleteMe')
+	endif
+	for i in g:plug_extra
+		call minpac#add(i)
+	endfor
+endfunction
+
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
+
 nmap <C-p> :Files<CR>
 imap <C-x><C-p> <plug>(fzf-complete-path)
 
@@ -111,7 +129,6 @@ if &term =~? "^rxvt-unicode"
 	let &t_EI = "\<Esc>[2 q"
 endif
 
-Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_keys = 'asghlqwertyuiopzxcvbnmdkfj'
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_prompt = '{n}/'
@@ -120,16 +137,13 @@ let g:EasyMotion_verbose = 0
 nmap s <Plug>(easymotion-s)
 nmap S <Plug>(easymotion-sn)
 
-Plug 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
-Plug 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 let g:easy_align_delimiters = {
@@ -141,35 +155,25 @@ let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
 
-if has('python3')
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
+let g:UltiSnipsExpandTrigger="<c-space>"
+xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-	Plug 'vim-scripts/UltiSnips'
-	let g:UltiSnipsSnippetDirectories=["ultisnips"]
-	let g:UltiSnipsExpandTrigger="<c-space>"
-	xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
-	let g:UltiSnipsJumpForwardTrigger="<tab>"
-	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-	if v:version > 703
-		Plug 'Valloric/YouCompleteMe'
-		nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
-		nnoremap <Leader>i <Esc>:YcmCompleter FixIt<CR>:cclose<CR>
-		let g:ycm_key_list_select_completion = ['<Down>']
-		let g:ycm_key_list_previous_completion = ['<Up>']
-		let g:ycm_allow_changing_updatetime=0
-		set completeopt-=preview
-		let g:ycm_add_preview_to_completeopt=0
-		let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
-		let g:ycm_semantic_triggers={'haskell' : ['.']}
-	endif
-
-endif
+nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
+nnoremap <Leader>i <Esc>:YcmCompleter FixIt<CR>:cclose<CR>
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_allow_changing_updatetime=0
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_global_ycm_extra_conf = '~/.vim/default_ycm_extra_conf.py'
+let g:ycm_semantic_triggers={'haskell' : ['.']}
 
 if filereadable($HOME . "/.vimrc.local")
 	source ~/.vimrc.local
 endif
-
-call plug#end()
 
 filetype plugin on
 filetype indent on

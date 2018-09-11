@@ -66,10 +66,10 @@ do
 done
 
 # Install vundle.
-if [ ! -d "vim/plugged/vim-plug" ]; then
-	git clone --depth 1 https://github.com/junegunn/vim-plug.git "vim/plugged/vim-plug"
+if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
+	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
 fi
-vim +PlugClean +PlugUpdate +qall
+vim +PackClean +PackUpdate +qall
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
