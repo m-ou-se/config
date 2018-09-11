@@ -58,7 +58,7 @@ let g:rust_recommended_style=0
 let g:python_recommended_style=0
 
 let g:plug_extra = []
-command -nargs=1 Plug call add(g:plug_extra, '<args>')
+command -nargs=1 Plug call add(g:plug_extra, <args>)
 
 function! PackInit() abort
 	packadd minpac
