@@ -63,14 +63,11 @@ impl Clone for ${1:Type} {
 endsnippet
 
 snippet error
-impl std::error::Error for ${1:Type} {
-	fn description(&self) -> &str {
-		${2:"${3:$1}"}
-	}${4:
+impl std::error::Error for ${1:Type} {${2:
 	fn cause(&self) -> Option<&Error> \{
 		${5:Some(${6:self.${7:foo}})}
-	\}}
-}
+	\}
+}}
 endsnippet
 
 snippet from
