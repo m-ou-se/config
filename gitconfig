@@ -52,6 +52,8 @@
 	newHighlight = "green 22 bold"
 
 [color.diff]
+	old = "red bold"
+	new = "green bold"
 	meta = "yellow"
 	frag = "magenta bold"
 	commit = "yellow bold"
