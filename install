@@ -47,6 +47,13 @@ elif [ ! -d "$HOME/.config" ]; then
 	exit 1
 fi
 
+if [ ! -e "$HOME/.config/nvim" ]; then
+	ln -s config_dir/vim "$HOME/.config/nvim"
+elif [ "$(readlink "$HOME/.config/nvim")" != "config_dir/vim" ]; then
+	echo "$HOME/.config/nvim exists but is not a symlink to config_dir/vim" 1>&2
+	exit 1
+fi
+
 if [ ! -e "$HOME/.config/config_dir" ]; then
 	ln -s "$config_dir_prefix$config_dir" "$HOME/.config/config_dir"
 elif [ "$(readlink "$HOME/.config/config_dir")" != "$config_dir_prefix$config_dir" ]; then
