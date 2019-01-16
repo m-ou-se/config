@@ -37,8 +37,8 @@ let g:c_no_curly_error=1
 nnoremap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
-nnoremap <silent> <Leader>S vip:<C-R>=exists(':RustFmtRange')==2?'RustFmtRange':'sort'<Cr><Cr>
-vnoremap <silent> <Leader>S :<C-R>=exists(':RustFmtRange')==2?'RustFmtRange':'sort'<Cr><Cr>gv
+nnoremap <silent> <Leader>S vip:sort<Cr>
+vnoremap <silent> <Leader>S :sort<Cr>gv
 nnoremap <Leader>n :NERDTreeToggle<Cr>
 nnoremap <Leader>f :NERDTreeFind<Cr>
 noremap <MiddleMouse> <Nop>
