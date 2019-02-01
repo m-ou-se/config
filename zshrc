@@ -20,6 +20,7 @@ zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename "$HOME/.zshrc"
 
+fpath+=("$HOME/.local/share/zsh/site-functions")
 autoload -Uz compinit
 compinit
 
