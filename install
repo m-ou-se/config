@@ -33,6 +33,12 @@ install_file() {
 	ln -s "$config_dir/$1" "$HOME/$2"
 }
 
+ask() {
+	read -n 1 -r -p "$1 (y/N)"
+	echo
+	[[ $REPLY = "Y" || $REPLY = "y" ]]
+}
+
 # Check for required tools.
 required_commands="git vim"
 if ! check_commands $required_commands; then
@@ -89,8 +95,7 @@ case "$shell" in
 	*)
 		zshell=$(grep '/zsh$' /etc/shells | head -n1)
 		if [ -n "$zshell" ]; then
-			echo "Changing shell to $zshell. ^C to keep $shell."
-			chsh -s "$zshell"
+			ask "Change shell to zsh?" && chsh -s "$zshell"
 		fi
 		;;
 esac
