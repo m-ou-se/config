@@ -4,6 +4,8 @@ bindkey -e
 bindkey '^[[Z' reverse-menu-complete
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 bindkey -s '^[Oo' '/'
 bindkey -s '^[Oj' '*'
 bindkey -s '^[Om' '-'
