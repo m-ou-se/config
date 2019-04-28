@@ -33,6 +33,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 setopt appendhistory
+setopt histignorespace
 setopt auto_pushd
 setopt extendedglob
 setopt notify
