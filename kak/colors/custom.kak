@@ -2,9 +2,9 @@
 
 # For Code
 face global value red
-face global type yellow
+face global type default
 face global variable default
-face global module green
+face global module magenta
 face global function cyan
 face global string red
 face global keyword yellow
