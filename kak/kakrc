@@ -21,6 +21,7 @@ eval %sh{
 
 hook global WinSetOption filetype=rust %{
 	add-highlighter shared/rust/code/arithmetic_operator regex \b[-+*/%&]|<<|>>\b 0:operator
+	set-option buffer makecmd cargo
 }
 
 hook global ModuleLoaded "x11" %{
