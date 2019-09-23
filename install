@@ -3,6 +3,8 @@
 cd $(dirname "$0")
 config_dir="${PWD##$HOME/}"
 
+git submodule update --init --recursive
+
 # Check if the config_dir is relative to $HOME or not.
 config_dir_prefix=""
 [ "$config_dir" != "$PWD" ] && config_dir_prefix="../"
@@ -53,10 +55,17 @@ elif [ ! -d "$HOME/.config" ]; then
 	exit 1
 fi
 
+if [ ! -e "$HOME/.config/kak" ]; then
+	ln -s config_dir/kak "$HOME/.config/kak"
+elif [ "$(readlink "$HOME/.config/kak")" != "config_dir/kak" ]; then
+	echo "$HOME/.config/kak exists but is not the correct symlink. Please move or remove it." 1>&2
+	exit 1
+fi
+
 if [ ! -e "$HOME/.config/nvim" ]; then
 	ln -s config_dir/vim "$HOME/.config/nvim"
 elif [ "$(readlink "$HOME/.config/nvim")" != "config_dir/vim" ]; then
-	echo "$HOME/.config/nvim exists but is not a symlink to config_dir/vim" 1>&2
+	echo "$HOME/.config/nvim exists but is not the correct symlink. Please move or remove it." 1>&2
 	exit 1
 fi
 
@@ -79,6 +88,7 @@ do
 done
 
 # Install vundle.
+echo "Installing/updating vim plugins."
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
 	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
 fi
@@ -101,13 +111,19 @@ case "$shell" in
 esac
 
 if ! command -v rg > /dev/null; then
-	echo "Consider installing ripgrep"
+	echo "Consider installing ripgrep."
 fi
 
 if ! command -v fzf > /dev/null; then
-	echo "Consider installing fzf (fuzzy finding in zsh, bash, vim, etc.)"
+	echo "Consider installing fzf (fuzzy finding in zsh, bash, vim, etc.)."
 fi
 
 if ! command -v diff-so-fancy > /dev/null; then
-	echo "Consider installing diff-so-fancy (prettier diff/patch outputs in git)"
+	echo "Consider installing diff-so-fancy (prettier diff/patch outputs in git)."
 fi
+
+if ! command -v kak-lsp > /dev/null; then
+	echo "Consider installing kak-lsp."
+fi
+
+echo "Configuration installed."
