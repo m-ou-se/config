@@ -1,0 +1,3 @@
+[submodule "kak/plugins/kakoune-surround"]
+	path = kak/plugins/kakoune-surround
+	url = https://github.com/h-youhei/kakoune-surround

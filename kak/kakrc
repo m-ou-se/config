@@ -1,0 +1,38 @@
+set-option global tabstop 4
+set-option global indentwidth 0
+add-highlighter global/ show-whitespaces -tab '›' -tabpad '─' -lf ' ' -spc ' ' -nbsp ' '
+add-highlighter global/ regex ' +$' 0:TrailingWhitespace
+add-highlighter global/ number-lines -hlcursor
+
+face global TrailingWhitespace yellow,default+f@Whitespace   
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+	lsp-enable-window
+}
+
+hook global WinSetOption filetype=rust %{
+	add-highlighter shared/rust/code/arithmetic_operator regex \b[-+*/%&]|<<|>>\b 0:operator
+}
+
+hook global ModuleLoaded "x11" %{
+	set-option global termcmd 'urxvt -e zsh -ic'
+}
+
+# Also copy things to X clipboard.
+hook global NormalKey y|d|c %{ nop %sh{
+	printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
+
+# Paste from X clipboard with ,p and ,P
+map global user p -docstring 'paste from X clipboard' '<a-!>xsel --output --clipboard<ret>'
+map global user P -docstring 'paste after from X clipboard' '!xsel --output --clipboard<ret>'
+
+source "%val{config}/plugins/kakoune-surround/surround.kak"
+declare-user-mode surround
+map global user s -docstring 'surround' ':enter-user-mode surround<ret>'
+map global surround s -docstring 'add surrounding' ':surround<ret>'
+map global surround c ':change-surround<ret>'
+map global surround d ':delete-surround<ret>'
+
+colorscheme custom   
