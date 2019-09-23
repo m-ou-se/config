@@ -36,7 +36,7 @@ face global SecondaryCursorEol black,cyan+fg
 face global MenuForeground white,blue
 face global MenuBackground blue,white
 face global MenuInfo cyan
-face global Information black,yellow
+face global Information rgb:999099,rgb:330044
 face global Error black,red+fg
 face global StatusLine cyan,rgb:111111
 face global StatusLineMode yellow,default
