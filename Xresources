@@ -13,9 +13,11 @@ URxvt.iso14755:             false
 URxvt.pointerBlank:         true
 URxvt.pointerBlankDelay:    987654321
 
+URxvt.searchable-scrollback:  M-Shift-a
 URxvt.perl-ext-common:        default,clipboard,url-select,keyboard-select,resize-font
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.M-a:             builtin-string:
 URxvt.keysym.M-u:             perl:url-select:select_next
 URxvt.keysym.M-Escape:        perl:keyboard-select:activate
 URxvt.keysym.C-0:             resize-font:reset
