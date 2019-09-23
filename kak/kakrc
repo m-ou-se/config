@@ -6,9 +6,17 @@ add-highlighter global/ number-lines -hlcursor
 
 face global TrailingWhitespace yellow,default+f@Whitespace   
 
-eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
-	lsp-enable-window
+eval %sh{
+	command -v kak-lsp > /dev/null || exit
+	kak-lsp --kakoune -s "$kak_session"
+	cat <<-EOF
+	lsp-auto-hover-enable
+	set global lsp_hover_anchor true
+	hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+		lsp-enable-window
+	}
+	map global user l -docstring 'language server' ':enter-user-mode lsp<ret>'
+	EOF
 }
 
 hook global WinSetOption filetype=rust %{
