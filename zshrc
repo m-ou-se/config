@@ -77,7 +77,7 @@ function count_hidden_files {
 function chpwd {
 	local count=$(count_files)
 	local hidden=$(count_hidden_files)
-	[ "$count" -le 50 ] && ls --group-directories-first -CF --color=always
+	[ "$count" -le 50 ] && ls --group-directories-first -F --color=always
 	echo "Files: $count, hidden: $hidden"
 }
 
