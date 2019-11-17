@@ -54,6 +54,15 @@ if test_command dircolors; then
     test -r "$config_dir/dircolors" && eval "$(dircolors -b "$config_dir/dircolors")" || eval "$(dircolors -b)"
 fi
 
+# Set up additional colors for EXA.
+EXA_COLORS="uu=0:gu=0:un=33:gn=33"
+EXA_COLORS="${EXA_COLORS}:lp=34;1"
+EXA_COLORS="${EXA_COLORS}:ur=33:gr=33:tr=33"
+EXA_COLORS="${EXA_COLORS}:uw=31:gw=31:tw=32"
+EXA_COLORS="${EXA_COLORS}:ue=32:gx=32:tx=32"
+EXA_COLORS="${EXA_COLORS}:ux=32;1"
+export EXA_COLORS
+
 # Enable viewing non-text files in less.
 test_command lesspipe && eval "$(SHELL=/bin/sh lesspipe)"
 
