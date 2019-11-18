@@ -54,27 +54,6 @@ if test_command dircolors; then
     test -r "$config_dir/dircolors" && eval "$(dircolors -b "$config_dir/dircolors")" || eval "$(dircolors -b)"
 fi
 
-# READMEs and licenses
-LS_COLORS="${LS_COLORS}:README=33:README.*=33"
-LS_COLORS="${LS_COLORS}:LICENSE=33:LICENSE.*=33"
-LS_COLORS="${LS_COLORS}:COPYING=33:COPYING.*=33"
-LS_COLORS="${LS_COLORS}:COPYING.LESSER=33:COPYING.LESSER.*=33"
-
-# Build definition files (overrides exa defaults)
-LS_COLORS="${LS_COLORS}:Makefile=33;1"
-LS_COLORS="${LS_COLORS}:Cargo.toml=33;1"
-LS_COLORS="${LS_COLORS}:SConstruct=33;1"
-LS_COLORS="${LS_COLORS}:CMakeLists.txt=33;1"
-LS_COLORS="${LS_COLORS}:build.gradle=33;1"
-LS_COLORS="${LS_COLORS}:Rakefile=33;1"
-LS_COLORS="${LS_COLORS}:Gruntfile.js=33;1"
-LS_COLORS="${LS_COLORS}:Gruntfile.coffee=33;1"
-LS_COLORS="${LS_COLORS}:BUILD=33;1"
-LS_COLORS="${LS_COLORS}:BUILD.bazel=33;1"
-LS_COLORS="${LS_COLORS}:WORKSPACE=33;1"
-LS_COLORS="${LS_COLORS}:build.xml=33;1"
-LS_COLORS="${LS_COLORS}:package.xml=33;1"
-
 # Set up additional colors for EXA.
 EXA_COLORS="uu=0:gu=0:un=33:gn=33"
 EXA_COLORS="${EXA_COLORS}:lp=34;1"
