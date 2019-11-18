@@ -111,3 +111,7 @@ fi
 if ! command -v diff-so-fancy > /dev/null; then
 	echo "Consider installing diff-so-fancy (prettier diff/patch outputs in git)"
 fi
+
+if ! command -v exa > /dev/null; then
+	echo "Consider installing exa (a better ls)"
+fi
