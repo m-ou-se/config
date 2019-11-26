@@ -1,5 +1,6 @@
 if test_command exa; then
 	alias ls='exa --git -g'
+	alias tree='exa --tree -g'
 elif test_command gnuls; then
 	alias ls='gnuls --color=auto'
 elif test_command gls; then
