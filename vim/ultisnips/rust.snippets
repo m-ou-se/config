@@ -86,23 +86,23 @@ impl Drop for ${1:Type} {
 }
 endsnippet
 
-snippet "der(i(ve?)?)?" "" r
+snippet "\bder(i(ve?)?)?" "" r
 #[derive(${1:${2:Clone${3:, Copy}}${4:, PartialEq, Eq${5:, PartialOrd, Ord}}${6:, Hash}${7:, Debug}})]
 endsnippet
 
-snippet "st(ruct?)?" "" r
+snippet "\bst(ruct?)?" "" r
 ${1:pub }struct ${2:Magic}${3: \{
 	$0
 \}}
 endsnippet
 
-snippet "en(um?)?" "" r
+snippet "\ben(um?)?" "" r
 ${1:pub }enum ${2:Magic} {
 	$0
 }
 endsnippet
 
-snippet "tr(a(it?)?)?" "" r
+snippet "\btr(a(it?)?)?" "" r
 ${1:pub }trait ${2:Magic} {
 	$0
 }
@@ -132,13 +132,13 @@ if ${1:1 + 1 == 2} {
 }
 endsnippet
 
-snippet "el(se?)?" "" r
+snippet "\bel(se?)?" "" r
  else {
 	$1
 }
 endsnippet
 
-snippet "el(se?)?if" "" r
+snippet "\bel(se?)?if" "" r
  else if ${1:1 + 1 == 2} {
 	$2
 }
@@ -157,23 +157,37 @@ fn ${1:do_magic}(${2:&self})${3: -> ${4:Result<${5:Value}, ${6:Error}>}}${7: \{
 \}}
 endsnippet
 
-snippet "[Ss]ome" "" rw
+snippet testmod
+#[cfg(test)]
+mod test {
+	$0
+}
+endsnippet
+
+snippet test
+#[test]
+fn test_${1:something}() {
+	$0
+}
+endsnippet
+
+snippet "\b[Ss]ome" "" rw
 Some(${VISUAL}${1})
 endsnippet
 
-snippet "[Ee]rr" "" rw
+snippet "\b[Ee]rr" "" rw
 Err(${VISUAL}${1})
 endsnippet
 
-snippet "[Oo]k" "" rw
+snippet "\b[Oo]k" "" rw
 Ok(${VISUAL}${1})
 endsnippet
 
-snippet "[Rr]esult" "" rw
+snippet "\b[Rr]esult" "" rw
 Result<${1:${VISUAL:Value}}, ${2:Error}>
 endsnippet
 
-snippet "[Oo]ption" "" rw
+snippet "\b[Oo]ption" "" rw
 Option<${1:${VISUAL:Value}}>
 endsnippet
 
