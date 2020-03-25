@@ -64,6 +64,7 @@ function! PackInit() abort
 	packadd minpac
 	call minpac#init()
 	call minpac#add('Shougo/vimproc.vim')
+	call minpac#add('Valloric/YouCompleteMe')
 	call minpac#add('bkad/CamelCaseMotion')
 	call minpac#add('easymotion/vim-easymotion')
 	call minpac#add('godlygeek/tabular')
@@ -81,12 +82,9 @@ function! PackInit() abort
 	call minpac#add('vim-scripts/Rename2')
 	call minpac#add('vim-scripts/ShowMarks')
 	call minpac#add('vim-scripts/The-NERD-tree')
+	call minpac#add('vim-scripts/UltiSnips')
 	call minpac#add('vim-scripts/VisIncr')
 	call minpac#add('vim-scripts/vis')
-	if has('python3')
-		call minpac#add('vim-scripts/UltiSnips')
-		call minpac#add('Valloric/YouCompleteMe')
-	endif
 	" File type / language support:
 	call minpac#add('vim-scripts/JSON.vim')
 	call minpac#add('vim-scripts/django.vim')
