@@ -9,9 +9,9 @@ endif
 let colors_name = "custom"
 
 " gitgutter
-hi GitGutterAdd    cterm=None ctermfg=Green
-hi GitGutterDelete cterm=None ctermfg=Red
-hi GitGutterChange cterm=None ctermfg=Yellow
+hi GitGutterAdd    cterm=None ctermfg=Green  ctermbg=233
+hi GitGutterDelete cterm=None ctermfg=Red    ctermbg=233
+hi GitGutterChange cterm=None ctermfg=Yellow ctermbg=233
 
 " Color terminal
 hi Cursor        cterm=none ctermbg=Black
