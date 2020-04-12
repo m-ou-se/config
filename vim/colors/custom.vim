@@ -8,6 +8,11 @@ endif
 
 let colors_name = "custom"
 
+" gitgutter
+hi GitGutterAdd    cterm=None ctermfg=Green
+hi GitGutterDelete cterm=None ctermfg=Red
+hi GitGutterChange cterm=None ctermfg=Yellow
+
 " Color terminal
 hi Cursor        cterm=none ctermbg=Black
 hi DiffAdd       cterm=none ctermbg=22

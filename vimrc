@@ -18,7 +18,7 @@ set colorcolumn=+1
 set showcmd
 set hlsearch
 set nrformats=bin,hex,alpha
-set updatetime=500
+set updatetime=100
 set timeoutlen=300
 set ttimeoutlen=50
 set foldmethod=marker
@@ -65,6 +65,7 @@ function! PackInit() abort
 	call minpac#init()
 	call minpac#add('Shougo/vimproc.vim')
 	call minpac#add('Valloric/YouCompleteMe')
+	call minpac#add('airblade/vim-gitgutter')
 	call minpac#add('bkad/CamelCaseMotion')
 	call minpac#add('easymotion/vim-easymotion')
 	call minpac#add('godlygeek/tabular')
@@ -128,6 +129,13 @@ if &term =~? "^rxvt-unicode"
 	let &t_SR = "\<Esc>[4 q"
 	let &t_EI = "\<Esc>[2 q"
 endif
+
+let g:gitgutter_sign_priority=0
+let g:gitgutter_sign_added='+'
+let g:gitgutter_sign_removed='-'
+let g:gitgutter_sign_removed_first_line='-↑'
+let g:gitgutter_sign_modified='*'
+let g:gitgutter_sign_modified_removed='*-'
 
 let g:EasyMotion_keys = 'asghlqwertyuiopzxcvbnmdkfj'
 let g:EasyMotion_enter_jump_first = 1
