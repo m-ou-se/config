@@ -53,6 +53,7 @@ colorscheme custom
 autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
 autocmd BufRead,BufNewFile Cargo.toml,*.rs compiler cargo
+autocmd! BufRead,BufNewFile *.md set filetype=markdown.pandoc
 
 let g:rust_recommended_style=0
 let g:python_recommended_style=0
@@ -92,6 +93,7 @@ function! PackInit() abort
 	call minpac#add('vim-scripts/glsl.vim')
 	call minpac#add('vim-scripts/jade.vim')
 	call minpac#add('vim-scripts/openscad.vim')
+	call minpac#add('vim-pandoc/vim-pandoc-syntax')
 	call minpac#add('cespare/vim-toml')
 	call minpac#add('de-vri-es/vim-urscript')
 	call minpac#add('eagletmt/neco-ghc')
