@@ -65,7 +65,6 @@ function! PackInit() abort
 	packadd minpac
 	call minpac#init()
 	call minpac#add('Shougo/vimproc.vim')
-	call minpac#add('Valloric/YouCompleteMe')
 	call minpac#add('airblade/vim-gitgutter')
 	call minpac#add('bkad/CamelCaseMotion')
 	call minpac#add('easymotion/vim-easymotion')
@@ -74,6 +73,7 @@ function! PackInit() abort
 	call minpac#add('haya14busa/incsearch.vim')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('junegunn/vim-easy-align')
+	call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 	call minpac#add('terryma/vim-multiple-cursors')
 	call minpac#add('tpope/vim-commentary')
 	call minpac#add('tpope/vim-fugitive')
