@@ -55,6 +55,9 @@ autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 autocmd BufRead,BufNewFile Cargo.toml,*.rs compiler cargo
 autocmd! BufRead,BufNewFile *.md set filetype=markdown.pandoc
 
+let g:pandoc#syntax#conceal#use=0
+let g:pandoc#syntax#codeblocks#embeds#langs = ["cpp", "sh", "rust"]
+
 let g:rust_recommended_style=0
 let g:python_recommended_style=0
 
