@@ -33,7 +33,7 @@ hi Pmenu         cterm=none ctermfg=Grey ctermbg=52
 hi PmenuSel      cterm=none ctermfg=White ctermbg=88
 hi Question      cterm=none ctermfg=DarkGreen
 hi Search        cterm=none ctermbg=Magenta ctermfg=White
-hi SpecialKey    cterm=bold ctermfg=DarkYellow
+hi SpecialKey    cterm=none ctermfg=DarkYellow
 hi StatusLineNC  cterm=none ctermfg=240 ctermbg=234
 hi StatusLine    cterm=bold ctermfg=250 ctermbg=234
 hi Title         cterm=none ctermfg=DarkMagenta
@@ -61,7 +61,6 @@ hi SpellBad      cterm=none ctermbg=88
 hi SpellCap      cterm=none ctermbg=94
 hi SpellRare     cterm=none ctermbg=54
 hi SpellLocal    cterm=none ctermbg=18
-hi Whitespace    cterm=bold ctermfg=DarkYellow
 
 " GUI
 hi Cursor        gui=none guibg=#aaaaaa
@@ -108,4 +107,3 @@ hi Special       gui=none guifg=#9933cc
 hi Statement     gui=none guifg=#cc9900
 hi Todo          gui=none guifg=#000000 guibg=#cc9900
 hi Type          gui=none guifg=#009900
-hi Whitespace    gui=none guifg=#cc9900
