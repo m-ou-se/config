@@ -29,6 +29,7 @@ set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
 set statusline+=%-14.(%4l/%L,%c%V%)\ %P
+set undofile
 set guioptions=ac
 set wildmenu
 set nojoinspaces
