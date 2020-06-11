@@ -102,7 +102,6 @@ function! PackInit() abort
 	call minpac#add('de-vri-es/vim-urscript')
 	call minpac#add('eagletmt/neco-ghc')
 	call minpac#add('guns/xterm-color-table.vim')
-	call minpac#add('hallison/vim-markdown')
 	call minpac#add('leafgarland/typescript-vim')
 	call minpac#add('lukerandall/haskellmode-vim')
 	call minpac#add('rust-lang/rust.vim')
