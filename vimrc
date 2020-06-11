@@ -29,6 +29,7 @@ set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
 set statusline+=%-14.(%4l/%L,%c%V%)\ %P
+set undofile
 set guioptions=ac
 set wildmenu
 set nojoinspaces
@@ -101,7 +102,6 @@ function! PackInit() abort
 	call minpac#add('de-vri-es/vim-urscript')
 	call minpac#add('eagletmt/neco-ghc')
 	call minpac#add('guns/xterm-color-table.vim')
-	call minpac#add('hallison/vim-markdown')
 	call minpac#add('leafgarland/typescript-vim')
 	call minpac#add('lukerandall/haskellmode-vim')
 	call minpac#add('rust-lang/rust.vim')
