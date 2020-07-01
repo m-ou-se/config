@@ -22,6 +22,12 @@
 	whitespace = space-before-tab
 	pager = "diff-so-fancy-if-exists | less --tabs=4 -RFX"
 
+[commit]
+	verbose = true
+
+[pull]
+	ff = only
+
 [push]
 	default = upstream
 	followTags = true
