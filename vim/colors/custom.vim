@@ -28,7 +28,7 @@ hi LineNr        cterm=none ctermfg=240 ctermbg=233
 hi MatchParen    cterm=bold ctermfg=White ctermbg=none
 hi ModeMsg       cterm=bold
 hi MoreMsg       cterm=none ctermfg=DarkGreen
-hi NonText       cterm=none ctermfg=Yellow
+hi NonText       cterm=none ctermfg=DarkYellow
 hi Pmenu         cterm=none ctermfg=Grey ctermbg=52
 hi PmenuSel      cterm=none ctermfg=White ctermbg=88
 hi Question      cterm=none ctermfg=DarkGreen

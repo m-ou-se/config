@@ -78,7 +78,7 @@ do
 	install_file "$file" ".$file"
 done
 
-# Install vundle.
+# Install minpack.
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
 	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
 fi
