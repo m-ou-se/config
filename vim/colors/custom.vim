@@ -18,6 +18,7 @@ hi GitGutterChange gui=none guifg=#ffff33 guibg=#121212
 
 " Color terminal
 hi Cursor        cterm=none ctermbg=Black
+hi CursorLine    cterm=none ctermbg=234
 hi DiffAdd       cterm=none ctermbg=22
 hi DiffChange    cterm=none ctermbg=17
 hi DiffDelete    cterm=none ctermbg=52 ctermfg=52
@@ -68,6 +69,7 @@ hi SpellLocal    cterm=none ctermbg=18
 " GUI
 hi Normal        gui=none guifg=#aaaaaa guibg=#000000
 hi Cursor        gui=none guibg=#aaaaaa
+hi CursorLine    gui=none guibg=#1c1c1c
 hi DiffAdd       gui=none guibg=#005f00
 hi DiffChange    gui=none guibg=#00005f
 hi DiffDelete    gui=none guibg=#5f0000 guifg=#5f0000
