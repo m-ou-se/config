@@ -1,5 +1,0 @@
-#!/bin/sh
-set -xe
-cd $(dirname "$0")/vim/pack/minpac/start/YouCompleteMe
-git submodule update --init --recursive
-python ./install.py --clang-completer --system-libclang --system-boost --rust-completer --ts-completer
