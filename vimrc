@@ -119,6 +119,8 @@ command! PackStatus call PackInit() | call minpac#status()
 nmap <C-p> :Files<CR>
 imap <C-x><C-p> <plug>(fzf-complete-path)
 
+source ~/.config/config_dir/vim/coc.vim
+
 if executable('rg')
 	command! -bang -nargs=* Find call fzf#vim#grep(
 		\'rg --smart-case --column --line-number --no-heading --follow --color "always" '.shellescape(<q-args>),

@@ -61,6 +61,7 @@ hi SpellBad      cterm=none ctermbg=88
 hi SpellCap      cterm=none ctermbg=94
 hi SpellRare     cterm=none ctermbg=54
 hi SpellLocal    cterm=none ctermbg=18
+hi CocHighlightText ctermbg=238
 
 " GUI
 hi Cursor        gui=none guibg=#aaaaaa
@@ -107,3 +108,4 @@ hi Special       gui=none guifg=#9933cc
 hi Statement     gui=none guifg=#cc9900
 hi Todo          gui=none guifg=#000000 guibg=#cc9900
 hi Type          gui=none guifg=#009900
+hi CocHighlightText guibg=#444444
