@@ -2,4 +2,5 @@
 	"rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
 	"rust-analyzer.updates.channel": "nightly",
 	"rust-analyzer.procMacro.enable": true,
+	"rust-analyzer.inlayHints.chainingHints": false,
 }
