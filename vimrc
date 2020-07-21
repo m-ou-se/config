@@ -90,7 +90,6 @@ function! PackInit() abort
 	call minpac#add('vim-scripts/Rename2')
 	call minpac#add('vim-scripts/ShowMarks')
 	call minpac#add('vim-scripts/The-NERD-tree')
-	call minpac#add('vim-scripts/UltiSnips')
 	call minpac#add('vim-scripts/VisIncr')
 	call minpac#add('vim-scripts/vis')
 	" File type / language support:
@@ -169,12 +168,6 @@ let g:easy_align_delimiters = {
 let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
-
-let g:UltiSnipsSnippetDirectories=["ultisnips"]
-let g:UltiSnipsExpandTrigger="<c-space>"
-xnoremap <silent> <tab> :call UltiSnips#SaveLastVisualSelection()<cr>gvs
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 nnoremap <Leader>k <Esc>:YcmCompleter GoToDefinitionElseDeclaration<Cr>
 nnoremap <Leader>i <Esc>:YcmCompleter FixIt<CR>:cclose<CR>
