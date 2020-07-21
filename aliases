@@ -20,6 +20,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+if test_command nvim; then
+	alias vim=nvim
+fi
+
 function fvim {
 	vim +Find!\ "$*"
 }
