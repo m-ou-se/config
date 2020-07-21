@@ -35,7 +35,6 @@ set wildmenu
 set nojoinspaces
 let g:c_no_curly_error=1
 
-nnoremap K i<Cr><Esc>
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 nnoremap <silent> <Leader>S vip:sort<Cr>
@@ -46,7 +45,6 @@ noremap <MiddleMouse> <Nop>
 inoremap <MiddleMouse> <Nop>
 map <F1> <Esc>
 map! <F1> <Esc>
-nmap <F8> :terminal ++curwin<Cr>
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 imap <C-D> <C-r>=strftime('%F')<Cr>
 imap <C-T> <C-r>=strftime('%T')<Cr>
