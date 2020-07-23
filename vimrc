@@ -75,7 +75,6 @@ function! PackInit() abort
 	call minpac#add('easymotion/vim-easymotion')
 	call minpac#add('godlygeek/tabular')
 	call minpac#add('groenewege/vim-less')
-	call minpac#add('haya14busa/incsearch.vim')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('junegunn/vim-easy-align')
 	call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
@@ -151,10 +150,6 @@ let g:EasyMotion_add_search_history = 0
 let g:EasyMotion_verbose = 0
 nmap s <Plug>(easymotion-s)
 nmap S <Plug>(easymotion-sn)
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
