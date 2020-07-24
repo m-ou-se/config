@@ -85,7 +85,7 @@ fi
 
 vim +PackClean +PackUpdate +qall
 
-for ext in clangd cmake css html json lists python rust-analyzer snippets xml yaml yank; do
+for ext in calc clangd cmake css html json lists python rust-analyzer snippets xml yaml yank; do
 	vim +"echo 'Installing coc-$ext'" +"CocInstall -sync coc-$ext'" +qall
 done
 
