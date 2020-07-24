@@ -1,3 +1,7 @@
+if !exists(":CocAction")
+  finish
+endif
+
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
