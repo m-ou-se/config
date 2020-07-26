@@ -3,4 +3,5 @@
 	"rust-analyzer.updates.channel": "nightly",
 	"rust-analyzer.procMacro.enable": true,
 	"rust-analyzer.inlayHints.chainingHints": false,
+	"diagnostic.refreshOnInsertMode": true,
 }
