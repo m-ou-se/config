@@ -22,6 +22,9 @@
 	whitespace = space-before-tab
 	pager = "diff-so-fancy-if-exists | less --tabs=4 -RFX"
 
+[init]
+	defaultBranch = main
+
 [commit]
 	verbose = true
 
