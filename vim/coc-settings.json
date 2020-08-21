@@ -5,4 +5,5 @@
 	"rust-analyzer.inlayHints.chainingHints": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.refreshOnInsertMode": true,
+	"clangd.arguments": ["--header-insertion=never"],
 }
