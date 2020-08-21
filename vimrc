@@ -6,7 +6,6 @@ set softtabstop=-1
 set autoindent
 set cindent
 set copyindent
-set cursorline
 set laststatus=2
 set list
 set listchars=tab:›─,trail:␣,extends:▶,precedes:◀
