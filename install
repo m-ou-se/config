@@ -81,9 +81,11 @@ done
 # Install minpac.
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
 	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
+else
+	git -C "vim/pack/minpac/opt/minpac" pull
 fi
 
-vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'quit'})"
+vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
