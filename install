@@ -78,12 +78,12 @@ do
 	install_file "$file" ".$file"
 done
 
-# Install minpack.
+# Install minpac.
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
 	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
 fi
 
-vim +PackClean +PackUpdate +qall
+vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'quit'})"
 
 for ext in calc clangd cmake css html json lists python rust-analyzer snippets xml yaml yank; do
 	vim +"echo 'Installing coc-$ext'" +"CocInstall -sync coc-$ext'" +qall

@@ -109,9 +109,9 @@ function! PackInit() abort
 	endfor
 endfunction
 
-command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
-command! PackClean  call PackInit() | call minpac#clean()
-command! PackStatus call PackInit() | call minpac#status()
+command! -bar PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! -bar PackClean  call PackInit() | call minpac#clean()
+command! -bar PackStatus call PackInit() | call minpac#status()
 
 nmap <C-p> :Files<CR>
 imap <C-x><C-p> <plug>(fzf-complete-path)
