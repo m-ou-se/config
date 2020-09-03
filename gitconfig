@@ -5,9 +5,6 @@
 [status]
 	submodulesummary = 1
 
-[color]
-	ui = true
-
 [alias]
 	l     = log --graph --pretty=format:'%Cred%h %Cgreen%ad%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:%F --author-date-order
 	lg    = !git l --all
@@ -30,10 +27,6 @@
 
 [pull]
 	ff = only
-
-[push]
-	default = upstream
-	followTags = true
 
 [rebase]
 	autoSquash = true
