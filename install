@@ -85,9 +85,22 @@ fi
 
 vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'quit'})"
 
-for ext in calc clangd cmake css html json lists python rust-analyzer snippets xml yaml yank; do
-	vim +"echo 'Installing coc-$ext'" +"CocInstall -sync coc-$ext'" +qall
-done
+coc_extensions=(
+	coc-calc
+	coc-clangd
+	coc-cmake
+	coc-css
+	coc-html
+	coc-json
+	coc-lists
+	coc-python
+	coc-rust-analyzer
+	coc-snippets
+	coc-xml
+	coc-yaml
+	coc-yank
+)
+vim -c "autocmd vimenter * echo 'Installing vim-coc extensions.' | CocInstall -sync ${coc_extensions[*]} | qall"
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
