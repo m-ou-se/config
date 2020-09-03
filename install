@@ -78,11 +78,12 @@ do
 	install_file "$file" ".$file"
 done
 
-# Install minpack.
+# Install minpac.
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then
 	git clone --depth 1 https://github.com/k-takata/minpac "vim/pack/minpac/opt/minpac"
 fi
-vim +PackClean +PackUpdate +qall
+
+vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'quit'})"
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
