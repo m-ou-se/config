@@ -6,7 +6,7 @@
 	submodulesummary = 1
 
 [alias]
-	l     = log --graph --pretty=format:'%Cred%h %Cgreen%ad%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:%F --author-date-order
+	l     = log --graph --pretty=format:'%Cred%h %Cgreen%ad%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%aN>%Creset' --abbrev-commit --date=format:%F --author-date-order
 	lg    = !git l --all
 	slg   = !git l --simplify-by-decoration
 	stat  = status
