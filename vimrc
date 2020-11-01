@@ -88,7 +88,6 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-speeddating')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('vim-scripts/Rename2')
-	call minpac#add('vim-scripts/ShowMarks')
 	call minpac#add('vim-scripts/The-NERD-tree')
 	call minpac#add('vim-scripts/UltiSnips')
 	call minpac#add('vim-scripts/VisIncr')
@@ -162,7 +161,6 @@ let g:easy_align_delimiters = {
 	\ '(': { 'pattern': '(', 'left_margin': 0, 'right_margin': 0 },
 	\ ')': { 'pattern': ')', 'left_margin': 0, 'right_margin': 0 } }
 
-let g:showmarks_enable=0
 let g:haddock_browser='xdg-open'
 let g:necoghc_enable_detailed_browse=1
 
