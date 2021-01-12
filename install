@@ -4,11 +4,13 @@ cd $(dirname "$0")
 config_dir="${PWD##$HOME/}"
 
 SET_SHELL=ask
+INSTALL_VIM_PLUGINS="yes"
 
 for arg in "$@"; do
 	case "$arg" in
 		--keep-shell) SET_SHELL="no";;
 		--set-shell) SET_SHELL="yes";;
+		--skip-vim-plugins) INSTALL_VIM_PLUGINS="no";;
 		*)
 			printf "Unrecognized option/argument: %s\n" "$arg" >&2
 			exit 1
@@ -97,7 +99,9 @@ else
 	git -C "vim/pack/minpac/opt/minpac" pull
 fi
 
-vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
+if [[ "$INSTALL_VIM_PLUGINS" != "no" ]]; then
+	vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
+fi
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
