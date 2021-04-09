@@ -68,6 +68,7 @@ command -nargs=1 Plug call add(g:plug_extra, <args>)
 function! PackInit() abort
 	packadd minpac
 	call minpac#init()
+	call minpac#add('PeterRincker/vim-argumentative')
 	call minpac#add('Shougo/vimproc.vim')
 	call minpac#add('airblade/vim-gitgutter')
 	call minpac#add('bkad/CamelCaseMotion')
