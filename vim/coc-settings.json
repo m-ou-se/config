@@ -1,5 +1,6 @@
 {
 	"rust-analyzer.server.path": "rust-analyzer",
+	"rust-analyzer.completion.autoimport.enable": false,
 	"rust-analyzer.updates.channel": "nightly",
 	"rust-analyzer.procMacro.enable": true,
 	"rust-analyzer.inlayHints.chainingHints": false,
