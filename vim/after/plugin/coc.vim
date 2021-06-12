@@ -104,3 +104,7 @@ nmap <leader>rp :CocCommand rust-analyzer.parentModule<cr>
 nmap <leader>rr :CocCommand rust-analyzer.run<cr>
 nmap <leader>rt :CocCommand rust-analyzer.runSingle<cr>
 nmap <leader>rs :CocCommand rust-analyzer.ssr<cr>
+nmap <silent> <A-up> :CocCommand rust-analyzer.moveItemUp<cr>
+nmap <silent> <A-down> :CocCommand rust-analyzer.moveItemDown<cr>
+nmap <silent> <A-k> :CocCommand rust-analyzer.moveItemUp<cr>
+nmap <silent> <A-j> :CocCommand rust-analyzer.moveItemDown<cr>
