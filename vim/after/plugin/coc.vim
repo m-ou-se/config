@@ -59,9 +59,9 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 
-" Use CTRL-S for selections ranges.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" Use CTRL-S for codeAction
+nmap <silent> <C-s> <Plug>(coc-codeaction-cursor)
+xmap <silent> <C-s> <Plug>(coc-codeaction-selected)
 
 " `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
