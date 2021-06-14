@@ -19,6 +19,10 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Tab to cycle through options.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -55,9 +59,31 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 
-" Use CTRL-S for selections ranges.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" Use CTRL-S CTRL-S for codeAction
+nmap <silent> <C-s><C-s> <Plug>(coc-codeaction-cursor)
+xmap <silent> <C-s><C-s> <Plug>(coc-codeaction-selected)
+
+" Use CTRL-S d for codeLensAction
+nmap <silent> <C-s>d <Plug>(coc-codelens-action)
+nmap <silent> <C-s><C-d> <Plug>(coc-codelens-action)
+
+" Use CTRL-S n for rename
+nmap <C-s>n <Plug>(coc-rename)
+nmap <C-s><C-n> <Plug>(coc-rename)
+
+" Use CTRL-S f for format
+nmap <C-s>f <Plug>(coc-format)
+nmap <C-s><C-f> <Plug>(coc-format)
+xmap <C-s>f <Plug>(coc-format-selected)
+xmap <C-s><C-f> <Plug>(coc-format-selected)
+
+" Use CTRL-S x for fix
+nmap <C-s>x <Plug>(coc-fix-current)
+nmap <C-s><C-x> <Plug>(coc-fix-current)
+
+" Use CTRL-S r for refactor
+nmap <C-s>r <Plug>(coc-refactor)
+nmap <C-s><C-r> <Plug>(coc-refactor)
 
 " `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -78,3 +104,7 @@ nmap <leader>rp :CocCommand rust-analyzer.parentModule<cr>
 nmap <leader>rr :CocCommand rust-analyzer.run<cr>
 nmap <leader>rt :CocCommand rust-analyzer.runSingle<cr>
 nmap <leader>rs :CocCommand rust-analyzer.ssr<cr>
+nmap <silent> <A-up> :CocCommand rust-analyzer.moveItemUp<cr>
+nmap <silent> <A-down> :CocCommand rust-analyzer.moveItemDown<cr>
+nmap <silent> <A-k> :CocCommand rust-analyzer.moveItemUp<cr>
+nmap <silent> <A-j> :CocCommand rust-analyzer.moveItemDown<cr>

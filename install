@@ -3,6 +3,20 @@
 cd $(dirname "$0")
 config_dir="${PWD##$HOME/}"
 
+SET_SHELL=ask
+INSTALL_VIM_PLUGINS="yes"
+
+for arg in "$@"; do
+	case "$arg" in
+		--keep-shell) SET_SHELL="no";;
+		--set-shell) SET_SHELL="yes";;
+		--skip-vim-plugins) INSTALL_VIM_PLUGINS="no";;
+		*)
+			printf "Unrecognized option/argument: %s\n" "$arg" >&2
+			exit 1
+	esac
+done
+
 # Check if the config_dir is relative to $HOME or not.
 config_dir_prefix=""
 [ "$config_dir" != "$PWD" ] && config_dir_prefix="../"
@@ -85,7 +99,9 @@ else
 	git -C "vim/pack/minpac/opt/minpac" pull
 fi
 
-vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
+if [[ "$INSTALL_VIM_PLUGINS" != "no" ]]; then
+	vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
+fi
 
 coc_extensions=(
 	coc-calc
@@ -109,16 +125,22 @@ if [ ! -d "zsh-syntax-highlighting" ]; then
 	git clone git://github.com/zsh-users/zsh-syntax-highlighting
 fi
 
-shell=$(getent passwd $LOGNAME | cut -d: -f7)
-case "$shell" in
-	*/zsh) ;;
-	*)
-		zshell=$(grep '/zsh$' /etc/shells | head -n1)
-		if [ -n "$zshell" ]; then
-			ask "Change shell to zsh?" && chsh -s "$zshell"
-		fi
-		;;
-esac
+if [[ "$SET_SHELL" != "no" ]]; then
+	shell=$(getent passwd $LOGNAME | cut -d: -f7)
+	case "$shell" in
+		*/zsh) ;;
+		*)
+			zshell=$(grep '/zsh$' /etc/shells | head -n1)
+			if [ -n "$zshell" ]; then
+				if [[ "$SET_SHELL" == "ask" ]] && ask "Change shell to zsh?"; then
+					chsh -s "$zshell"
+				elif [[ "$SET_SHELL" == "yes" ]]; then
+					chsh -s "$zshell"
+				fi
+			fi
+			;;
+	esac
+fi
 
 if ! command -v rg > /dev/null; then
 	echo "Consider installing ripgrep"
