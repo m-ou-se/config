@@ -3,9 +3,6 @@ source "$HOME/.profile"
 
 source "$HOME/.config/config_dir/shellrc"
 
-try_source /usr/share/doc/pkgfile/command-not-found.zsh
-try_source /etc/zsh_command_not_found
-
 zstyle ':completion:*' auto-description '<%d>'
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' file-sort name
@@ -134,6 +131,26 @@ if try_source "$config_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
 	ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
 fi
 
+command_not_found_handler() {
+	printf 'zsh: command not found: %s\n' "$1"
+	local pkgs files=()
+	if test_command pacman; then
+		files=(${(f)"$(pacman -F --machinereadable -- "/usr/bin/${1}")"})
+		if (( ${#files[@]} )); then
+			printf '\r%s may be found in the following packages:\n' "$1"
+			local res=() repo package version file
+			for file in "$files[@]"; do
+				res=("${(0)file}")
+				repo="$res[1]"
+				package="$res[2]"
+				version="$res[3]"
+				file="$res[4]"
+				printf '  %s/%s %s: /%s\n' "$repo" "$package" "$version" "$file"
+			done
+		fi
+	fi
+	return 127
+}
 
 try_source /usr/share/fzf/key-bindings.zsh
 try_source /usr/share/fzf/completion.zsh
