@@ -16,6 +16,7 @@ add_path "$config_dir/bin"
 add_path "$HOME/.local/bin"
 add_path "$HOME/.cabal/bin"
 add_path "$HOME"/.gem/ruby/*/bin
+add_path "$HOME"/.local/share/gem/ruby/*/bin
 add_path "$HOME/.npm-packages/bin"
 add_path "$HOME/.cargo/bin"
 
