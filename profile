@@ -34,4 +34,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 [ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # vi: ft=sh
