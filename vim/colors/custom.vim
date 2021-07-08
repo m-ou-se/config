@@ -49,7 +49,7 @@ hi WildMenu      cterm=none ctermfg=Black ctermbg=3
 hi ColorColumn   ctermbg=17
 hi SignColumn    cterm=none ctermfg=14 ctermbg=233
 hi FoldColumn    cterm=none ctermfg=Grey ctermbg=233
-hi EndOfBuffer   cterm=none ctermfg=237 ctermbg=Black
+hi EndOfBuffer   cterm=none ctermfg=237 ctermbg=none
 hi IndentTab     cterm=none ctermfg=240
 hi Comment       cterm=none ctermfg=DarkBlue
 hi Constant      cterm=none ctermfg=DarkRed
