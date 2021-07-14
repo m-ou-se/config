@@ -16,8 +16,8 @@ hi! link IndentTab GruvboxBg2
 
 hi CocErrorHighlight   cterm=none ctermbg=88 gui=none guibg=#883322
 hi CocWarningHighlight cterm=none ctermbg=94 gui=none guibg=#664422
-hi CocInfoHighlight    cterm=none ctermbg=58 gui=none guibg=#666622
-hi CocHintHighlight    cterm=none ctermbg=60 gui=none guibg=#222266
+hi CocInfoHighlight    cterm=none ctermbg=58 gui=none guibg=#3e4e42
+hi CocHintHighlight    cterm=none ctermbg=60 gui=none guibg=#3e4e42
 
 hi SpellCap   cterm=none ctermbg=88 gui=italic guibg=#883322
 hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#883322
