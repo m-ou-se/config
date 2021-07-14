@@ -1,4 +1,5 @@
 {
+	"coc.preferences.semanticTokensHighlights": false,
 	"rust-analyzer.server.path": "rust-analyzer",
 	"rust-analyzer.completion.autoimport.enable": false,
 	"rust-analyzer.updates.channel": "nightly",
