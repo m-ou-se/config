@@ -103,7 +103,11 @@ function mkd {
 
 export TTY="$(tty)"
 export TTY_HOST="$(who -m | awk '$NF ~ /\(.*\)/ { if ("/dev/" $2 == ENVIRON["TTY"]) { sub(/^\(/, "", $NF); sub(/\)$/, "", $NF); print $NF; exit 0; } }')"
-export TTY_USER="$(ls -l "$TTY" | awk '{ print $3; exit 0; }')"
+export TTY_USER="$(ls -l "$TTY" 2>/dev/null | awk '{ print $3; exit 0; }')"
+
+if [ -z "$TTY_USER" ]; then
+	export TTY_USER="$LOGNAME"
+fi
 
 if [ "$SHELLTTY" != "$TTY" ]; then
 	export SHELLTTY="$TTY"
