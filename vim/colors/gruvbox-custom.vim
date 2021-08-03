@@ -24,4 +24,7 @@ hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#883322
 hi SpellLocal cterm=none ctermbg=88 gui=italic guibg=#883322
 hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#883322
 
+hi! link Comment GruvboxOrange
+hi! link SpecialComment GruvboxPurple
+hi! link CocRustTypeHint GruvboxBg4
 hi link Operator GruvboxBlue
