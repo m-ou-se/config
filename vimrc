@@ -48,6 +48,7 @@ map! <F1> <Esc>
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 imap <C-D> <C-r>=strftime('%F')<Cr>
 imap <C-T> <C-r>=strftime('%T')<Cr>
+nnoremap <C-j> i<Cr><Esc>==
 
 syntax on
 colorscheme custom
