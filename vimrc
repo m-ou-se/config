@@ -66,6 +66,11 @@ let g:python_recommended_style=0
 let g:plug_extra = []
 command -nargs=1 Plug call add(g:plug_extra, <args>)
 
+" Custom mappings for vim-visual-multi to be more like vim-multiple-cursors.
+let g:VM_maps = {}
+let g:VM_maps['Skip Region'] = '<C-x>'
+let g:VM_maps['Remove Last Region'] = '<C-p>'
+
 function! PackInit() abort
 	packadd minpac
 	call minpac#init()
@@ -80,7 +85,7 @@ function! PackInit() abort
 	call minpac#add('junegunn/vim-easy-align')
 	call minpac#add('morhetz/gruvbox')
 	call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-	call minpac#add('terryma/vim-multiple-cursors')
+	call minpac#add('mg979/vim-visual-multi')
 	call minpac#add('tpope/vim-commentary')
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('tpope/vim-repeat')
@@ -149,9 +154,6 @@ let g:EasyMotion_add_search_history = 0
 let g:EasyMotion_verbose = 0
 nmap s <Plug>(easymotion-s)
 nmap S <Plug>(easymotion-sn)
-
-let g:multi_cursor_exit_from_visual_mode = 0
-let g:multi_cursor_exit_from_insert_mode = 0
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
