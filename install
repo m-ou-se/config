@@ -111,7 +111,7 @@ coc_extensions=(
 	coc-html
 	coc-json
 	coc-lists
-	coc-python
+	coc-pywrite
 	coc-rust-analyzer
 	coc-snippets
 	coc-xml
