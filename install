@@ -36,15 +36,15 @@ config_backup_dir="backup-$(date +%F-%H-%M-%S)";
 
 install_file() {
 	if [ -e "$HOME/$2" ]; then
-		if [ "$(readlink "$HOME/$2")" != "$config_dir/$1" ]; then
+		if [ "$(readlink "$HOME/$2")" != ".config/config_dir/$1" ]; then
 			mkdir -p "$config_backup_dir"
-			mv "$HOME/$2" "$config_backup_dir/$1"
-			echo "'$2' already exists. It is moved to '$config_dir/$config_backup_dir/$1'." 1>&2
+			mv "$HOME/$2" "$config_backup_dir/$2"
+			echo "'$2' already exists. It is moved to '$config_dir/$config_backup_dir/$2'." 1>&2
 		else
 			return
 		fi
 	fi
-	ln -s "$config_dir/$1" "$HOME/$2"
+	ln -s ".config/config_dir/$1" "$HOME/$2"
 }
 
 ask() {
@@ -87,7 +87,8 @@ if [ "$(readlink "$HOME/.zprofile")" == "$config_dir/zprofile" ]; then
 fi
 
 # Install configuration files.
-for file in bash_profile bashrc gitconfig profile screenrc vimrc zshrc vim zshenv Xresources tmux.conf
+install_file vim/init.vim .vimrc
+for file in bash_profile bashrc gitconfig profile screenrc zshrc vim zshenv Xresources tmux.conf
 do
 	install_file "$file" ".$file"
 done
