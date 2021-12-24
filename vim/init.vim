@@ -111,6 +111,7 @@ function! PackInit() abort
 	call minpac#add('leafgarland/typescript-vim')
 	call minpac#add('lukerandall/haskellmode-vim')
 	call minpac#add('rust-lang/rust.vim')
+	call minpac#add('zig-lang/zig.vim')
 	" Plugins added by :Plug
 	for i in g:plug_extra
 		call minpac#add(i)
