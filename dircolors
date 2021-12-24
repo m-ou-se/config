@@ -1,6 +1,6 @@
 RESET 0 # reset to "normal" color
-DIR 01;34 # directory
-LINK 01;36 # symbolic link. (If you set this to 'target' instead of a
+DIR 01;94 # directory
+LINK 01;96 # symbolic link. (If you set this to 'target' instead of a
 MULTIHARDLINK 04 # regular file with more than one link
 FIFO 40;33 # pipe
 SOCK 01;44 # socket
@@ -14,57 +14,57 @@ CAPABILITY 30;41 # file with capability
 STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 33;44 # dir that is other-writable (o+w) and not sticky
 STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
-EXEC 01;32 # executable file
+EXEC 01;92 # executable file
 # archives or compressed
-.a 01;31
-.tar 01;31
-.tgz 01;31
-.arj 01;31
-.taz 01;31
-.lzh 01;31
-.lzma 01;31
-.tlz 01;31
-.txz 01;31
-.zip 01;31
-.z 01;31
-.Z 01;31
-.dz 01;31
-.gz 01;31
-.lz 01;31
-.xz 01;31
-.bz2 01;31
-.bz 01;31
-.tbz 01;31
-.tbz2 01;31
-.tz 01;31
-.deb 01;31
-.rpm 01;31
-.jar 01;31
-.war 01;31
-.ear 01;31
-.sar 01;31
-.rar 01;31
-.ace 01;31
-.zoo 01;31
-.cpio 01;31
-.7z 01;31
-.rz 01;31
+.a 01;91
+.tar 01;91
+.tgz 01;91
+.arj 01;91
+.taz 01;91
+.lzh 01;91
+.lzma 01;91
+.tlz 01;91
+.txz 01;91
+.zip 01;91
+.z 01;91
+.Z 01;91
+.dz 01;91
+.gz 01;91
+.lz 01;91
+.xz 01;91
+.bz2 01;91
+.bz 01;91
+.tbz 01;91
+.tbz2 01;91
+.tz 01;91
+.deb 01;91
+.rpm 01;91
+.jar 01;91
+.war 01;91
+.ear 01;91
+.sar 01;91
+.rar 01;91
+.ace 01;91
+.zoo 01;91
+.cpio 01;91
+.7z 01;91
+.rz 01;91
 # source code files
-.cpp 01;35
-.cc 01;35
-.c 01;35
-.s 01;35
-.d 01;35
-.C 01;35
-.S 01;35
-.css 01;35
-.html 01;35
-.htm 01;35
-.php 01;35
-.py 01;35
-.js 01;35
-.java 01;35
-.hs 01;35
+.cpp 01;95
+.cc 01;95
+.c 01;95
+.s 01;95
+.d 01;95
+.C 01;95
+.S 01;95
+.css 01;95
+.html 01;95
+.htm 01;95
+.php 01;95
+.py 01;95
+.js 01;95
+.java 01;95
+.hs 01;95
 # header files
 .hpp 00;35
 .hh 00;35
