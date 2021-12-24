@@ -26,6 +26,7 @@ set history=200
 set viminfo='100,s10,h,%
 set statusline=%<%f\ %h%w%m%r\ 
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
+set statusline+=\ [coc:\ %{coc#status()}]
 set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
 set statusline+=%-14.(%4l/%L,%c%V%)\ %P
