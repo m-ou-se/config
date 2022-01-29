@@ -17,6 +17,9 @@ zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename "$HOME/.zshrc"
 
+if type brew &>/dev/null; then
+	fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
 fpath+=("$HOME/.local/share/zsh/site-functions")
 autoload -Uz compinit
 compinit
