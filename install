@@ -123,7 +123,7 @@ vim -c "autocmd vimenter * echo 'Installing vim-coc extensions.' | CocInstall -s
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
-	git clone git://github.com/zsh-users/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting
 fi
 
 if [[ "$SET_SHELL" != "no" ]]; then
