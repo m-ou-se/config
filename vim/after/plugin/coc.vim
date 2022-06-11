@@ -1,4 +1,4 @@
-if !exists(":CocAction")
+if !exists(":CocInfo")
   finish
 endif
 
