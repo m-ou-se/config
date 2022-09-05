@@ -4,13 +4,13 @@ cd $(dirname "$0")
 config_dir="${PWD##$HOME/}"
 
 SET_SHELL=ask
-INSTALL_VIM_PLUGINS="yes"
+INSTALL_VIM_PLUGINS=1
 
 for arg in "$@"; do
 	case "$arg" in
 		--keep-shell) SET_SHELL="no";;
 		--set-shell) SET_SHELL="yes";;
-		--skip-vim-plugins) INSTALL_VIM_PLUGINS="no";;
+		--skip-vim-plugins) INSTALL_VIM_PLUGINS=0;;
 		*)
 			printf "Unrecognized option/argument: %s\n" "$arg" >&2
 			exit 1
@@ -53,9 +53,15 @@ ask() {
 	[[ $REPLY = "Y" || $REPLY = "y" ]]
 }
 
+if command -v nvim > /dev/null; then
+	vim=nvim
+else
+	vim=vim
+fi
+
 # Check for required tools.
-required_commands="git vim"
-if ! check_commands $required_commands; then
+required_commands=( git "$vim" )
+if ! check_commands "${required_commands[@]}"; then
 	exit 1
 fi
 
@@ -100,26 +106,28 @@ else
 	git -C "vim/pack/minpac/opt/minpac" pull
 fi
 
-if [[ "$INSTALL_VIM_PLUGINS" != "no" ]]; then
-	vim -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
-fi
+if (( INSTALL_VIM_PLUGINS )); then
+	echo "Installing vim plugins" >&2
+	$vim -es -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
 
-coc_extensions=(
-	coc-calc
-	coc-clangd
-	coc-cmake
-	coc-css
-	coc-html
-	coc-json
-	coc-lists
-	coc-pywrite
-	coc-rust-analyzer
-	coc-snippets
-	coc-xml
-	coc-yaml
-	coc-yank
-)
-vim -c "autocmd vimenter * echo 'Installing vim-coc extensions.' | CocInstall -sync ${coc_extensions[*]} | qall"
+	echo "Installing vim-coc extensions" >&2
+	coc_extensions=(
+		coc-calc
+		coc-clangd
+		coc-cmake
+		coc-css
+		coc-html
+		coc-json
+		coc-lists
+		coc-pywrite
+		coc-rust-analyzer
+		coc-snippets
+		coc-xml
+		coc-yaml
+		coc-yank
+	)
+	$vim -es -c "autocmd vimenter * echo 'Installing vim-coc extensions.' | CocInstall -sync ${coc_extensions[*]} | qall"
+fi
 
 # Install zsh-syntax-highlighting.
 if [ ! -d "zsh-syntax-highlighting" ]; then
