@@ -20,6 +20,7 @@ if s:is_dark
 	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#3e4e42
 	hi CocHintHighlight    cterm=none ctermbg=60   gui=none guibg=#3e4e42
 	hi CocFadeOut          cterm=none ctermbg=none gui=none guibg=none
+	hi CocMenuSel          cterm=none ctermbg=240  gui=none guibg=#585858
 
 	hi SpellCap   cterm=none ctermbg=88 gui=italic guibg=#883322
 	hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#883322
@@ -31,6 +32,7 @@ else
 	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#bbeeff
 	hi CocHintHighlight    cterm=none ctermbg=60   gui=none guibg=#bbeeff
 	hi CocFadeOut          cterm=none ctermbg=none gui=none guibg=none
+	hi CocMenuSel          cterm=none ctermbg=251  gui=none guibg=#c6c6c6
 
 	hi SpellCap   cterm=none ctermbg=88 gui=italic guibg=#ddaa99
 	hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#ddaa99
