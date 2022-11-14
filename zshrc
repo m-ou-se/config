@@ -51,7 +51,7 @@ colors
 
 function update_title {
 	case "$TERM" in
-		xterm*|rxvt*|alacritty*) print -Pn "\e]2;%n@${HOST##${TTY_USER-$USER}-}: %~\a" ;;
+		xterm*|rxvt*|alacritty*) print -Pn "\e]2;%n@${HOST%%.*}: %~\a" ;;
 	esac
 }
 update_title
@@ -109,7 +109,7 @@ function prompt {
 	if [ -n "$TTY_HOST" ]; then
 		echo -n "%{$bold_color%}"
 	fi
-	echo -n "@${HOST##${TTY_USER-$USER}-}"
+	echo -n "@${HOST%%.*}"
 	echo -n "%{$reset_color%}:"
 	git_prompt_path
 	echo -n "%{$reset_color%}"

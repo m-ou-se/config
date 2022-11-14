@@ -28,7 +28,7 @@ function update_ps1 {
 	if [ -n "$TTY_HOST" ]; then
 		PS1+='\[\e[1m\]'
 	fi
-	PS1+='@${HOSTNAME##${TTY_USER-$USER}-}'
+	PS1+='@${HOSTNAME%%.*}'
 	PS1+='\[\e[m\]:'
 	PS1+="$(git_prompt_path)"
 	if [ $UID -eq 0 ]; then
