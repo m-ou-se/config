@@ -14,7 +14,7 @@ HISTFILESIZE=2000
 function update_ps1 {
 	PS1=''
 	case "$TERM" in
-		xterm*|rxvt*) PS1+='\[\e]0;\u@\h: \w\a\]' ;;
+		xterm*|rxvt*|alacritty*) PS1+='\[\e]0;\u@\h: \w\a\]' ;;
 		*) ;;
 	esac
 	if [ $UID -eq 0 ]; then

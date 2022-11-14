@@ -47,6 +47,21 @@ install_file() {
 	ln -s ".config/config_dir/$1" "$HOME/$2"
 }
 
+install_config_dir_symlink() {
+	if [[ -e "$HOME/.config/$1" || -L "$HOME/.config/$1" ]]; then
+		readlink "$HOME/.config/$1"
+		if [ "$(readlink "$HOME/.config/$1")" != "config_dir/$1" ]; then
+			mkdir -p "$config_backup_dir"
+			mv "$HOME/.config/$1" "$config_backup_dir/$1"
+			echo "'$1' already exists. It is moved to '$config_dir/$config_backup_dir/$1'." 1>&2
+		else
+			return
+		fi
+	fi
+	mkdir -p "$HOME/.config"
+	ln -s "config_dir/$1" "$HOME/.config/$1"
+}
+
 ask() {
 	read -n 1 -r -p "$1 (y/N)"
 	echo
@@ -98,6 +113,8 @@ for file in bash_profile bashrc gitconfig profile screenrc zshrc vim zshenv Xres
 do
 	install_file "$file" ".$file"
 done
+
+install_config_dir_symlink alacritty
 
 # Install minpac.
 if [ ! -d "vim/pack/minpac/opt/minpac" ]; then

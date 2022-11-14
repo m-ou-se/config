@@ -51,7 +51,7 @@ colors
 
 function update_title {
 	case "$TERM" in
-		xterm*|rxvt*) print -Pn "\e]2;%n@${HOST##${TTY_USER-$USER}-}: %~\a" ;;
+		xterm*|rxvt*|alacritty*) print -Pn "\e]2;%n@${HOST##${TTY_USER-$USER}-}: %~\a" ;;
 	esac
 }
 update_title
