@@ -76,6 +76,7 @@ let g:VM_maps['Remove Last Region'] = '<C-p>'
 function! PackInit() abort
 	packadd minpac
 	call minpac#init()
+	call minpac#add('bogado/file-line')
 	call minpac#add('PeterRincker/vim-argumentative')
 	call minpac#add('Shougo/vimproc.vim')
 	call minpac#add('airblade/vim-gitgutter')
