@@ -13,6 +13,7 @@ set cinkeys=0},0),0],o,O,!^F
 set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
 set mouse=a
+set mousemodel=extend
 set nowrap
 set colorcolumn=+1
 set showcmd
