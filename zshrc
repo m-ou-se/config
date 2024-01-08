@@ -111,7 +111,12 @@ function prompt {
 	fi
 	echo -n "@${HOST%%.*}"
 	echo -n "%{$reset_color%}:"
-	git_prompt_path
+	if [[ "$NO_GIT_PROMPT" == "" || "$NO_GIT_PROMPT" == 0 ]]; then
+		git_prompt_path
+	else
+		echo -n "%{$fg[blue]%}$PWD"
+	fi
+
 	echo -n "%{$reset_color%}"
 	echo -n '%(1j.[%j].)'
 	if [ $UID -eq 0 ]; then
