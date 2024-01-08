@@ -1,0 +1,28 @@
+[font]
+size = 9.0
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Alt"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[scrolling]
+history = 100000
+
+[selection]
+save_to_clipboard = true
+
+[window]
+padding = { x = 2, y = 2 }
