@@ -9,10 +9,10 @@ else
 	alias ls='ls --color=auto'
 fi
 
-alias lla='ls -alF --group-directories-first'
-alias ll='ls -lF --group-directories-first'
-alias la='ls -A --group-directories-first'
-alias l='ls -F --group-directories-first'
+alias lla='ls -alF --group-directories-first --time-style long-iso'
+alias ll='ls -lF --group-directories-first --time-style long-iso'
+alias la='ls -A --group-directories-first --time-style long-iso'
+alias l='ls -F --group-directories-first --time-style long-iso'
 
 alias clip='xclip -i -selection clipboard'
 
