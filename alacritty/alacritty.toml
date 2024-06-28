@@ -9,14 +9,10 @@ command = "xdg-open"
 hyperlinks = true
 post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
-
-[hints.enabled.binding]
-key = "U"
-mods = "Alt"
-
-[hints.enabled.mouse]
-enabled = true
-mods = "None"
+binding.key = "U"
+binding.mods = "Alt"
+mouse.enabled = true
+mouse.mods = "Shift"
 
 [scrolling]
 history = 100000
