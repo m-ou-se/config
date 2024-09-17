@@ -54,7 +54,7 @@ nnoremap <C-j> i<Cr><Esc>==
 
 syntax on
 set background=dark
-colorscheme custom
+colorscheme gruvbox-custom
 autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
 autocmd BufRead,BufNewFile Cargo.toml,*.rs compiler cargo
