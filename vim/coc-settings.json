@@ -20,5 +20,6 @@
 	"diagnostic.hintSign": "●",
 	"clangd.arguments": [
 		"--header-insertion=never"
-	]
+	],
+	"html.autoClosingTags": false,
 }
