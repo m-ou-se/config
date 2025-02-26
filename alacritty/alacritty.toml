@@ -1,5 +1,5 @@
 [font]
-size = 9.0
+normal.family = "DejaVu Sans Mono"
 
 [hints]
 alphabet = "jfkdls;ahgurieowpq"
