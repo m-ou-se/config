@@ -2,11 +2,11 @@ if test_command exa; then
 	alias ls='exa --git -g'
 	alias tree='exa --tree -g'
 elif test_command gnuls; then
-	alias ls='gnuls --color=auto'
+	alias ls='gnuls --color=auto --group-directories-first'
 elif test_command gls; then
-	alias ls='gls --color=auto'
+	alias ls='gls --color=auto --group-directories-first'
 else
-	alias ls='ls --color=auto'
+	alias ls='ls --color=auto --group-directories-first'
 fi
 
 alias lla='ls -alF --group-directories-first --time-style long-iso'
