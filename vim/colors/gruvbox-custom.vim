@@ -40,7 +40,7 @@ else
 	hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#ddaa99
 endif
 
-hi CocHighlightText cterm=inverse gui=inverse
+hi CocHighlightText cterm=none ctermbg=238 gui=none guibg=#444444
 
 hi! link Comment GruvboxOrange
 hi! link SpecialComment GruvboxPurple
