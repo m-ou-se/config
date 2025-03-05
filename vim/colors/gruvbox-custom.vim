@@ -1,12 +1,12 @@
 hi clear
 
-if exists("syntax_on")
+if exists('syntax_on')
 	syntax reset
 endif
 
 runtime colors/gruvbox.vim
 
-let g:colors_name = "gruvbox-custom"
+let g:colors_name = 'gruvbox-custom'
 
 let s:is_dark=(&background == 'dark')
 
@@ -15,6 +15,7 @@ hi! link NonText GruvboxOrange
 hi! link IndentTab GruvboxBg2
 
 if s:is_dark
+	hi CocHighlightText    cterm=none ctermbg=238  gui=none guibg=#444444
 	hi CocErrorHighlight   cterm=none ctermbg=88   gui=none guibg=#883322
 	hi CocWarningHighlight cterm=none ctermbg=94   gui=none guibg=#664422
 	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#3e4e42
@@ -27,6 +28,7 @@ if s:is_dark
 	hi SpellLocal cterm=none ctermbg=88 gui=italic guibg=#883322
 	hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#883322
 else
+	hi CocHighlightText    cterm=none ctermbg=253  gui=none guibg=#dadada
 	hi CocErrorHighlight   cterm=none ctermbg=88   gui=none guibg=#ddaa99
 	hi CocWarningHighlight cterm=none ctermbg=94   gui=none guibg=#ddaa66
 	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#bbeeff
@@ -40,7 +42,6 @@ else
 	hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#ddaa99
 endif
 
-hi CocHighlightText cterm=none ctermbg=238 gui=none guibg=#444444
 
 hi! link Comment GruvboxOrange
 hi! link SpecialComment GruvboxPurple
