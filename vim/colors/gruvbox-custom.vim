@@ -15,31 +15,31 @@ hi! link NonText GruvboxOrange
 hi! link IndentTab GruvboxBg2
 
 if s:is_dark
-	hi CocHighlightText    cterm=none ctermbg=238  gui=none guibg=#444444
-	hi CocErrorHighlight   cterm=none ctermbg=88   gui=none guibg=#883322
-	hi CocWarningHighlight cterm=none ctermbg=94   gui=none guibg=#664422
-	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#3e4e42
-	hi CocHintHighlight    cterm=none ctermbg=60   gui=none guibg=#3e4e42
-	hi CocFadeOut          cterm=none ctermbg=none gui=none guibg=none
-	hi CocMenuSel          cterm=none ctermbg=240  gui=none guibg=#585858
+	hi CocHighlightText    cterm=NONE ctermbg=238  gui=NONE guibg=#444444
+	hi CocErrorHighlight   cterm=NONE ctermbg=88   gui=NONE guibg=#883322
+	hi CocWarningHighlight cterm=NONE ctermbg=94   gui=NONE guibg=#664422
+	hi CocInfoHighlight    cterm=NONE ctermbg=58   gui=NONE guibg=#3e4e42
+	hi CocHintHighlight    cterm=NONE ctermbg=60   gui=NONE guibg=#3e4e42
+	hi CocFadeOut          cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+	hi CocMenuSel          cterm=NONE ctermbg=240  gui=NONE guibg=#585858
 
-	hi SpellCap   cterm=none ctermbg=88 gui=italic guibg=#883322
-	hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#883322
-	hi SpellLocal cterm=none ctermbg=88 gui=italic guibg=#883322
-	hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#883322
+	hi SpellCap   cterm=NONE ctermbg=88 gui=italic guibg=#883322
+	hi SpellBad   cterm=NONE ctermbg=88 gui=italic guibg=#883322
+	hi SpellLocal cterm=NONE ctermbg=88 gui=italic guibg=#883322
+	hi SpellRare  cterm=NONE ctermbg=88 gui=italic guibg=#883322
 else
-	hi CocHighlightText    cterm=none ctermbg=253  gui=none guibg=#dadada
-	hi CocErrorHighlight   cterm=none ctermbg=88   gui=none guibg=#ddaa99
-	hi CocWarningHighlight cterm=none ctermbg=94   gui=none guibg=#ddaa66
-	hi CocInfoHighlight    cterm=none ctermbg=58   gui=none guibg=#bbeeff
-	hi CocHintHighlight    cterm=none ctermbg=60   gui=none guibg=#bbeeff
-	hi CocFadeOut          cterm=none ctermbg=none gui=none guibg=none
-	hi CocMenuSel          cterm=none ctermbg=251  gui=none guibg=#c6c6c6
+	hi CocHighlightText    cterm=NONE ctermbg=253  gui=NONE guibg=#dadada
+	hi CocErrorHighlight   cterm=NONE ctermbg=88   gui=NONE guibg=#ddaa99
+	hi CocWarningHighlight cterm=NONE ctermbg=94   gui=NONE guibg=#ddaa66
+	hi CocInfoHighlight    cterm=NONE ctermbg=58   gui=NONE guibg=#bbeeff
+	hi CocHintHighlight    cterm=NONE ctermbg=60   gui=NONE guibg=#bbeeff
+	hi CocFadeOut          cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+	hi CocMenuSel          cterm=NONE ctermbg=251  gui=NONE guibg=#c6c6c6
 
-	hi SpellCap   cterm=none ctermbg=88 gui=italic guibg=#ddaa99
-	hi SpellBad   cterm=none ctermbg=88 gui=italic guibg=#ddaa99
-	hi SpellLocal cterm=none ctermbg=88 gui=italic guibg=#ddaa99
-	hi SpellRare  cterm=none ctermbg=88 gui=italic guibg=#ddaa99
+	hi SpellCap   cterm=NONE ctermbg=88 gui=italic guibg=#ddaa99
+	hi SpellBad   cterm=NONE ctermbg=88 gui=italic guibg=#ddaa99
+	hi SpellLocal cterm=NONE ctermbg=88 gui=italic guibg=#ddaa99
+	hi SpellRare  cterm=NONE ctermbg=88 gui=italic guibg=#ddaa99
 endif
 
 

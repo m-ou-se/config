@@ -52,8 +52,8 @@ imap <C-D> <C-r>=strftime('%F')<Cr>
 imap <C-T> <C-r>=strftime('%T')<Cr>
 nnoremap <C-j> i<Cr><Esc>==
 
-syntax on
 set background=dark
+syntax on
 colorscheme gruvbox-custom
 autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
 
