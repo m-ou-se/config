@@ -35,6 +35,8 @@ set undofile
 set wildmenu
 set nojoinspaces
 let g:c_no_curly_error=1
+let g:skip_defaults_vim=1
+let skip_defaults_vim=1
 
 if !has('nvim')
 	set guioptions=ac
