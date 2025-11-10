@@ -32,10 +32,13 @@ set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
 set statusline+=%-14.(%4l/%L,%c%V%)\ %P
 set undofile
-set guioptions=ac
 set wildmenu
 set nojoinspaces
 let g:c_no_curly_error=1
+
+if !has('nvim')
+	set guioptions=ac
+endif
 
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
