@@ -1,2 +1,3 @@
-source $HOME/.profile
 source $HOME/.bashrc
+
+# vi: ft=sh
