@@ -38,6 +38,10 @@ let g:c_no_curly_error=1
 let g:skip_defaults_vim=1
 let skip_defaults_vim=1
 
+if $BACKGROUND == "light"
+	set background=light
+endif
+
 if !has('nvim')
 	set guioptions=ac
 endif
