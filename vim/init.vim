@@ -81,46 +81,26 @@ let g:VM_maps['Remove Last Region'] = '<C-p>'
 
 function! PackInit() abort
 	packadd minpac
+
+	" Read plugins from the 'plugins' file: one plugin per line.
+	" If there is a second word on the line, it's the branch to use.
+	let path = fnamemodify(resolve(expand('<script>:p')), ':h')
+	echo path . '/plugins'
+	let plugins = readfile(path . '/plugins')
 	call minpac#init()
-	call minpac#add('bogado/file-line')
-	call minpac#add('PeterRincker/vim-argumentative')
-	call minpac#add('Shougo/vimproc.vim')
-	call minpac#add('airblade/vim-gitgutter')
-	call minpac#add('bkad/CamelCaseMotion')
-	call minpac#add('easymotion/vim-easymotion')
-	call minpac#add('godlygeek/tabular')
-	call minpac#add('groenewege/vim-less')
-	call minpac#add('junegunn/fzf.vim')
-	call minpac#add('junegunn/vim-easy-align')
-	call minpac#add('morhetz/gruvbox')
-	call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-	call minpac#add('mg979/vim-visual-multi')
-	call minpac#add('tpope/vim-commentary')
-	call minpac#add('tpope/vim-fugitive')
-	call minpac#add('tpope/vim-repeat')
-	call minpac#add('tpope/vim-sleuth')
-	call minpac#add('tpope/vim-speeddating')
-	call minpac#add('tpope/vim-surround')
-	call minpac#add('vim-scripts/Rename2')
-	call minpac#add('vim-scripts/The-NERD-tree')
-	call minpac#add('vim-scripts/VisIncr')
-	call minpac#add('vim-scripts/vis')
-	" File type / language support:
-	call minpac#add('vim-scripts/JSON.vim')
-	call minpac#add('vim-scripts/django.vim')
-	call minpac#add('vim-scripts/glsl.vim')
-	call minpac#add('vim-scripts/jade.vim')
-	call minpac#add('vim-scripts/openscad.vim')
-	call minpac#add('vim-pandoc/vim-pandoc-syntax')
-	call minpac#add('cespare/vim-toml')
-	call minpac#add('de-vri-es/vim-urscript')
-	call minpac#add('eagletmt/neco-ghc')
-	call minpac#add('guns/xterm-color-table.vim')
-	call minpac#add('leafgarland/typescript-vim')
-	call minpac#add('lukerandall/haskellmode-vim')
-	call minpac#add('rust-lang/rust.vim')
-	call minpac#add('zig-lang/zig.vim')
-	" Plugins added by :Plug
+	for plugin in plugins
+		" Skip empty lines and lines starting with a #
+		let plugin = trim(plugin)
+		if plugin == '' || plugin =~ '^#'
+			continue
+		endif
+		let config = {}
+		let args = split(plugin)
+		if len(args) > 1
+			let config.branch = args[1]
+		endif
+		call minpac#add(args[0], config)
+	endfor
 	for i in g:plug_extra
 		call minpac#add(i)
 	endfor

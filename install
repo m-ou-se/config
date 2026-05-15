@@ -125,7 +125,13 @@ fi
 
 if (( INSTALL_VIM_PLUGINS )); then
 	echo "Installing vim plugins" >&2
-	$vim -es -c "autocmd vimenter * echo 'Cleaning vim plugins.' | PackClean | echo 'Installing vim plugins.' | call minpac#update('', {'do': 'qall'})"
+	mkdir -p "vim/pack/minpac/start"
+	while read -r plugin branch; do
+		[[ "$plugin" == "" || "$plugin" == "#"* ]] && continue
+		args=()
+		[[ -n "$branch" ]] && args+=("--branch" "$branch")
+		( cd "vim/pack/minpac/start" && git clone "https://github.com/$plugin" "${args[@]}" )
+	done < ./vim/plugins
 
 	echo "Installing vim-coc extensions" >&2
 	coc_extensions=(

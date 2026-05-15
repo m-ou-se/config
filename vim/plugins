@@ -1,0 +1,41 @@
+bogado/file-line
+PeterRincker/vim-argumentative
+Shougo/vimproc.vim
+airblade/vim-gitgutter
+bkad/CamelCaseMotion
+easymotion/vim-easymotion
+godlygeek/tabular
+groenewege/vim-less
+junegunn/fzf.vim
+junegunn/vim-easy-align
+morhetz/gruvbox
+neoclide/coc.nvim release
+mg979/vim-visual-multi
+tpope/vim-commentary
+tpope/vim-fugitive
+tpope/vim-repeat
+tpope/vim-sleuth
+tpope/vim-speeddating
+tpope/vim-surround
+vim-scripts/Rename2
+vim-scripts/The-NERD-tree
+vim-scripts/VisIncr
+vim-scripts/vis
+
+# File type / language support
+vim-scripts/JSON.vim
+vim-scripts/django.vim
+vim-scripts/glsl.vim
+vim-scripts/jade.vim
+vim-scripts/openscad.vim
+vim-pandoc/vim-pandoc-syntax
+cespare/vim-toml
+de-vri-es/vim-urscript
+eagletmt/neco-ghc
+guns/xterm-color-table.vim
+leafgarland/typescript-vim
+lukerandall/haskellmode-vim
+rust-lang/rust.vim
+zig-lang/zig.vim
+
+# :vi set ft=conf
