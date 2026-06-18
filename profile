@@ -1,3 +1,5 @@
+[ -f "/etc/profile" ] && source /etc/profile
+
 config_dir="$HOME/.config/config_dir"
 
 add_path() {
