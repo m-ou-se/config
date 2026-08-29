@@ -46,6 +46,7 @@ if !has('nvim')
 	set guioptions=ac
 endif
 
+xnoremap <silent> p P
 nmap <Leader>o VaBJds{
 nmap <Leader>b i{<Cr><Esc>o}<Esc>k^
 nnoremap <silent> <Leader>S vip:sort<Cr>
