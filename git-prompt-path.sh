@@ -131,8 +131,8 @@ function git_prompt_path {
 		if [[ -e "${pp}/.git" ]]; then
 			info="$(cd ${ZSH_VERSION+-q} "${pp}" &&
 				GIT_PS1_SHOWDIRTYSTATE= GIT_PS1_SHOWUNTRACKEDFILES= __git_ps1 "(%s)")"
-			# Shorten "(master u+1)" to "(master+1)".
-			info="${info/ u/}"
+			# Shorten "(master|u+1)" to "(master+1)".
+			info="${info/|u/}"
 		fi
 
 		# Show short git status.
