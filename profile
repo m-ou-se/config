@@ -28,7 +28,12 @@ fi
 
 export EDITOR=vim
 export PAGER=less
-export MANPAGER=vimpager
+
+if command -v nvim > /dev/null; then
+	export MANPAGER='nvim +Man!'
+else
+	export MANPAGER='vim +MANPAGER "+nn <buffer> q :q<CR>" --not-a-term -'
+fi
 
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 

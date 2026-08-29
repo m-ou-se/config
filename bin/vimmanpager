@@ -1,3 +1,0 @@
-#!/bin/sh
-
-col -b | vim -R -c 'set filetype=man' -c 'nnoremap q :q<cr>' -
