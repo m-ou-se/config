@@ -44,6 +44,22 @@ else
 	set background=dark
 endif
 
+function CheckTheme(...)
+	silent! let l:data = readfile($HOME . "/.config/theme", "", 1)
+	if len(data) == 0
+		return
+	endif
+	let l:theme=l:data[0]
+	if l:theme == "light"
+		set background=light
+	elseif l:theme == "dark"
+		set background=dark
+	endif
+endfunction
+
+call CheckTheme()
+call timer_start(500, 'CheckTheme', {'repeat': -1})
+
 if !has('nvim')
 	set guioptions=ac
 endif
