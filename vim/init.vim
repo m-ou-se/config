@@ -40,6 +40,8 @@ let skip_defaults_vim=1
 
 if $BACKGROUND == "light"
 	set background=light
+else
+	set background=dark
 endif
 
 if !has('nvim')
@@ -62,7 +64,6 @@ imap <C-D> <C-r>=strftime('%F')<Cr>
 imap <C-T> <C-r>=strftime('%T')<Cr>
 nnoremap <C-j> i<Cr><Esc>==
 
-set background=dark
 syntax on
 colorscheme gruvbox-custom
 autocmd BufEnter,WinEnter * 2match IndentTab /^\t\+\( *\S\)\@=/
