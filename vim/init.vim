@@ -50,10 +50,12 @@ function CheckTheme(...)
 		return
 	endif
 	let l:theme=l:data[0]
-	if l:theme == "light"
-		set background=light
-	elseif l:theme == "dark"
-		set background=dark
+	if &background != l:theme
+		if l:theme == "light"
+			set background=light
+		elseif l:theme == "dark"
+			set background=dark
+		endif
 	endif
 endfunction
 
